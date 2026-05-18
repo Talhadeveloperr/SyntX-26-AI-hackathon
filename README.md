@@ -1,0 +1,1 @@
+# SyntX-26-AI-hackathon
