@@ -1,0 +1,143 @@
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background-color: #051424;
+  color: #d4e4fa;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Full-width root — no constraints */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Bootstrap dark-theme variable overrides ── */
+:root {
+  --bs-primary:            #c0c1ff;
+  --bs-secondary:          #ffb0cd;
+  --bs-body-color:         #d4e4fa;
+  --bs-body-bg:            #051424;
+  --bs-border-color:       rgba(255,255,255,0.1);
+  --bs-surface-container:  #122131;
+}
+
+
+/* ── Shared glass card utility ── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ── Text color utilities ── */
+.text-on-surface         { color: #d4e4fa !important; }
+.text-on-surface-variant { color: rgba(199,196,215,0.55) !important; }
+.text-primary            { color: #c0c1ff !important; }
+.text-secondary          { color: #ffb0cd !important; }
+.text-info               { color: #ffb783 !important; }
+
+/* ── Background surface utilities ── */
+.bg-surface-container         { background-color: #0d2035 !important; }
+.bg-surface-container-high    { background-color: #122131 !important; }
+.bg-surface-container-lowest  { background-color: rgba(1,15,31,0.8) !important; }
+.bg-primary                   { background-color: #c0c1ff !important; }
+
+/* ── Material 3 typography scale ── */
+.font-display-lg   { font-size: 57px;  font-weight: 400; line-height: 1.12; letter-spacing: -0.02em; }
+.font-headline-lg  { font-size: 32px;  font-weight: 400; line-height: 1.25; letter-spacing: -0.01em; }
+.font-headline-md  { font-size: 28px;  font-weight: 400; line-height: 1.3; }
+.font-title-lg     { font-size: 22px;  font-weight: 500; line-height: 1.4; }
+.font-title-md     { font-size: 16px;  font-weight: 600; line-height: 1.5; }
+.font-title-sm     { font-size: 14px;  font-weight: 600; line-height: 1.43; letter-spacing: 0.01em; }
+.font-body-lg      { font-size: 16px;  font-weight: 400; line-height: 1.5; }
+.font-body-md      { font-size: 14px;  font-weight: 400; line-height: 1.43; }
+.font-body-sm      { font-size: 12px;  font-weight: 400; line-height: 1.33; }
+.font-label-lg     { font-size: 14px;  font-weight: 500; line-height: 1.43; letter-spacing: 0.01em; }
+.font-label-md     { font-size: 12px;  font-weight: 500; line-height: 1.33; letter-spacing: 0.05em; }
+.font-label-sm     { font-size: 11px;  font-weight: 500; line-height: 1.45; letter-spacing: 0.05em; }
+
+/* ── Shared interactive utilities ── */
+.pointer-events-none { pointer-events: none; }
+.cursor-pointer { cursor: pointer; }
+.hide-scrollbar { scrollbar-width: none; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+
+/* ── Bootstrap form control dark override ── */
+.form-control, .form-select {
+  color: #d4e4fa;
+  background-color: rgba(1,15,31,0.8);
+  border-color: rgba(255,255,255,0.1);
+}
+.form-control:focus, .form-select:focus {
+  color: #d4e4fa;
+  background-color: rgba(1,15,31,0.9);
+  border-color: rgba(192,193,255,0.4);
+  box-shadow: 0 0 0 3px rgba(192,193,255,0.1);
+}
+.form-control::placeholder { color: rgba(199,196,215,0.3); }
+textarea.form-control { color: #d4e4fa; }
+.form-control option, .form-select option { background-color: #0d2035; color: #d4e4fa; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.22); }
+
+/* ── Sidebar ── */
+.sidebar-container {
+  position: fixed;
+  left: 0; top: 0;
+  width: 256px;
+  height: 100vh;
+  background: #071828;
+  border-right: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  z-index: 200;
+}
+
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 199;
+}
+
+/* On mobile the sidebar slides off-screen */
+@media (max-width: 991px) {
+  .sidebar-container {
+    transform: translateX(-256px);
+  }
+  .sidebar-container.show {
+    transform: translateX(0);
+    box-shadow: 4px 0 24px rgba(0,0,0,0.5);
+  }
+  .layout-main {
+    margin-left: 0 !important;
+  }
+}
+
+/* ── Hover utilities ── */
+.custom-hover-bg:hover { background-color: rgba(255,255,255,0.07) !important; }
+
+/* ── Glass card ── */
+.glass-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}

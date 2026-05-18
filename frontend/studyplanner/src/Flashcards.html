@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "secondary": "#ffb0cd",
+                  "primary": "#c0c1ff",
+                  "tertiary-fixed-dim": "#ffb783",
+                  "on-secondary-fixed-variant": "#8c0053",
+                  "on-surface": "#d4e4fa",
+                  "on-secondary-container": "#ffbad3",
+                  "tertiary": "#ffb783",
+                  "surface-container-high": "#1c2b3c",
+                  "on-primary-fixed-variant": "#2f2ebe",
+                  "on-secondary": "#640039",
+                  "outline-variant": "#464554",
+                  "on-tertiary-fixed": "#301400",
+                  "on-primary-fixed": "#07006c",
+                  "on-tertiary": "#4f2500",
+                  "surface-container": "#122131",
+                  "tertiary-container": "#d97721",
+                  "on-background": "#d4e4fa",
+                  "primary-fixed-dim": "#c0c1ff",
+                  "secondary-container": "#aa0266",
+                  "inverse-on-surface": "#233143",
+                  "surface-dim": "#051424",
+                  "inverse-primary": "#494bd6",
+                  "on-primary-container": "#0d0096",
+                  "surface-variant": "#273647",
+                  "on-secondary-fixed": "#3e0022",
+                  "surface-bright": "#2c3a4c",
+                  "inverse-surface": "#d4e4fa",
+                  "on-error": "#690005",
+                  "tertiary-fixed": "#ffdcc5",
+                  "surface-container-highest": "#273647",
+                  "surface": "#051424",
+                  "on-tertiary-container": "#452000",
+                  "on-tertiary-fixed-variant": "#703700",
+                  "on-surface-variant": "#c7c4d7",
+                  "surface-container-lowest": "#010f1f",
+                  "on-error-container": "#ffdad6",
+                  "on-primary": "#1000a9",
+                  "surface-tint": "#c0c1ff",
+                  "outline": "#908fa0",
+                  "surface-container-low": "#0d1c2d",
+                  "secondary-fixed-dim": "#ffb0cd",
+                  "primary-fixed": "#e1e0ff",
+                  "primary-container": "#8083ff",
+                  "background": "#051424",
+                  "error-container": "#93000a",
+                  "error": "#ffb4ab",
+                  "secondary-fixed": "#ffd9e4"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "container-max": "1280px",
+                  "margin-desktop": "40px",
+                  "unit": "8px",
+                  "margin-mobile": "20px",
+                  "gutter": "24px"
+          },
+          "fontFamily": {
+                  "body-lg": ["Inter"],
+                  "label-sm": ["Geist"],
+                  "headline-lg-mobile": ["Geist"],
+                  "title-md": ["Geist"],
+                  "display-lg": ["Geist"],
+                  "headline-lg": ["Geist"],
+                  "body-md": ["Inter"]
+          },
+          "fontSize": {
+                  "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                  "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                  "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                  "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "600"}],
+                  "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                  "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .active-glow {
+      box-shadow: 0 0 20px rgba(192, 193, 255, 0.3);
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary selection:text-on-primary-container">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full flex flex-col z-50 bg-surface/80 backdrop-blur-xl h-screen w-64 border-r border-white/10">
+<div class="p-8">
+<h1 class="font-headline-lg text-headline-lg font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Study AI</h1>
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mt-1">Deep Focus</p>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-title-md text-title-md">Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-title-md text-title-md">Smart Chat</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-title-md text-title-md">Quiz Generator</span>
+</a>
+<!-- Active Navigation: Flashcards -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-gradient-to-r from-primary/20 to-secondary/20 text-on-surface border-r-2 border-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">style</span>
+<span class="font-title-md text-title-md">Flashcards</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-title-md text-title-md">Study Planner</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">history_edu</span>
+<span class="font-title-md text-title-md">Past Papers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-title-md text-title-md">Profile</span>
+</a>
+</nav>
+<div class="p-6">
+<button class="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-primary to-secondary text-on-primary-container font-bold hover:opacity-90 active:scale-95 transition-all active-glow">
+        Upgrade to Pro
+      </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-10 py-6 sticky top-0 z-40 bg-surface/80 backdrop-blur-xl border-b border-white/10">
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">Flashcards</h2>
+<div class="flex items-center gap-6">
+<div class="relative">
+<input class="bg-black/40 border border-white/10 rounded-full px-6 py-2 w-64 focus:border-primary focus:ring-0 transition-all outline-none" placeholder="Search decks..." type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<img alt="User Avatar" class="w-10 h-10 rounded-full border border-white/20" data-alt="A professional close-up headshot of a young scholar with a neutral expression, set against a dark, blurred library background. The lighting is soft and cinematic, with a teal and violet atmospheric glow consistent with a futuristic AI study environment. The image is crisp, detailed, and feels highly premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTFMgJd1l18XzW-vbosd0XxIZ4w9GhdqQC26wiZtaKe1zt27F6u892crVul7J8-GiDhDcSxdYdLuhR2mvEiZj2JeKb542SQtZZ_fc6KyRpv7c3SJ43h60yDGqKHyHW0gV5U1DO8Vu4LKGXYnb3-az0dwvBCfENC3bq_qeiRkkLGaaIj-NlCUOCz1vm1i-DT_VwvoWm7h2CJTg2bCu0j2Q8IcJXNlAB_-w6Y0xnIyi2Y7KWAWv0moawsr0ypu7qW7GWnuwq-zMcCOOh"/>
+</div>
+</header>
+<div class="max-w-[1280px] mx-auto p-10 space-y-10">
+<!-- Deck Selector -->
+<section class="space-y-4">
+<div class="flex justify-between items-end">
+<h3 class="font-title-md text-title-md text-on-surface-variant">Library Decks</h3>
+<button class="text-primary font-label-sm hover:underline">View All</button>
+</div>
+<div class="flex gap-4 overflow-x-auto hide-scrollbar pb-4 -mx-2 px-2">
+<!-- Active Deck -->
+<button class="flex-shrink-0 glass-card px-8 py-6 rounded-2xl border-primary/40 bg-white/10 ring-1 ring-primary/20">
+<div class="text-left">
+<span class="material-symbols-outlined text-primary mb-2">urology</span>
+<p class="font-title-md text-title-md font-bold block">Anatomy</p>
+<p class="text-label-sm text-on-surface-variant">42 cards • 8 due</p>
+</div>
+</button>
+<!-- Inactive Decks -->
+<button class="flex-shrink-0 glass-card px-8 py-6 rounded-2xl hover:bg-white/10 transition-colors">
+<div class="text-left">
+<span class="material-symbols-outlined text-on-surface-variant mb-2">payments</span>
+<p class="font-title-md text-title-md block text-on-surface">Macroeconomics</p>
+<p class="text-label-sm text-on-surface-variant">128 cards • 15 due</p>
+</div>
+</button>
+<button class="flex-shrink-0 glass-card px-8 py-6 rounded-2xl hover:bg-white/10 transition-colors">
+<div class="text-left">
+<span class="material-symbols-outlined text-on-surface-variant mb-2">calculate</span>
+<p class="font-title-md text-title-md block text-on-surface">Calculus II</p>
+<p class="text-label-sm text-on-surface-variant">56 cards • 0 due</p>
+</div>
+</button>
+<button class="flex-shrink-0 glass-card px-8 py-6 rounded-2xl hover:bg-white/10 transition-colors">
+<div class="text-left">
+<span class="material-symbols-outlined text-on-surface-variant mb-2">translate</span>
+<p class="font-title-md text-title-md block text-on-surface">Modern Greek</p>
+<p class="text-label-sm text-on-surface-variant">210 cards • 32 due</p>
+</div>
+</button>
+<button class="flex-shrink-0 glass-card px-8 py-6 rounded-2xl hover:bg-white/10 transition-colors">
+<div class="text-left">
+<span class="material-symbols-outlined text-on-surface-variant mb-2">psychology</span>
+<p class="font-title-md text-title-md block text-on-surface">Neurology</p>
+<p class="text-label-sm text-on-surface-variant">88 cards • 12 due</p>
+</div>
+</button>
+</div>
+</section>
+<!-- Centerpiece Workspace -->
+<section class="flex flex-col items-center gap-10 py-6">
+<!-- Progress Info -->
+<div class="w-full max-w-2xl flex justify-between items-center px-2">
+<div class="flex items-center gap-4">
+<span class="text-label-sm font-bold text-primary">DUE TODAY: 8</span>
+<div class="w-48 h-1.5 bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary w-1/3"></div>
+</div>
+<span class="text-label-sm text-on-surface-variant">12 / 42 cards</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-base">timer</span>
+<span class="text-label-sm">14m left</span>
+</div>
+</div>
+<!-- 3D Card Simulator -->
+<div class="relative group cursor-pointer perspective-1000 w-full max-w-2xl aspect-[1.6/1]">
+<div class="glass-card w-full h-full rounded-[32px] p-12 flex flex-col items-center justify-center text-center border-white/20 transition-transform duration-500 hover:scale-[1.02] relative overflow-hidden">
+<!-- Decorative inner glow for active look -->
+<div class="absolute inset-0 border border-white/5 rounded-[32px] pointer-events-none"></div>
+<span class="font-label-sm text-primary uppercase tracking-[0.2em] mb-6 block">Question</span>
+<h4 class="font-headline-lg text-headline-lg text-on-surface max-w-lg">What are the primary functions of the Cerebellum in the human brain?</h4>
+<div class="absolute bottom-10 flex items-center gap-2 text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">touch_app</span>
+<span class="font-label-sm font-bold">CLICK TO FLIP</span>
+</div>
+<!-- Atmosphere Blob Behind Card -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary/10 blur-[100px] rounded-full"></div>
+</div>
+</div>
+<!-- Rating Buttons -->
+<div class="flex gap-4">
+<button class="group flex flex-col items-center gap-2 px-10 py-4 rounded-2xl glass-card hover:border-red-400/50 transition-all active:scale-95">
+<span class="material-symbols-outlined text-red-400">sentiment_very_dissatisfied</span>
+<span class="font-label-sm text-on-surface-variant group-hover:text-on-surface">Hard</span>
+<span class="text-[10px] text-red-400/60 font-bold uppercase tracking-tighter">1m</span>
+</button>
+<button class="group flex flex-col items-center gap-2 px-10 py-4 rounded-2xl glass-card hover:border-tertiary/50 transition-all active:scale-95">
+<span class="material-symbols-outlined text-tertiary">sentiment_neutral</span>
+<span class="font-label-sm text-on-surface-variant group-hover:text-on-surface">Medium</span>
+<span class="text-[10px] text-tertiary/60 font-bold uppercase tracking-tighter">1d</span>
+</button>
+<button class="group flex flex-col items-center gap-2 px-10 py-4 rounded-2xl glass-card hover:border-green-400/50 transition-all active:scale-95">
+<span class="material-symbols-outlined text-green-400">sentiment_very_satisfied</span>
+<span class="font-label-sm text-on-surface-variant group-hover:text-on-surface">Easy</span>
+<span class="text-[10px] text-green-400/60 font-bold uppercase tracking-tighter">4d</span>
+</button>
+</div>
+</section>
+<!-- Stats Section (Asymmetric Grid) -->
+<section class="grid grid-cols-12 gap-6">
+<div class="col-span-8 glass-card p-8 rounded-3xl flex items-center justify-between">
+<div>
+<h5 class="text-on-surface-variant font-label-sm uppercase tracking-wider mb-1">Study Session Performance</h5>
+<p class="font-headline-lg text-headline-lg font-bold">Retention Score: 88%</p>
+</div>
+<div class="flex gap-8">
+<div class="text-center">
+<p class="text-primary font-display-lg leading-none">142</p>
+<p class="text-label-sm text-on-surface-variant uppercase mt-1">Cards Reviewed</p>
+</div>
+<div class="text-center">
+<p class="text-secondary font-display-lg leading-none">45m</p>
+<p class="text-label-sm text-on-surface-variant uppercase mt-1">Time Spent</p>
+</div>
+</div>
+</div>
+<div class="col-span-4 glass-card p-8 rounded-3xl relative overflow-hidden">
+<h5 class="text-on-surface-variant font-label-sm uppercase tracking-wider mb-4">Daily Streak</h5>
+<div class="flex items-center gap-4">
+<div class="p-3 rounded-full bg-gradient-to-tr from-orange-500 to-yellow-500 shadow-lg shadow-orange-500/20">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<p class="font-headline-lg text-headline-lg font-bold">12 Days</p>
+</div>
+<p class="text-on-surface-variant text-label-sm mt-2">Next reward in 3 days!</p>
+<!-- Background pulse -->
+<div class="absolute -right-8 -bottom-8 w-24 h-24 bg-orange-500/10 rounded-full blur-2xl"></div>
+</div>
+</section>
+</div>
+</main>
+<!-- Visual Enhancement Blobs -->
+<div class="fixed top-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary/5 blur-[150px] -z-10 rounded-full"></div>
+<div class="fixed bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-secondary/5 blur-[150px] -z-10 rounded-full"></div>
+</body></html>

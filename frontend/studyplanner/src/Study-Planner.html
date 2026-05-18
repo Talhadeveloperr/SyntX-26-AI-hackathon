@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Geist:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      background-color: #051424;
+      color: #d4e4fa;
+    }
+    .glass-card {
+      backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .gradient-border-active {
+      border: 1px solid transparent;
+      background: linear-gradient(#051424, #051424) padding-box,
+                  linear-gradient(to right, #c0c1ff, #ffb0cd) border-box;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary": "#ffb0cd",
+            "primary": "#c0c1ff",
+            "tertiary-fixed-dim": "#ffb783",
+            "on-secondary-fixed-variant": "#8c0053",
+            "on-surface": "#d4e4fa",
+            "on-secondary-container": "#ffbad3",
+            "tertiary": "#ffb783",
+            "surface-container-high": "#1c2b3c",
+            "on-primary-fixed-variant": "#2f2ebe",
+            "on-secondary": "#640039",
+            "outline-variant": "#464554",
+            "on-tertiary-fixed": "#301400",
+            "on-primary-fixed": "#07006c",
+            "on-tertiary": "#4f2500",
+            "surface-container": "#122131",
+            "tertiary-container": "#d97721",
+            "on-background": "#d4e4fa",
+            "primary-fixed-dim": "#c0c1ff",
+            "secondary-container": "#aa0266",
+            "inverse-on-surface": "#233143",
+            "surface-dim": "#051424",
+            "inverse-primary": "#494bd6",
+            "on-primary-container": "#0d0096",
+            "surface-variant": "#273647",
+            "on-secondary-fixed": "#3e0022",
+            "surface-bright": "#2c3a4c",
+            "inverse-surface": "#d4e4fa",
+            "on-error": "#690005",
+            "tertiary-fixed": "#ffdcc5",
+            "surface-container-highest": "#273647",
+            "surface": "#051424",
+            "on-tertiary-container": "#452000",
+            "on-tertiary-fixed-variant": "#703700",
+            "on-surface-variant": "#c7c4d7",
+            "surface-container-lowest": "#010f1f",
+            "on-error-container": "#ffdad6",
+            "on-primary": "#1000a9",
+            "surface-tint": "#c0c1ff",
+            "outline": "#908fa0",
+            "surface-container-low": "#0d1c2d",
+            "secondary-fixed-dim": "#ffb0cd",
+            "primary-fixed": "#e1e0ff",
+            "primary-container": "#8083ff",
+            "background": "#051424",
+            "error-container": "#93000a",
+            "error": "#ffb4ab",
+            "secondary-fixed": "#ffd9e4"
+          },
+          "fontFamily": {
+            "body-lg": ["Inter"],
+            "label-sm": ["Geist"],
+            "headline-lg": ["Geist"],
+            "title-md": ["Geist"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-body-md text-on-surface overflow-hidden">
+<!-- Side Navigation Bar -->
+<nav class="fixed left-0 top-0 h-full flex flex-col z-50 bg-surface/80 backdrop-blur-xl h-screen w-64 border-r border-white/10">
+<div class="px-6 py-10">
+<h1 class="font-headline-lg text-headline-lg font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Study AI</h1>
+<p class="text-on-surface-variant text-label-sm font-label-sm opacity-60">Deep Focus</p>
+</div>
+<div class="flex-1 flex flex-col gap-1 px-3">
+<!-- Home -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-title-md text-title-md">Home</span>
+</a>
+<!-- Smart Chat -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-title-md text-title-md">Smart Chat</span>
+</a>
+<!-- Quiz Generator -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-title-md text-title-md">Quiz Generator</span>
+</a>
+<!-- Flashcards -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">style</span>
+<span class="font-title-md text-title-md">Flashcards</span>
+</a>
+<!-- Study Planner (ACTIVE) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-gradient-to-r from-primary/20 to-secondary/20 text-on-surface border-r-2 border-primary active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-title-md text-title-md">Study Planner</span>
+</a>
+<!-- Past Papers -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">history_edu</span>
+<span class="font-title-md text-title-md">Past Papers</span>
+</a>
+<!-- Profile -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-title-md text-title-md">Profile</span>
+</a>
+</div>
+<div class="p-6">
+<button class="w-full py-3 rounded-xl bg-gradient-to-r from-primary to-secondary text-on-primary font-bold shadow-[0_0_20px_rgba(192,193,255,0.3)] hover:opacity-90 transition-opacity">
+        Upgrade to Pro
+      </button>
+</div>
+</nav>
+<!-- Top App Bar -->
+<header class="fixed left-64 top-0 right-0 z-40 bg-surface/80 backdrop-blur-xl border-b border-white/10 flex justify-between items-center px-10 py-4">
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">Study Planner</h2>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<input class="bg-black/40 border border-white/10 rounded-full py-2 px-10 focus:ring-1 focus:ring-primary focus:border-primary text-sm w-64 outline-none transition-all" placeholder="Search tasks..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant opacity-50">search</span>
+</div>
+<button class="relative hover:text-on-surface transition-colors active:opacity-80">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-secondary rounded-full"></span>
+</button>
+<div class="w-10 h-10 rounded-full border border-white/10 overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="A cinematic, high-resolution portrait of a futuristic student with sleek cybernetic glasses reflecting data streams. The aesthetic is ultra-modern, featuring a dark, moody background with subtle bioluminescent blue and pink highlights that match a high-performance cognitive interface design. Lighting is soft, high-key, and emphasizes professional clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyqOcOm4QOm4CJEsNLuEMU7pL4NkDhHYNHSrF_PX63v3V5Tx2PswiuZLaqmlWjNneq9zk2nlwW8GGuDgMtZscv7449_4dQL71hu8liMkQyrZAV4NX0DSafeovRN-atm4IvEoXdYBDN1HQwljL3vrJAp1T3YNkkrw5y8sKTg6X8_bSORzsWLRWas9HQcJggTSSyTMbUM5tNJAalqq_KC-zLwrfhtxr6UYU0ZhQSulkUYQmpQfVS8LYlTZ29iU9_NSBVBwxqmD1ilRda"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 px-10 pb-10 min-h-screen relative overflow-y-auto max-w-[1280px]">
+<!-- Atmospheric background effects -->
+<div class="fixed inset-0 pointer-events-none z-0">
+<div class="absolute top-[20%] right-[10%] w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-[10%] left-[5%] w-[400px] h-[400px] bg-secondary/5 blur-[120px] rounded-full"></div>
+</div>
+<div class="relative z-10 flex flex-col gap-8">
+<!-- AI Schedule Suggestions -->
+<section class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h3 class="font-title-md text-title-md">AI Insights</h3>
+</div>
+<div class="flex gap-3 overflow-x-auto pb-2">
+<button class="flex items-center gap-2 px-5 py-2.5 glass-card rounded-full whitespace-nowrap hover:bg-white/10 transition-colors">
+<span class="text-primary font-medium">Focus:</span>
+<span>Biology Metabolism today</span>
+<span class="material-symbols-outlined text-sm">trending_up</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-2.5 glass-card rounded-full whitespace-nowrap hover:bg-white/10 transition-colors">
+<span class="text-secondary font-medium">Review:</span>
+<span>Calculus Limits tomorrow</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-2.5 glass-card rounded-full whitespace-nowrap hover:bg-white/10 transition-colors">
+<span class="text-tertiary font-medium">Break:</span>
+<span>20m walk suggested after next task</span>
+</button>
+</div>
+</section>
+<!-- Main Layout: Calendar + Side Panel -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Calendar View (Left 8 Columns) -->
+<div class="col-span-8 flex flex-col gap-6">
+<div class="glass-card rounded-3xl p-8 flex flex-col gap-6">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-4">
+<h4 class="font-headline-lg text-headline-lg">October 2023</h4>
+<div class="flex gap-1">
+<button class="p-1 hover:bg-white/5 rounded"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="p-1 hover:bg-white/5 rounded"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 rounded-lg bg-white/5 text-sm font-medium border border-white/10">Month</button>
+<button class="px-4 py-2 rounded-lg bg-primary/20 text-primary text-sm font-medium border border-primary/30">Week</button>
+</div>
+</div>
+<!-- Weekly Grid -->
+<div class="grid grid-cols-7 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+<!-- Headers -->
+<div class="bg-surface-container py-3 text-center text-label-sm font-label-sm opacity-60">MON</div>
+<div class="bg-surface-container py-3 text-center text-label-sm font-label-sm opacity-60">TUE</div>
+<div class="bg-surface-container py-3 text-center text-label-sm font-label-sm opacity-60">WED</div>
+<div class="bg-surface-container py-3 text-center text-label-sm font-label-sm opacity-60">THU</div>
+<div class="bg-surface-container py-3 text-center text-label-sm font-label-sm opacity-60">FRI</div>
+<div class="bg-surface-container py-3 text-center text-label-sm font-label-sm opacity-60">SAT</div>
+<div class="bg-surface-container py-3 text-center text-label-sm font-label-sm opacity-60">SUN</div>
+<!-- Mon -->
+<div class="bg-surface/40 min-h-[160px] p-3 flex flex-col gap-2 relative">
+<span class="text-sm opacity-40">16</span>
+<div class="bg-primary-container/20 border-l-2 border-primary p-2 rounded text-xs text-on-surface">
+                  Lecture: Cell Bio
+                  <div class="mt-1 opacity-60">09:00 AM</div>
+</div>
+</div>
+<!-- Tue (Active Day) -->
+<div class="bg-surface-variant/40 min-h-[160px] p-3 flex flex-col gap-2 relative border-b-2 border-primary">
+<span class="text-sm text-primary font-bold">17</span>
+<div class="bg-secondary-container/20 border-l-2 border-secondary p-2 rounded text-xs text-on-surface">
+                  Exam Prep: Macro
+                  <div class="mt-1 opacity-60">02:30 PM</div>
+</div>
+<div class="bg-white/5 border border-white/10 p-2 rounded text-xs text-on-surface-variant">
+                  Lab Session
+                </div>
+</div>
+<!-- Wed -->
+<div class="bg-surface/40 min-h-[160px] p-3 flex flex-col gap-2">
+<span class="text-sm opacity-40">18</span>
+<div class="bg-tertiary-container/20 border-l-2 border-tertiary p-2 rounded text-xs text-on-surface">
+                  Deadline: Thesis
+                  <div class="mt-1 opacity-60">11:59 PM</div>
+</div>
+</div>
+<!-- Thu -->
+<div class="bg-surface/40 min-h-[160px] p-3 flex flex-col gap-2">
+<span class="text-sm opacity-40">19</span>
+</div>
+<!-- Fri -->
+<div class="bg-surface/40 min-h-[160px] p-3 flex flex-col gap-2">
+<span class="text-sm opacity-40">20</span>
+<div class="bg-primary-container/20 border-l-2 border-primary p-2 rounded text-xs text-on-surface">
+                  Seminar: Ethics
+                </div>
+</div>
+<!-- Sat -->
+<div class="bg-surface/40 min-h-[160px] p-3 flex flex-col gap-2">
+<span class="text-sm opacity-40">21</span>
+</div>
+<!-- Sun -->
+<div class="bg-surface/40 min-h-[160px] p-3 flex flex-col gap-2">
+<span class="text-sm opacity-40">22</span>
+</div>
+</div>
+</div>
+<!-- Quick Stats Bento Section -->
+<div class="grid grid-cols-2 gap-6">
+<div class="glass-card rounded-3xl p-6 flex flex-col justify-between">
+<div>
+<p class="text-on-surface-variant text-sm font-medium mb-1">Focus Time Week</p>
+<h5 class="text-4xl font-bold">24.5<span class="text-lg font-normal opacity-50 ml-1">hrs</span></h5>
+</div>
+<div class="mt-4 flex items-end gap-2 h-16">
+<div class="flex-1 bg-primary/20 rounded-t h-[40%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t h-[60%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t h-[100%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t h-[80%]"></div>
+<div class="flex-1 bg-primary rounded-t h-[90%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t h-[30%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t h-[20%]"></div>
+</div>
+</div>
+<div class="glass-card rounded-3xl p-6 flex flex-col justify-between bg-gradient-to-br from-surface-container to-surface-dim">
+<div>
+<p class="text-on-surface-variant text-sm font-medium mb-1">Upcoming Milestone</p>
+<h5 class="text-2xl font-bold">Final Term Project</h5>
+</div>
+<div class="flex items-center gap-3 mt-4">
+<div class="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-3/4"></div>
+</div>
+<span class="text-xs font-bold text-secondary">75%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Deadlines & Add New (Right 4 Columns) -->
+<div class="col-span-4 flex flex-col gap-6">
+<!-- Add Deadline Section -->
+<section class="glass-card rounded-3xl p-8 border border-primary/20 shadow-[0_0_40px_rgba(192,193,255,0.05)]">
+<h4 class="font-title-md text-title-md mb-6">Add Deadline</h4>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-label-sm opacity-60 ml-1">SUBJECT NAME</label>
+<input class="bg-black border border-white/10 rounded-xl px-4 py-3 text-sm focus:border-primary outline-none transition-all" placeholder="e.g. Molecular Biology" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-label-sm opacity-60 ml-1">DATE</label>
+<input class="bg-black border border-white/10 rounded-xl px-4 py-3 text-sm focus:border-primary outline-none transition-all" type="date"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-label-sm opacity-60 ml-1">PRIORITY</label>
+<select class="bg-black border border-white/10 rounded-xl px-4 py-3 text-sm focus:border-primary outline-none transition-all appearance-none">
+<option>High</option>
+<option>Medium</option>
+<option>Low</option>
+</select>
+</div>
+</div>
+<button class="mt-2 w-full py-3.5 rounded-xl bg-primary text-on-primary font-bold hover:brightness-110 active:scale-[0.98] transition-all">
+                Sync to Calendar
+              </button>
+</div>
+</section>
+<!-- Critical Deadlines -->
+<section class="flex flex-col gap-4">
+<h4 class="font-title-md text-title-md">Critical Deadlines</h4>
+<!-- Deadline Card: High Urgency -->
+<div class="glass-card rounded-2xl p-5 flex flex-col gap-4 group hover:bg-white/[0.08] transition-colors relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-error/10 blur-[40px] pointer-events-none"></div>
+<div class="flex justify-between items-start">
+<div>
+<h5 class="font-bold text-on-surface">Organic Chemistry Quiz</h5>
+<p class="text-xs text-on-surface-variant">Chapter 14: Amines</p>
+</div>
+<span class="px-3 py-1 bg-error-container text-on-error-container text-[10px] font-bold rounded-full uppercase tracking-wider">Urgent</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-error">
+<span class="material-symbols-outlined text-lg">timer</span>
+<span class="text-sm font-bold">14h 22m left</span>
+</div>
+<button class="p-2 glass-card rounded-lg group-hover:bg-primary group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Deadline Card: Medium Urgency -->
+<div class="glass-card rounded-2xl p-5 flex flex-col gap-4 group hover:bg-white/[0.08] transition-colors">
+<div class="flex justify-between items-start">
+<div>
+<h5 class="font-bold text-on-surface">Data Structures Lab</h5>
+<p class="text-xs text-on-surface-variant">Trees &amp; Graphs Assignment</p>
+</div>
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container text-[10px] font-bold rounded-full uppercase tracking-wider">Warning</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined text-lg">schedule</span>
+<span class="text-sm font-bold">2d 05h left</span>
+</div>
+<button class="p-2 glass-card rounded-lg group-hover:bg-primary group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Deadline Card: Standard -->
+<div class="glass-card rounded-2xl p-5 flex flex-col gap-4 opacity-70">
+<div class="flex justify-between items-start">
+<div>
+<h5 class="font-bold text-on-surface">Research Ethics Paper</h5>
+<p class="text-xs text-on-surface-variant">First Draft Submission</p>
+</div>
+<span class="px-3 py-1 bg-white/10 text-on-surface-variant text-[10px] font-bold rounded-full uppercase tracking-wider">Planned</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+<span class="text-sm font-medium">8 days left</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Study Partner Promo -->
+<div class="mt-auto glass-card rounded-3xl p-6 bg-gradient-to-br from-primary/10 to-transparent border border-white/5">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">robot_2</span>
+</div>
+<div>
+<p class="text-xs opacity-60">ADVISOR</p>
+<p class="font-bold">Deep Focus AI</p>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant italic">"Your brain focus is peak at 10:00 AM. I've blocked your calendar for heavy study then."</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button (SUPPRESSED for Planner as defined in rules, but UI requires some action) -->
+<!-- Using a specialized sidebar task launcher instead -->
+</body></html>

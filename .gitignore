@@ -1,0 +1,9 @@
+# Ignore node_modules folders
+frontend/studyplanner/node_modules/
+
+# Ignore __pycache__ folders globally, except for backend
+__pycache__/
+!backend/**/__pycache__/
+
+# Ignore .vscode folder
+.vscode/

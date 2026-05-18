@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Past Papers Analyzer - Study AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#ffb0cd",
+                    "primary": "#c0c1ff",
+                    "tertiary-fixed-dim": "#ffb783",
+                    "on-secondary-fixed-variant": "#8c0053",
+                    "on-surface": "#d4e4fa",
+                    "on-secondary-container": "#ffbad3",
+                    "tertiary": "#ffb783",
+                    "surface-container-high": "#1c2b3c",
+                    "on-primary-fixed-variant": "#2f2ebe",
+                    "on-secondary": "#640039",
+                    "outline-variant": "#464554",
+                    "on-tertiary-fixed": "#301400",
+                    "on-primary-fixed": "#07006c",
+                    "on-tertiary": "#4f2500",
+                    "surface-container": "#122131",
+                    "tertiary-container": "#d97721",
+                    "on-background": "#d4e4fa",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "secondary-container": "#aa0266",
+                    "inverse-on-surface": "#233143",
+                    "surface-dim": "#051424",
+                    "inverse-primary": "#494bd6",
+                    "on-primary-container": "#0d0096",
+                    "surface-variant": "#273647",
+                    "on-secondary-fixed": "#3e0022",
+                    "surface-bright": "#2c3a4c",
+                    "inverse-surface": "#d4e4fa",
+                    "on-error": "#690005",
+                    "tertiary-fixed": "#ffdcc5",
+                    "surface-container-highest": "#273647",
+                    "surface": "#051424",
+                    "on-tertiary-container": "#452000",
+                    "on-tertiary-fixed-variant": "#703700",
+                    "on-surface-variant": "#c7c4d7",
+                    "surface-container-lowest": "#010f1f",
+                    "on-error-container": "#ffdad6",
+                    "on-primary": "#1000a9",
+                    "surface-tint": "#c0c1ff",
+                    "outline": "#908fa0",
+                    "surface-container-low": "#0d1c2d",
+                    "secondary-fixed-dim": "#ffb0cd",
+                    "primary-fixed": "#e1e0ff",
+                    "primary-container": "#8083ff",
+                    "background": "#051424",
+                    "error-container": "#93000a",
+                    "error": "#ffb4ab",
+                    "secondary-fixed": "#ffd9e4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "margin-desktop": "40px",
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "title-md": ["Geist"],
+                    "display-lg": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #051424;
+            color: #d4e4fa;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-button {
+            box-shadow: 0 0 20px rgba(192, 193, 255, 0.3);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #c0c1ff, #ffb0cd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .heatmap-cell {
+            transition: all 0.2s ease;
+        }
+        .heatmap-cell:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+    </style>
+</head>
+<body class="font-body-md overflow-hidden">
+<!-- Atmospheric Depth Background Blobs -->
+<div class="fixed inset-0 overflow-hidden -z-10">
+<div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-primary/10 blur-[120px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-secondary/10 blur-[120px]"></div>
+</div>
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full flex flex-col z-50 h-screen w-64 border-r border-white/10 bg-surface/80 backdrop-blur-xl">
+<div class="p-8">
+<h1 class="font-headline-lg text-headline-lg font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Study AI</h1>
+<p class="text-on-surface-variant text-label-sm mt-1">Deep Focus</p>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-title-md text-title-md">Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-title-md text-title-md">Smart Chat</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-title-md text-title-md">Quiz Generator</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">style</span>
+<span class="font-title-md text-title-md">Flashcards</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-title-md text-title-md">Study Planner</span>
+</a>
+<!-- Active Tab -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-gradient-to-r from-primary/20 to-secondary/20 text-on-surface border-r-2 border-primary active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">history_edu</span>
+<span class="font-title-md text-title-md">Past Papers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-title-md text-title-md">Profile</span>
+</a>
+</nav>
+<div class="p-4 mt-auto">
+<button class="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-on-primary font-bold glow-button active:scale-95 transition-transform">
+                Upgrade to Pro
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-10 py-6 backdrop-blur-xl border-b border-white/10 bg-surface/80">
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">Past Papers Analyzer</h2>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="bg-black/40 border border-white/10 rounded-full pl-10 pr-4 py-2 text-on-surface focus:outline-none focus:border-primary transition-colors w-64" placeholder="Search analyzed papers..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-on-surface transition-colors">notifications</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-primary/30">
+<img alt="User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN1PvgesrlfsbCZqriKha2Y7w_cTnj_sWHwZAuSUb56cyh8hfh7haAEzFk9HJ6dTmyYNb7f8KyJ_VRWvhhexhpGe-w1niLz4xDDexl0UeIXOa5cA0-Ht5xCkSml5o4bkCDGcLW8UYuMiRwZKpZopIje2v8FOP6moMOstssuGS5A6gx-oTZDKu9Md_J-8VyGxGFkCrcndvTYbkIpbUD2ig-doRbJwRrl2VUY7itR18n_GoYe9vPwXMQw7pLzDpR7vxbxKuytWRXivft"/>
+</div>
+</div>
+</header>
+<!-- Scrollable Dashboard Area -->
+<section class="flex-1 overflow-y-auto p-10 max-w-container-max mx-auto w-full">
+<div class="grid grid-cols-12 gap-8">
+<!-- Upload Zone -->
+<div class="col-span-12 glass-card rounded-2xl p-8 border border-white/10 flex flex-col items-center justify-center min-h-[300px] border-dashed border-2 border-primary/40 relative group">
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
+<span class="material-symbols-outlined text-6xl text-primary mb-4">cloud_upload</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Drag and drop past paper files</h3>
+<p class="text-on-surface-variant font-body-md mb-6">Support for PDF, DOCX, and JPG scans. AI will extract and categorize topics automatically.</p>
+<button class="px-8 py-3 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors font-title-md text-title-md">Browse Files</button>
+</div>
+<!-- Frequency Heatmap -->
+<div class="col-span-8 glass-card rounded-2xl p-8">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Topic Frequency Heatmap</h3>
+<p class="text-on-surface-variant text-label-sm">Distribution across 50+ analyzed papers</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">leaderboard</span>
+</div>
+<div class="grid grid-cols-12 gap-2 h-48">
+<!-- Heatmap Cells Simulation -->
+<div class="bg-primary/90 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/20 rounded-sm heatmap-cell"></div>
+<div class="bg-secondary/40 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/60 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/10 rounded-sm heatmap-cell"></div>
+<div class="bg-secondary/20 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/80 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/30 rounded-sm heatmap-cell"></div>
+<div class="bg-secondary/70 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/50 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/10 rounded-sm heatmap-cell"></div>
+<div class="bg-secondary/40 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/10 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/40 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/90 rounded-sm heatmap-cell"></div>
+<div class="bg-secondary/10 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/20 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/60 rounded-sm heatmap-cell"></div>
+<div class="bg-secondary/30 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/80 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/10 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/30 rounded-sm heatmap-cell"></div>
+<div class="bg-secondary/90 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/50 rounded-sm heatmap-cell"></div>
+<div class="bg-secondary/20 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/50 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/10 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/90 rounded-sm heatmap-cell"></div>
+<div class="bg-secondary/60 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/30 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/10 rounded-sm heatmap-cell"></div>
+<div class="bg-secondary/20 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/40 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/70 rounded-sm heatmap-cell"></div>
+<div class="bg-primary/10 rounded-sm heatmap-cell"></div>
+<div class="bg-secondary/50 rounded-sm heatmap-cell"></div>
+</div>
+<div class="flex justify-between mt-4 text-label-sm text-on-surface-variant uppercase">
+<span>Low Frequency</span>
+<span>High Frequency</span>
+</div>
+</div>
+<!-- Predicted Topics -->
+<div class="col-span-4 glass-card rounded-2xl p-8 flex flex-col">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-6">Predicted Topics</h3>
+<div class="space-y-6 flex-1">
+<div class="group cursor-pointer">
+<div class="flex justify-between mb-2">
+<span class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">Cell Respiration</span>
+<span class="text-primary font-bold">98% AI</span>
+</div>
+<div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[98%] group-hover:shadow-[0_0_10px_#c0c1ff] transition-all"></div>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="flex justify-between mb-2">
+<span class="font-title-md text-title-md text-on-surface group-hover:text-secondary transition-colors">Genetic Variation</span>
+<span class="text-secondary font-bold">85% AI</span>
+</div>
+<div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[85%] group-hover:shadow-[0_0_10px_#ffb0cd] transition-all"></div>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="flex justify-between mb-2">
+<span class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">Neurobiology</span>
+<span class="text-primary font-bold">72% AI</span>
+</div>
+<div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[72%] group-hover:shadow-[0_0_10px_#c0c1ff] transition-all"></div>
+</div>
+</div>
+</div>
+<div class="mt-8 p-4 bg-primary/10 rounded-xl border border-primary/20">
+<p class="text-label-sm text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                            High confidence in Cell Respiration based on 5-year cycle analysis.
+                        </p>
+</div>
+</div>
+<!-- Tag Cloud of Extracted Topics -->
+<div class="col-span-12 glass-card rounded-2xl p-8">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-8">Extracted Topics</h3>
+<div class="flex flex-wrap gap-4">
+<span class="px-5 py-2 glass-card rounded-full text-body-md border-primary/30 text-primary">Mitosis</span>
+<span class="px-5 py-2 glass-card rounded-full text-body-md border-secondary/30 text-secondary">Photosynthesis</span>
+<span class="px-5 py-2 glass-card rounded-full text-body-md border-white/20">Cell Membrane</span>
+<span class="px-5 py-2 glass-card rounded-full text-body-md border-white/20">Active Transport</span>
+<span class="px-5 py-2 glass-card rounded-full text-body-md border-primary/30 text-primary">DNA Replication</span>
+<span class="px-5 py-2 glass-card rounded-full text-body-md border-white/20">Enzyme Kinetics</span>
+<span class="px-5 py-2 glass-card rounded-full text-body-md border-secondary/30 text-secondary">Homeostasis</span>
+<span class="px-5 py-2 glass-card rounded-full text-body-md border-white/20">Osmosis</span>
+<span class="px-5 py-2 glass-card rounded-full text-body-md border-white/20">ATP Synthesis</span>
+<span class="px-5 py-2 glass-card rounded-full text-body-md border-primary/30 text-primary">Meiosis</span>
+<span class="px-5 py-2 glass-card rounded-full text-body-md border-white/20">Metabolism</span>
+<span class="px-5 py-2 glass-card rounded-full text-body-md border-secondary/30 text-secondary">Protein Synthesis</span>
+<span class="px-5 py-2 glass-card rounded-full text-body-md border-white/20">Endocytosis</span>
+</div>
+</div>
+<!-- Past Uploads Grid -->
+<div class="col-span-12 mb-10">
+<div class="flex justify-between items-end mb-6">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Recent Analysis</h3>
+<a class="text-primary hover:underline text-title-md" href="#">View History</a>
+</div>
+<div class="grid grid-cols-4 gap-6">
+<div class="glass-card rounded-xl overflow-hidden border border-white/10 group">
+<div class="h-32 bg-surface-container relative">
+<img alt="Biology Paper 1 2023 Preview" class="w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-opacity" data-alt="A clean, high-resolution digital preview of a biology exam paper titled Biology Paper 1 2023. The paper is styled with a minimalist dark-mode aesthetic, featuring a subtle frosted glass overlay and crisp white text. The lighting is soft and centered, giving the document a premium, scholarly feel within a sophisticated technical workspace environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoSxTVAgTAxTqB9MprOJ5xF8bQ81mAKEdIuniwk46NPiWrQVuea1dZUe1isdA8k1Ovi27IrAwCn-cZY9cPy-glhsrH9-wr3IDFoxilM-NS5rY_sgLY6JlvAqn8p8hOfHmLm9c_cscws7WJZQecEqlRLzKeYTPDj3IyNEuRynhXHTVSUG8dupUa1mTZkaVWY_aPYWw2Y8yjZh3Nob6jDfQqSRQMlBdW01_JkyS8DbfxyYVI8XDvuhdaR922m8QExtBGd3RVZJj80yL2"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">picture_as_pdf</span>
+</div>
+</div>
+<div class="p-4">
+<p class="text-on-surface font-title-md mb-1">Biology Paper 1 2023</p>
+<p class="text-on-surface-variant text-label-sm">Analyzed 2 days ago</p>
+</div>
+</div>
+<div class="glass-card rounded-xl overflow-hidden border border-white/10 group">
+<div class="h-32 bg-surface-container relative">
+<img alt="Chemistry Mock V2 Preview" class="w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-opacity" data-alt="A stylized digital document representing a Chemistry Mock Exam Paper. The document features chemical structure diagrams and formulas visible through a semi-transparent dark interface. The background glow is a soft indigo, matching the high-performance AI study platform's aesthetic. The composition is clean, technical, and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFOkcixprH4DiJav-WUsolGWdNX88wSzh6ItSolHcFb-AHS6QZjOui14iwIV0IE3PTXsNFbdHylRNTKzXe1k157tn9fQdVRQO4O7lbqJKk_MKHV5BI0evX_4QcRMJy_1wFYA5mcITB_2V0tQdCliDEm9UXvQC0LPRN0mWs32UkzCEcqrWAKVDRdD2YlDFWT7emBlY6Wr1aAOgH02WokdPsiIfzOxUNsUyN1qkuEWulddf7a_ToaQl373T1oT7h0VQ7GikE2JPLEnO8"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">description</span>
+</div>
+</div>
+<div class="p-4">
+<p class="text-on-surface font-title-md mb-1">Chemistry Mock V2</p>
+<p class="text-on-surface-variant text-label-sm">Analyzed 5 days ago</p>
+</div>
+</div>
+<div class="glass-card rounded-xl overflow-hidden border border-white/10 group">
+<div class="h-32 bg-surface-container relative">
+<img alt="Biology Paper 2 2022 Preview" class="w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-opacity" data-alt="A technical visualization of a biology exam paper titled Paper 2 2022. The digital layout is sleek with a dark blue and indigo color scheme. The document is highlighted by a glowing neon border, suggesting AI analysis is active. The mood is focused and academic, presented in a high-tech digital library setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMmSZc-yyaNLw3bRx0t28h6fu_zmANKm4UDmd-5inBNzdvS0-lJsiVGQB-8BMGrpcqjlT_iLZ8ChIJlTQN2x4tld1wDLBUCIxzTfmkX2xzRO6wdPhcwkKn_Xfz9sjw1W-YQbDTyF9avItyhY-kR6RtwssDksfmDbPKOvDEVcPC3NPZBeDTfKMfdqer7Ed58GOeBF5zbVEKO0vCCNF9_fH5-C1TqNqwzgYfRqpUSOPM80PSeSzSpvjKZmXpRz6dxjSNAAVo0Cx33mkl"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">picture_as_pdf</span>
+</div>
+</div>
+<div class="p-4">
+<p class="text-on-surface font-title-md mb-1">Biology Paper 2 2022</p>
+<p class="text-on-surface-variant text-label-sm">Analyzed 1 week ago</p>
+</div>
+</div>
+<div class="glass-card rounded-xl overflow-hidden border border-white/10 group">
+<div class="h-32 bg-surface-container relative">
+<img alt="Physics Scan Preview" class="w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-opacity" data-alt="A scanned document of a physics past paper displayed on a modern, dark-themed user interface. The image shows complex diagrams and equations illuminated by a soft pink and purple ambient light. The aesthetic is one of intelligence and technical depth, with the document appearing as part of a sophisticated AI-powered study workspace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8Sqz-CPZjsE5HubV2pNj5cN0aXlfdE5HNBEZ7KSZBiKalSA1wo9Vt_crJNAOghg5xvhx3rRM8wV-N8DcoDjVhPjYdd5rCBmTptLMQh4GjnaDblOyNSkuzOUnJfbq8-dx9-WV-HG3fJkMfeqBwETl6hYvbL_dKL4I8hsUi_5-nsx1BoaSQMHC0f4_ObST3jLUU1Xtmz6FsFrFMr9v_lLzY76zj_mDNESeWhQ9g7ZGvDeDKvxwQzl70lYzbC4r_32kLh3l2y7IfNepB"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">image</span>
+</div>
+</div>
+<div class="p-4">
+<p class="text-on-surface font-title-md mb-1">Physics Unit 4 Scan</p>
+<p class="text-on-surface-variant text-label-sm">Analyzed 2 weeks ago</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</body></html>

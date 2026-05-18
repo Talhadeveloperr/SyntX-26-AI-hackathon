@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smart AI Chat - Study AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#ffb0cd",
+                        "primary": "#c0c1ff",
+                        "tertiary-fixed-dim": "#ffb783",
+                        "on-secondary-fixed-variant": "#8c0053",
+                        "on-surface": "#d4e4fa",
+                        "on-secondary-container": "#ffbad3",
+                        "tertiary": "#ffb783",
+                        "surface-container-high": "#1c2b3c",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "on-secondary": "#640039",
+                        "outline-variant": "#464554",
+                        "on-tertiary-fixed": "#301400",
+                        "on-primary-fixed": "#07006c",
+                        "on-tertiary": "#4f2500",
+                        "surface-container": "#122131",
+                        "tertiary-container": "#d97721",
+                        "on-background": "#d4e4fa",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "secondary-container": "#aa0266",
+                        "inverse-on-surface": "#233143",
+                        "surface-dim": "#051424",
+                        "inverse-primary": "#494bd6",
+                        "on-primary-container": "#0d0096",
+                        "surface-variant": "#273647",
+                        "on-secondary-fixed": "#3e0022",
+                        "surface-bright": "#2c3a4c",
+                        "inverse-surface": "#d4e4fa",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#ffdcc5",
+                        "surface-container-highest": "#273647",
+                        "surface": "#051424",
+                        "on-tertiary-container": "#452000",
+                        "on-tertiary-fixed-variant": "#703700",
+                        "on-surface-variant": "#c7c4d7",
+                        "surface-container-lowest": "#010f1f",
+                        "on-error-container": "#ffdad6",
+                        "on-primary": "#1000a9",
+                        "surface-tint": "#c0c1ff",
+                        "outline": "#908fa0",
+                        "surface-container-low": "#0d1c2d",
+                        "secondary-fixed-dim": "#ffb0cd",
+                        "primary-fixed": "#e1e0ff",
+                        "primary-container": "#8083ff",
+                        "background": "#051424",
+                        "error-container": "#93000a",
+                        "error": "#ffb4ab",
+                        "secondary-fixed": "#ffd9e4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-desktop": "40px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "title-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-hidden">
+<!-- Sidebar Navigation Shell -->
+<aside class="fixed left-0 top-0 h-full flex flex-col z-50 bg-surface/80 backdrop-blur-xl h-screen w-64 border-r border-white/10 shadow-none">
+<div class="px-6 py-8">
+<div class="font-headline-lg text-headline-lg font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-1">Study AI</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm opacity-60">Deep Focus</div>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-title-md text-title-md">Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-gradient-to-r from-primary/20 to-secondary/20 text-on-surface border-r-2 border-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-title-md text-title-md">Smart Chat</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-title-md text-title-md">Quiz Generator</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">style</span>
+<span class="font-title-md text-title-md">Flashcards</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-title-md text-title-md">Study Planner</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">history_edu</span>
+<span class="font-title-md text-title-md">Past Papers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-title-md text-title-md">Profile</span>
+</a>
+</nav>
+<div class="p-6">
+<button class="w-full py-4 bg-gradient-to-r from-primary to-secondary rounded-xl font-bold text-on-primary-container shadow-[0_20px_40px_rgba(192,193,255,0.2)] active:scale-95 transition-transform">
+                Upgrade to Pro
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 h-screen flex flex-col relative">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center w-full px-10 py-4 bg-surface/80 backdrop-blur-xl border-b border-white/10 z-40">
+<div class="flex items-center gap-4">
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface">Smart AI Chat</h1>
+<div class="h-2 w-2 rounded-full bg-primary animate-pulse"></div>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant text-body-md">search</span>
+<input class="bg-surface-container-lowest border border-white/10 rounded-full py-2 pl-10 pr-4 text-on-surface focus:outline-none focus:border-primary transition-colors w-64" placeholder="Search insights..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-on-surface transition-colors">notifications</button>
+<img alt="User Avatar" class="w-10 h-10 rounded-full border border-white/20" data-alt="A professional close-up headshot of a student with soft studio lighting, showcasing a minimalist and focused aesthetic. The background is a clean, deep-toned studio set that complements the dark-mode UI theme. High-resolution photography with a shallow depth of field, emphasizing intelligence and calm authority." src="./user-avatar.jpg"/>
+</div>
+</header>
+<!-- Chat Workspace -->
+<div class="flex-1 flex overflow-hidden">
+<!-- Left Panel: Documents -->
+<aside class="w-80 bg-surface-container-lowest/50 backdrop-blur-sm border-r border-white/10 flex flex-col">
+<div class="p-6">
+<button class="w-full flex items-center justify-center gap-2 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-all duration-200">
+<span class="material-symbols-outlined text-primary">add</span>
+<span class="font-title-md text-title-md">Upload Document</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto px-4 pb-6"><p class="text-on-surface-variant font-label-sm text-label-sm mb-4 px-2 opacity-60 uppercase tracking-widest">Chat by Subject</p>
+<div class="space-y-4">
+<!-- Biology - Active -->
+<div class="space-y-2">
+<div class="flex items-center justify-between px-2 py-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">science</span>
+<span class="text-on-surface font-title-md">Biology</span>
+</div>
+<span class="flex h-2 w-2 rounded-full bg-primary"></span>
+</div>
+<div class="ml-4 border-l-2 border-primary/30 pl-4 space-y-2">
+<div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 group cursor-pointer hover:border-primary/50 transition-all">
+<div class="flex-1 min-w-0">
+<p class="text-on-surface text-body-md truncate">Biology_Notes.pdf</p>
+<p class="text-on-surface-variant text-label-sm opacity-50">2.4 MB • 12 pages</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Mathematics -->
+<div class="space-y-2">
+<div class="flex items-center gap-2 px-2 py-1 opacity-60 hover:opacity-100 cursor-pointer">
+<span class="material-symbols-outlined text-secondary text-[20px]">functions</span>
+<span class="text-on-surface font-title-md">Mathematics</span>
+</div>
+<div class="ml-4 border-l-2 border-white/5 pl-4 space-y-2">
+<div class="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 transition-all group cursor-pointer opacity-50">
+<div class="flex-1 min-w-0">
+<p class="text-on-surface text-body-md truncate">Calculus_Ch3.pdf</p>
+<p class="text-on-surface-variant text-label-sm opacity-50">1.8 MB</p>
+</div>
+</div>
+</div>
+</div>
+<!-- History -->
+<div class="space-y-2">
+<div class="flex items-center gap-2 px-2 py-1 opacity-60 hover:opacity-100 cursor-pointer">
+<span class="material-symbols-outlined text-tertiary text-[20px]">history_edu</span>
+<span class="text-on-surface font-title-md">History</span>
+</div>
+<div class="ml-4 border-l-2 border-white/5 pl-4 space-y-2">
+<div class="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 transition-all group cursor-pointer opacity-50">
+<div class="flex-1 min-w-0">
+<p class="text-on-surface text-body-md truncate">Historical_Context_V2.pdf</p>
+<p class="text-on-surface-variant text-label-sm opacity-50">4.1 MB</p>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="p-4 border-t border-white/5">
+<div class="p-4 rounded-xl bg-gradient-to-br from-tertiary/10 to-primary/10 border border-white/10"><p class="font-title-md text-title-md text-tertiary mb-1">Active Subject: Biology</p>
+<p class="text-label-sm opacity-70">AI is filtered to documents within the Biology subject category.</p></div>
+</div>
+</aside>
+<!-- Right Panel: Chat Interface -->
+<section class="flex-1 flex flex-col bg-surface relative overflow-hidden">
+<!-- Background Glow -->
+<div class="absolute -top-[20%] -right-[10%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="absolute -bottom-[20%] -left-[10%] w-[400px] h-[400px] bg-secondary/10 rounded-full blur-[100px] pointer-events-none"></div>
+<!-- Chat History -->
+<div class="flex-1 overflow-y-auto p-10 space-y-8 relative z-10">
+<!-- AI Message -->
+<div class="flex gap-4 max-w-3xl">
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-white/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-[18px]">auto_awesome</span>
+</div>
+<div class="space-y-2">
+<div class="p-5 rounded-2xl rounded-tl-none bg-white/5 backdrop-blur-xl border border-white/10 text-on-surface">
+<p class="mb-3">Hello! I've analyzed your <span class="text-primary font-bold">Biology_Notes.pdf</span>. It seems to cover Cellular Respiration in significant detail.</p>
+<p>How can I help you today? I can generate a summary, create flashcards, or quiz you on the Krebs cycle section.</p>
+</div>
+<span class="text-label-sm text-on-surface-variant opacity-40 ml-1">AI Assistant • 09:41 AM</span>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex flex-row-reverse gap-4 max-w-3xl ml-auto">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+</div>
+<div class="space-y-2 text-right">
+<div class="p-5 rounded-2xl rounded-tr-none bg-primary text-on-primary shadow-[0_10px_30px_rgba(192,193,255,0.15)]">
+<p>Can you explain the difference between aerobic and anaerobic respiration based on the notes on page 4?</p>
+</div>
+<span class="text-label-sm text-on-surface-variant opacity-40 mr-1">You • 09:42 AM</span>
+</div>
+</div>
+<!-- AI Message -->
+<div class="flex gap-4 max-w-3xl">
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-white/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-[18px]">auto_awesome</span>
+</div>
+<div class="space-y-2">
+<div class="p-5 rounded-2xl rounded-tl-none bg-white/5 backdrop-blur-xl border border-white/10 text-on-surface">
+<p class="mb-3">According to page 4 of your notes:</p>
+<ul class="list-disc ml-5 space-y-2 opacity-90">
+<li><span class="text-primary font-bold">Aerobic Respiration</span> occurs in the presence of oxygen and produces significantly more ATP (approx 36-38 per glucose molecule).</li>
+<li><span class="text-secondary font-bold">Anaerobic Respiration</span> occurs in the absence of oxygen, resulting in only 2 ATP per glucose molecule and producing lactic acid in animals.</li>
+</ul>
+</div>
+<span class="text-label-sm text-on-surface-variant opacity-40 ml-1">AI Assistant • 09:43 AM</span>
+</div>
+</div>
+<!-- Typing Indicator -->
+<div class="flex gap-4 items-center">
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[18px]">auto_awesome</span>
+</div>
+<div class="flex gap-1.5 p-3 rounded-full bg-white/5 border border-white/10">
+<div class="w-1.5 h-1.5 rounded-full bg-primary/50 animate-bounce"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-primary/50 animate-bounce [animation-delay:0.2s]"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-primary/50 animate-bounce [animation-delay:0.4s]"></div>
+</div>
+</div>
+</div>
+<!-- Input Area -->
+<div class="p-8 relative z-20">
+<div class="max-w-4xl mx-auto relative group">
+<div class="absolute -inset-0.5 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl blur opacity-30 group-focus-within:opacity-100 transition-opacity duration-500"></div>
+<div class="relative bg-surface-container-lowest border border-white/10 rounded-2xl p-2 backdrop-blur-xl">
+<div class="flex items-end gap-2">
+<button class="p-3 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+<textarea class="flex-1 bg-transparent border-none focus:ring-0 text-on-surface py-3 resize-none max-h-48 scrollbar-hide" placeholder="Ask anything about your study materials..." rows="1"></textarea>
+<button class="p-3 bg-gradient-to-r from-primary to-secondary rounded-xl text-on-primary flex items-center justify-center shadow-lg hover:brightness-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+<div class="flex justify-between items-center px-4 mt-3">
+<p class="text-label-sm text-on-surface-variant opacity-40 italic">Study AI can make mistakes. Verify important info.</p>
+<div class="flex gap-4">
+<button class="text-label-sm text-primary hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">history</span>
+                                    Clear Chat
+                                </button>
+<button class="text-label-sm text-on-surface-variant hover:text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">settings</span>
+                                    Chat Settings
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>

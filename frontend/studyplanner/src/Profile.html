@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile Settings - Study AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "secondary": "#ffb0cd",
+                "primary": "#c0c1ff",
+                "tertiary-fixed-dim": "#ffb783",
+                "on-secondary-fixed-variant": "#8c0053",
+                "on-surface": "#d4e4fa",
+                "on-secondary-container": "#ffbad3",
+                "tertiary": "#ffb783",
+                "surface-container-high": "#1c2b3c",
+                "on-primary-fixed-variant": "#2f2ebe",
+                "on-secondary": "#640039",
+                "outline-variant": "#464554",
+                "on-tertiary-fixed": "#301400",
+                "on-primary-fixed": "#07006c",
+                "on-tertiary": "#4f2500",
+                "surface-container": "#122131",
+                "tertiary-container": "#d97721",
+                "on-background": "#d4e4fa",
+                "primary-fixed-dim": "#c0c1ff",
+                "secondary-container": "#aa0266",
+                "inverse-on-surface": "#233143",
+                "surface-dim": "#051424",
+                "inverse-primary": "#494bd6",
+                "on-primary-container": "#0d0096",
+                "surface-variant": "#273647",
+                "on-secondary-fixed": "#3e0022",
+                "surface-bright": "#2c3a4c",
+                "inverse-surface": "#d4e4fa",
+                "on-error": "#690005",
+                "tertiary-fixed": "#ffdcc5",
+                "surface-container-highest": "#273647",
+                "surface": "#051424",
+                "on-tertiary-container": "#452000",
+                "on-tertiary-fixed-variant": "#703700",
+                "on-surface-variant": "#c7c4d7",
+                "surface-container-lowest": "#010f1f",
+                "on-error-container": "#ffdad6",
+                "on-primary": "#1000a9",
+                "surface-tint": "#c0c1ff",
+                "outline": "#908fa0",
+                "surface-container-low": "#0d1c2d",
+                "secondary-fixed-dim": "#ffb0cd",
+                "primary-fixed": "#e1e0ff",
+                "primary-container": "#8083ff",
+                "background": "#051424",
+                "error-container": "#93000a",
+                "error": "#ffb4ab",
+                "secondary-fixed": "#ffd9e4"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "container-max": "1280px",
+                "margin-desktop": "40px",
+                "unit": "8px",
+                "margin-mobile": "20px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "body-lg": ["Inter"],
+                "label-sm": ["Geist"],
+                "headline-lg-mobile": ["Geist"],
+                "title-md": ["Geist"],
+                "display-lg": ["Geist"],
+                "headline-lg": ["Geist"],
+                "body-md": ["Inter"]
+        },
+        "fontSize": {
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "600"}],
+                "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+        }
+      },
+    },
+  }
+</script>
+<style>
+        body {
+            background-color: #051424;
+            color: #d4e4fa;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .gradient-border-active {
+            border: 1px solid transparent;
+            background-image: linear-gradient(#051424, #051424), linear-gradient(to right, #c0c1ff, #ffb0cd);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+        .glow-button {
+            box-shadow: 0 0 20px rgba(192, 193, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- Atmospheric Depth Blobs -->
+<div class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full pointer-events-none z-0"></div>
+<div class="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-secondary/10 blur-[120px] rounded-full pointer-events-none z-0"></div>
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-full flex flex-col z-50 bg-surface/80 backdrop-blur-xl h-screen w-64 border-r border-white/10">
+<div class="p-8">
+<span class="font-headline-lg text-headline-lg font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Study AI</span>
+<p class="text-on-surface-variant text-label-sm font-label-sm mt-1 uppercase tracking-widest">Deep Focus</p>
+</div>
+<div class="flex-1 px-4 space-y-2">
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 text-on-surface-variant hover:bg-white/5" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-title-md text-title-md">Home</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 text-on-surface-variant hover:bg-white/5" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-title-md text-title-md">Smart Chat</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 text-on-surface-variant hover:bg-white/5" href="#">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-title-md text-title-md">Quiz Generator</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 text-on-surface-variant hover:bg-white/5" href="#">
+<span class="material-symbols-outlined" data-icon="style">style</span>
+<span class="font-title-md text-title-md">Flashcards</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 text-on-surface-variant hover:bg-white/5" href="#">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span class="font-title-md text-title-md">Study Planner</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 text-on-surface-variant hover:bg-white/5" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-title-md text-title-md">Past Papers</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 bg-gradient-to-r from-primary/20 to-secondary/20 text-on-surface border-r-2 border-primary" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+<span class="font-title-md text-title-md">Profile</span>
+</a>
+</div>
+<div class="p-6">
+<button class="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-on-primary font-bold glow-button active:scale-95 transition-transform">
+                Upgrade to Pro
+            </button>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="ml-64 relative z-10">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-10 py-4 max-w-[calc(1280px)] bg-surface/80 backdrop-blur-xl border-b border-white/10">
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface">Dashboard</h1>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<input class="bg-surface-container-lowest border border-white/10 rounded-full px-6 py-2 w-64 focus:outline-none focus:border-primary transition-all" placeholder="Search knowledge base..." type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-2 text-on-surface-variant" data-icon="search">search</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-white/20">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A detailed close-up portrait of a sophisticated young professional with sharp features, set against a dark, moody background with subtle blue and pink rim lighting. The style is cinematic and high-fidelity, emphasizing a persona of intelligence and focus. The lighting is soft yet dramatic, creating a premium, modern aesthetic consistent with a high-end tech platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrFUlKroURrvUXTpkSbO90ElharFua69ANPD40PGGsiFxAPVTIW6YZPwtn8DkBqNGp7bjuJ6WYYcAdlN-BENKrjWZaM25L6eCx_jP6b8SccfThmf81aHghWDZsJ6_bEPuKp9l94uAwGbmRMVzQIJ3H6AFERCzHdQRSqRjx4HvdRvwBI-eg0mudmXtZhlqnK1YvRQKo4DVgxW6w0Wy6WEHZTDgyjpgj0o6qlXuxj9u2IAAwCWfRDemsbRo25FkeEl1AnCUJweu8Beh6"/>
+</div>
+</div>
+</header>
+<!-- Content Section -->
+<div class="max-w-6xl mx-auto p-10">
+<div class="mb-12">
+<h2 class="font-display-lg text-display-lg text-on-surface mb-2">User Profile Settings</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg">Manage your identity, API access, and system preferences.</p>
+</div>
+<!-- Profile Bento Grid -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Left Column: Avatar and Identity -->
+<div class="col-span-12 md:col-span-4 space-y-8">
+<div class="glass-card rounded-[32px] p-10 flex flex-col items-center text-center">
+<div class="relative mb-6">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary to-secondary blur-xl opacity-40 rounded-full"></div>
+<div class="relative w-40 h-40 rounded-full p-1 bg-gradient-to-tr from-primary to-secondary">
+<div class="w-full h-full rounded-full overflow-hidden border-4 border-surface">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a person with an expression of calm intelligence, set within a dark environment. The lighting is characterized by sophisticated light-leaks of violet and rose, creating a high-performance, technical aura. The image is crisp, with a shallow depth of field, reflecting the premium minimalist glassmorphism style of the interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFrgKZ1fubJ2kF2qm92rqufJTAYRQWYO-NYm8F6eCETd5zfvih6p9Li_DxsijPUlEgAOSTO2toj-1J2Ir1G8Q2SqDlLhon_5nPYT0fE-NfrvPOxNxNPFRpanOdfmB0qYqOXCQuuViPfvmEF6VGX2GC00Bs9ZzRZdeJXd4iV4SSwc4PdSyuRSidbz1rlCrEBwruI6ocQ65icmlP_DIbieFtsO_qh2hTxj0txSIIACIuoQi66OmMnIplGj1IIf9fGN-Gl4wClgBtL5Ic"/>
+</div>
+</div>
+</div>
+<h3 class="text-headline-lg font-headline-lg text-on-surface">Alex Rivera</h3>
+<p class="text-on-surface-variant font-body-md text-body-md">Senior Research Student</p>
+<button class="mt-6 px-6 py-2 rounded-full border border-white/10 text-label-sm font-label-sm hover:bg-white/5 transition-all">Change Photo</button>
+</div>
+<div class="glass-card rounded-[32px] p-8">
+<h4 class="text-title-md font-title-md text-on-surface mb-6">Quick Actions</h4>
+<div class="space-y-4">
+<button class="w-full flex items-center justify-between p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="cloud_download">cloud_download</span>
+<span class="font-body-md text-body-md">Export My Data</span>
+</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors group">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error" data-icon="delete_forever">delete_forever</span>
+<span class="font-body-md text-body-md text-error">Delete Account</span>
+</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Settings & API -->
+<div class="col-span-12 md:col-span-8 space-y-8">
+<!-- Identity Fields -->
+<div class="glass-card rounded-[32px] p-10">
+<h4 class="text-headline-lg font-headline-lg text-on-surface mb-8">Personal Information</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant uppercase ml-1">Full Name</label>
+<input class="w-full bg-black border border-white/10 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all outline-none" type="text" value="Alex Rivera"/>
+</div>
+<div class="space-y-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant uppercase ml-1">Email Address</label>
+<input class="w-full bg-black border border-white/10 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all outline-none" type="email" value="alex.rivera@research.edu"/>
+</div>
+</div>
+</div>
+<!-- API Key Section -->
+<div class="glass-card rounded-[32px] p-10">
+<div class="flex justify-between items-center mb-6">
+<h4 class="text-headline-lg font-headline-lg text-on-surface">API Key</h4>
+<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Active</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6">Use your API key to integrate Study AI with your external research tools and IDEs.</p>
+<div class="flex items-center gap-4 bg-black border border-white/10 rounded-2xl p-2 pl-6">
+<span class="flex-1 font-mono tracking-widest text-on-surface-variant opacity-60">••••••••••••••••••••••••••••</span>
+<button class="p-3 text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+<button class="bg-white/10 hover:bg-white/20 p-3 rounded-xl transition-colors">
+<span class="material-symbols-outlined" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</div>
+<!-- System Preferences -->
+<div class="glass-card rounded-[32px] p-10">
+<h4 class="text-headline-lg font-headline-lg text-on-surface mb-8">System Settings</h4>
+<div class="space-y-8">
+<div class="flex items-center justify-between">
+<div class="space-y-1">
+<p class="font-title-md text-title-md text-on-surface">Visual Theme</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Switch between focused dark mode and high-contrast light mode.</p>
+</div>
+<div class="bg-black/40 p-1 rounded-full flex gap-1 border border-white/10">
+<button class="px-6 py-2 rounded-full text-label-sm font-label-sm transition-all bg-white/10 text-on-surface">Dark</button>
+<button class="px-6 py-2 rounded-full text-label-sm font-label-sm transition-all text-on-surface-variant hover:text-on-surface">Light</button>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="space-y-1">
+<p class="font-title-md text-title-md text-on-surface">AI Notifications</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Receive alerts when long-running research tasks are complete.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-14 h-8 bg-white/10 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-gradient-to-r peer-checked:from-primary peer-checked:to-secondary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between">
+<div class="space-y-1">
+<p class="font-title-md text-title-md text-on-surface">Focus Mode</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Mute all system alerts except critical study updates.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-14 h-8 bg-white/10 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-gradient-to-r peer-checked:from-primary peer-checked:to-secondary"></div>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Save Bar -->
+<div class="mt-12 flex justify-end gap-4">
+<button class="px-8 py-4 rounded-2xl text-on-surface-variant font-bold hover:text-on-surface transition-colors">Discard Changes</button>
+<button class="px-10 py-4 rounded-2xl bg-gradient-to-r from-primary to-secondary text-on-primary font-bold glow-button active:scale-95 transition-transform">
+                    Save Changes
+                </button>
+</div>
+</div>
+</main>
+</body></html>
