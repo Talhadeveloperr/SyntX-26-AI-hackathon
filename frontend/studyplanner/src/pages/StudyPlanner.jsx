@@ -65,7 +65,7 @@ const DUR    = [{ l:"30m",v:30 },{ l:"1h",v:60 },{ l:"1.5h",v:90 },{ l:"2h",v:12
 
 // ─── component ────────────────────────────────────────────────────────────────
 export default function StudyPlanner() {
-  useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   const [deadlines, setDeadlines] = useState([]);
   const [sessions,  setSessions]  = useState([]);
@@ -91,12 +91,22 @@ export default function StudyPlanner() {
 
   const fetchAll = useCallback(async () => {
     setLoading(true); setFetchErr("");
+    console.log("👤 User Model:", {
+      student_id:       user?.student_id,
+      full_name:        user?.full_name,
+      email:            user?.email,
+      class_level:      user?.class_level,
+      institution_name: user?.institution_name,
+      city:             user?.city,
+      role:             user?.role,
+    });
     try {
       const [a, b, c] = await Promise.all([getDeadlines(), getSessions(), getStats()]);
+      console.log("📊 Loaded — deadlines:", a.data.length, "| sessions:", b.data.length, "| stats:", c.data);
       setDeadlines(a.data); setSessions(b.data); setStats(c.data);
     } catch { setFetchErr("Failed to load data. Please refresh."); }
     finally { setLoading(false); }
-  }, []);
+  }, [user]);
 
   useEffect(() => { fetchAll(); }, [fetchAll]);
 
@@ -293,7 +303,7 @@ export default function StudyPlanner() {
                               const pct=Math.max(10,Math.round((s.duration_minutes/maxMin)*100));
                               return <div key={i} title={`${s.subject_name}: ${s.duration_minutes}m`} className="flex-fill rounded-top" style={{height:`${pct}%`,background:i===recentS.length-1?"linear-gradient(to top,#c0c1ff,#e1e0ff)":"rgba(192,193,255,0.2)",transition:"height 0.5s"}}/>;
                             })
-                          : [40,60,100,80,90,30,20].map((h,i)=><div key={i} className="flex-fill rounded-top" style={{height:`${h}%`,background:"rgba(192,193,255,0.08)"}}/>)
+                          : <p style={{margin:0,fontSize:"11px",color:"rgba(199,196,215,0.3)",alignSelf:"center",width:"100%",textAlign:"center"}}>No sessions yet</p>
                         }
                       </div>
                     </div>

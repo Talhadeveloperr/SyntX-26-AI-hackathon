@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Layout from "../components/Layout";
 import Icon from "../components/Icon";
+import { useStudyMaterials } from "../context/StudyMaterialsContext";
 import {
   getDecks, createDeck, deleteDeck,
   getCards, addCard, deleteCard, reviewCard,
@@ -28,7 +29,7 @@ export default function Flashcards() {
   const [cards,        setCards]        = useState([]);
   const [stats,        setStats]        = useState({ total_due: 0, reviewed_today: 0, streak: 0, total_cards: 0 });
 
-  const [loading,      setLoading]      = useState(true);
+  //const [loading,      setLoading]      = useState(true);
   const [cardsLoading, setCardsLoading] = useState(false);
   const [mode,         setMode]         = useState("study"); // "study" | "manage"
 
@@ -46,6 +47,56 @@ export default function Flashcards() {
   const [cardForm,     setCardForm]     = useState({ front_text: "", back_text: "" });
   const [formBusy,     setFormBusy]     = useState(false);
   const [cardMsg,      setCardMsg]      = useState(null);
+
+  // ── Study Materials context ──────────────────────────────────────────────────
+  const { subjects, subjectDocs, loading } = useStudyMaterials();
+  const [fcSubjectId,     setFcSubjectId]     = useState(null);
+  const [generating,      setGenerating]      = useState(false);
+  const [generatedCards,  setGeneratedCards]  = useState(null);
+  const [genIdx,          setGenIdx]          = useState(0);
+  const [genFlipped,      setGenFlipped]      = useState(false);
+
+  const fcSubject  = subjects.find(s => s.id === fcSubjectId) || null;
+  const fcDocs     = fcSubjectId ? (subjectDocs[fcSubjectId] || []) : [];
+
+  const DUMMY_CARDS = {
+    default: [
+      { q: "What is the main concept covered in your uploaded material?",           a: "Review your document for core definitions and foundational ideas." },
+      { q: "List three key terms from this subject.",                               a: "Key terms depend on your specific documents — highlight them as you read." },
+      { q: "What is the significance of the primary topic?",                        a: "It forms the basis for understanding related subtopics in the subject." },
+      { q: "How does this subject connect to real-world applications?",             a: "Practical applications are usually discussed in your reference materials." },
+      { q: "Summarise the most important idea in one sentence.",                    a: "Focus on the central argument or theorem presented in your notes." },
+    ],
+  };
+
+  const handleGenerateFlashcards = () => {
+    if (!fcSubject) return;
+    const payload = {
+      student_id:  1,
+      subject_id:  fcSubject.id,
+      subject_name: fcSubject.name,
+      documents:   fcDocs.map(d => ({ document_id: d.id, file_name: d.name })),
+    };
+    console.log("Flashcards Generate Payload:", payload);
+    setGenerating(true);
+    setGeneratedCards(null);
+    setTimeout(() => {
+      setGenerating(false);
+      setGeneratedCards(DUMMY_CARDS.default);
+      setGenIdx(0);
+      setGenFlipped(false);
+    }, 1600);
+  };
+
+  const docTypeIconFC = (name) => {
+    const ext = name.split(".").pop().toLowerCase();
+    if (ext === "pdf")                             return { icon: "picture_as_pdf", color: "#ffb0cd" };
+    if (["doc","docx"].includes(ext))              return { icon: "description",    color: "#c0c1ff" };
+    if (["ppt","pptx"].includes(ext))              return { icon: "slideshow",      color: "#ffd580" };
+    if (["jpg","jpeg","png","gif"].includes(ext))  return { icon: "image",          color: "#81c995" };
+    return { icon: "insert_drive_file", color: "rgba(199,196,215,0.5)" };
+  };
+  // ─────────────────────────────────────────────────────────────────────────────
 
   // ── loaders ─────────────────────────────────────────────────────────────────
   const loadDecks = useCallback(async (keepActive) => {
@@ -172,6 +223,293 @@ export default function Flashcards() {
   return (
     <Layout title="Flashcards">
       <div style={{ padding: "32px 40px", maxWidth: "1280px", margin: "0 auto" }}>
+
+        {/* ── Generate from Study Materials ── */}
+        {(loading || subjects.length > 0) && (
+          <section style={{ marginBottom: "28px" }}>
+            <div className="glass-card" style={{ borderRadius: "16px", padding: "20px 24px" }}>
+
+              {/* Header */}
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
+                <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: "rgba(192,193,255,0.1)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <Icon name="auto_awesome" size={18} style={{ color: "#c0c1ff" }} />
+                </div>
+                <div>
+                  <p style={{ margin: 0, fontSize: "13px", fontWeight: 700, color: "#d4e4fa" }}>Generate from Study Materials</p>
+                  <p style={{ margin: 0, fontSize: "11px", color: "rgba(199,196,215,0.4)" }}>Select a subject, review its documents, and auto-generate flashcards</p>
+                </div>
+              </div>
+
+              {/* Subject chips */}
+              {loading && subjects.length === 0 ? (
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "7px", marginBottom: "16px" }}>
+                  {[1, 2, 3].map(i => (
+                    <div key={i} style={{ height: "30px", width: "100px", borderRadius: "999px", background: "rgba(255,255,255,0.05)", animation: "fc-pulse 1.5s ease infinite" }} />
+                  ))}
+                </div>
+              ) : (
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "7px", marginBottom: "16px" }}>
+                {subjects.map(s => {
+                  const isActive = fcSubjectId === s.id;
+                  const count    = (subjectDocs[s.id] || []).length;
+                  return (
+                    <button
+                      key={s.id}
+                      onClick={() => { setFcSubjectId(isActive ? null : s.id); setGeneratedCards(null); }}
+                      style={{
+                        display: "flex", alignItems: "center", gap: "6px",
+                        padding: "6px 13px", borderRadius: "999px", cursor: "pointer",
+                        background: isActive ? "rgba(192,193,255,0.15)" : "rgba(255,255,255,0.04)",
+                        border: `1px solid ${isActive ? "rgba(192,193,255,0.45)" : "rgba(255,255,255,0.1)"}`,
+                        color: isActive ? "#c0c1ff" : "rgba(199,196,215,0.6)",
+                        fontSize: "12px", fontWeight: 600,
+                      }}
+                    >
+                      <Icon name="folder" size={13} style={{ color: isActive ? "#c0c1ff" : "rgba(199,196,215,0.35)" }} />
+                      {s.name}
+                      {count > 0 && (
+                        <span style={{ fontSize: "10px", fontWeight: 700, color: isActive ? "#c0c1ff" : "rgba(199,196,215,0.4)", background: isActive ? "rgba(192,193,255,0.2)" : "rgba(255,255,255,0.07)", borderRadius: "999px", padding: "1px 6px" }}>
+                          {count}
+                        </span>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+              )}
+
+              {/* Selected subject docs */}
+              {fcSubject && (
+                <div style={{ borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: "16px" }}>
+                  <p style={{ margin: "0 0 10px", fontSize: "11px", fontWeight: 700, letterSpacing: "0.07em", textTransform: "uppercase", color: "rgba(199,196,215,0.4)" }}>
+                    Documents in {fcSubject.name}
+                  </p>
+
+                  {fcDocs.length === 0 ? (
+                    <p style={{ margin: "0 0 14px", fontSize: "12px", color: "rgba(199,196,215,0.3)", fontStyle: "italic" }}>
+                      No documents uploaded yet. Go to Quiz Generator to upload files.
+                    </p>
+                  ) : (
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: "14px" }}>
+                      {fcDocs.map(doc => {
+                        const { icon, color } = docTypeIconFC(doc.name);
+                        return (
+                          <div key={doc.id} style={{ display: "flex", alignItems: "center", gap: "6px", padding: "5px 10px", borderRadius: "7px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}>
+                            <Icon name={icon} size={13} style={{ color, flexShrink: 0 }} />
+                            <span style={{ fontSize: "11px", color: "rgba(199,196,215,0.65)", maxWidth: "140px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{doc.name}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+
+                  {/* Generate button */}
+                  <button
+                    onClick={handleGenerateFlashcards}
+                    disabled={generating}
+                    style={{
+                      display: "flex", alignItems: "center", gap: "7px",
+                      padding: "9px 20px", borderRadius: "10px", border: "none", cursor: generating ? "not-allowed" : "pointer",
+                      background: generating ? "rgba(192,193,255,0.1)" : "linear-gradient(135deg,#c0c1ff,#ffb0cd)",
+                      color: generating ? "#c0c1ff" : "#051424",
+                      fontSize: "13px", fontWeight: 700, opacity: generating ? 0.7 : 1,
+                      border: generating ? "1px solid rgba(192,193,255,0.25)" : "none",
+                    }}
+                  >
+                    <Icon name={generating ? "hourglass_top" : "auto_awesome"} size={15} />
+                    {generating ? "Generating flashcards…" : `Generate Flashcards for ${fcSubject.name}`}
+                  </button>
+                </div>
+              )}
+
+              {/* Generated dummy cards — physical flip cards */}
+              {generatedCards && fcSubject && (() => {
+                const card = generatedCards[genIdx];
+                const hasNext = genIdx + 1 < generatedCards.length;
+                const hasNext2 = genIdx + 2 < generatedCards.length;
+                return (
+                  <div style={{ marginTop: "20px", borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: "18px" }}>
+
+                    {/* Header */}
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "18px" }}>
+                      <p style={{ margin: 0, fontSize: "11px", fontWeight: 700, letterSpacing: "0.07em", textTransform: "uppercase", color: "#c0c1ff" }}>
+                        {generatedCards.length} Cards — {fcSubject.name}
+                      </p>
+                      <button
+                        onClick={() => setGenFlipped(v => !v)}
+                        style={{
+                          display: "flex", alignItems: "center", gap: "5px",
+                          padding: "4px 10px", borderRadius: "6px", cursor: "pointer",
+                          background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)",
+                          color: "rgba(199,196,215,0.5)", fontSize: "10px", fontWeight: 600,
+                          transition: "all 0.15s",
+                        }}
+                        onMouseEnter={e => { e.currentTarget.style.background = "rgba(192,193,255,0.1)"; e.currentTarget.style.borderColor = "rgba(192,193,255,0.3)"; e.currentTarget.style.color = "#c0c1ff"; }}
+                        onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.04)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)"; e.currentTarget.style.color = "rgba(199,196,215,0.5)"; }}
+                      >
+                        <Icon name="flip" size={11} />
+                        {genFlipped ? "Show question" : "Click to flip"}
+                      </button>
+                    </div>
+
+                    {/* Card stage — centered */}
+                    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "14px" }}>
+
+                      {/* Stack wrapper — gives room for the ghost cards */}
+                      <div style={{ position: "relative", width: "300px", height: "190px" }}>
+
+                        {/* Ghost card 2 (furthest back) */}
+                        {hasNext2 && (
+                          <div style={{
+                            position: "absolute", top: "9px", left: "9px",
+                            width: "300px", height: "190px", borderRadius: "13px",
+                            background: "rgba(255,255,255,0.02)",
+                            border: "1px solid rgba(255,255,255,0.05)",
+                            boxShadow: "0 4px 16px rgba(0,0,0,0.25)",
+                          }} />
+                        )}
+
+                        {/* Ghost card 1 */}
+                        {hasNext && (
+                          <div style={{
+                            position: "absolute", top: "5px", left: "5px",
+                            width: "300px", height: "190px", borderRadius: "13px",
+                            background: "rgba(255,255,255,0.03)",
+                            border: "1px solid rgba(255,255,255,0.08)",
+                            boxShadow: "0 6px 20px rgba(0,0,0,0.3)",
+                          }} />
+                        )}
+
+                        {/* Active flip card */}
+                        <div style={{ position: "absolute", inset: 0, perspective: "900px", zIndex: 1 }}>
+                          <div
+                            onClick={() => setGenFlipped(v => !v)}
+                            style={{
+                              position: "relative", width: "100%", height: "100%",
+                              transformStyle: "preserve-3d",
+                              WebkitTransformStyle: "preserve-3d",
+                              transition: "transform 0.5s cubic-bezier(0.4,0,0.2,1)",
+                              transform: genFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
+                              borderRadius: "13px",
+                              cursor: "pointer",
+                            }}
+                          >
+
+                            {/* Front */}
+                            <div style={{
+                              position: "absolute", inset: 0, borderRadius: "13px",
+                              backfaceVisibility: "hidden",
+                              WebkitBackfaceVisibility: "hidden",
+                              background: "linear-gradient(150deg, rgba(192,193,255,0.13) 0%, rgba(192,193,255,0.05) 100%)",
+                              border: "1px solid rgba(192,193,255,0.2)",
+                              boxShadow: "0 12px 36px rgba(0,0,0,0.45), 0 2px 6px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.09)",
+                              display: "flex", flexDirection: "column",
+                              alignItems: "center", justifyContent: "center",
+                              padding: "20px 24px", textAlign: "center",
+                            }}>
+                              <span style={{ position: "absolute", top: "10px", left: "13px", fontSize: "9px", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(192,193,255,0.4)" }}>Q</span>
+                              <span style={{ position: "absolute", top: "10px", right: "13px", fontSize: "9px", color: "rgba(199,196,215,0.22)", fontWeight: 600 }}>{genIdx + 1}/{generatedCards.length}</span>
+
+                              <p style={{ margin: 0, fontSize: "13px", fontWeight: 600, color: "#d4e4fa", lineHeight: 1.55 }}>
+                                {card.q}
+                              </p>
+
+                              <div style={{ position: "absolute", bottom: "9px", display: "flex", alignItems: "center", gap: "4px", color: "rgba(199,196,215,0.2)", fontSize: "9px", fontWeight: 700, letterSpacing: "0.07em", textTransform: "uppercase", userSelect: "none", pointerEvents: "none" }}>
+                                <Icon name="touch_app" size={10} />
+                                tap to flip
+                              </div>
+                            </div>
+
+                            {/* Back */}
+                            <div style={{
+                              position: "absolute", inset: 0, borderRadius: "13px",
+                              backfaceVisibility: "hidden",
+                              WebkitBackfaceVisibility: "hidden",
+                              transform: "rotateY(180deg)",
+                              WebkitTransform: "rotateY(180deg)",
+                              background: "linear-gradient(150deg, rgba(129,201,149,0.12) 0%, rgba(129,201,149,0.04) 100%)",
+                              border: "1px solid rgba(129,201,149,0.22)",
+                              boxShadow: "0 12px 36px rgba(0,0,0,0.45), 0 2px 6px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.07)",
+                              display: "flex", flexDirection: "column",
+                              alignItems: "center", justifyContent: "center",
+                              padding: "20px 24px", textAlign: "center",
+                            }}>
+                              <span style={{ position: "absolute", top: "10px", left: "13px", fontSize: "9px", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(129,201,149,0.45)" }}>A</span>
+                              <span style={{ position: "absolute", top: "10px", right: "13px", fontSize: "9px", color: "rgba(199,196,215,0.22)", fontWeight: 600 }}>{genIdx + 1}/{generatedCards.length}</span>
+
+                              <p style={{ margin: 0, fontSize: "12px", color: "rgba(199,196,215,0.82)", lineHeight: 1.6 }}>
+                                {card.a}
+                              </p>
+
+                              <div style={{ position: "absolute", bottom: "9px", display: "flex", alignItems: "center", gap: "4px", color: "rgba(199,196,215,0.2)", fontSize: "9px", fontWeight: 700, letterSpacing: "0.07em", textTransform: "uppercase", userSelect: "none", pointerEvents: "none" }}>
+                                <Icon name="flip" size={10} />
+                                tap to flip
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </div>
+
+                      {/* Dots */}
+                      <div style={{ display: "flex", gap: "5px" }}>
+                        {generatedCards.map((_, i) => (
+                          <button key={i} onClick={() => { setGenIdx(i); setGenFlipped(false); }}
+                            style={{
+                              width: i === genIdx ? "18px" : "5px", height: "5px",
+                              borderRadius: "999px", border: "none", cursor: "pointer", padding: 0,
+                              background: i === genIdx ? "#c0c1ff" : "rgba(255,255,255,0.12)",
+                              transition: "all 0.22s",
+                            }}
+                          />
+                        ))}
+                      </div>
+
+                      {/* Prev / Next */}
+                      <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                        <button
+                          onClick={() => { setGenIdx(i => Math.max(0, i - 1)); setGenFlipped(false); }}
+                          disabled={genIdx === 0}
+                          style={{
+                            width: "30px", height: "30px", borderRadius: "50%", padding: 0,
+                            border: "1px solid rgba(255,255,255,0.1)", background: "transparent",
+                            color: genIdx === 0 ? "rgba(199,196,215,0.15)" : "rgba(199,196,215,0.55)",
+                            cursor: genIdx === 0 ? "default" : "pointer",
+                            display: "flex", alignItems: "center", justifyContent: "center",
+                          }}
+                        >
+                          <Icon name="arrow_back" size={13} />
+                        </button>
+
+                        <span style={{ fontSize: "11px", color: "rgba(199,196,215,0.35)", fontWeight: 600, minWidth: "38px", textAlign: "center" }}>
+                          {genIdx + 1} / {generatedCards.length}
+                        </span>
+
+                        <button
+                          onClick={() => { setGenIdx(i => Math.min(generatedCards.length - 1, i + 1)); setGenFlipped(false); }}
+                          disabled={genIdx === generatedCards.length - 1}
+                          style={{
+                            width: "30px", height: "30px", borderRadius: "50%", padding: 0,
+                            border: `1px solid ${genIdx === generatedCards.length - 1 ? "rgba(255,255,255,0.08)" : "rgba(192,193,255,0.28)"}`,
+                            background: genIdx === generatedCards.length - 1 ? "transparent" : "rgba(192,193,255,0.08)",
+                            color: genIdx === generatedCards.length - 1 ? "rgba(199,196,215,0.15)" : "#c0c1ff",
+                            cursor: genIdx === generatedCards.length - 1 ? "default" : "pointer",
+                            display: "flex", alignItems: "center", justifyContent: "center",
+                          }}
+                        >
+                          <Icon name="arrow_forward" size={13} />
+                        </button>
+                      </div>
+
+                    </div>
+                  </div>
+                );
+              })()}
+
+            </div>
+          </section>
+        )}
 
         {/* ── Deck strip ── */}
         <section style={{ marginBottom: "32px" }}>

@@ -1,0 +1,206 @@
+[
+  {
+    "faiss_id": 0,
+    "document_id": 4,
+    "file_name": "HCI_Outline.pdf",
+    "text": "University of Gujrat CS-464 Human Computer Interaction Department of Computer Science Faculty of Computing & Information Technology Title Human Computer Interaction Code CS-464 Credit Hours 3 Theory/week: Weight 3 Cr. Hrs. Lectures: 2 Duration 1.5 Hrs. /Lecture Prerequisite None Follow Up Advanced UI/UX Design, Software Engineering Category Domain Elective Aims and Objectives This course is designed to provide students with a comprehensive introduction to the field of Human Computer Interaction"
+  },
+  {
+    "faiss_id": 1,
+    "document_id": 4,
+    "file_name": "HCI_Outline.pdf",
+    "text": "ts with a comprehensive introduction to the field of Human Computer Interaction (HCI). The course aims to impart foundational knowledge required to design useful and usable interactive systems based on users’ needs and contextual requirements. It focuses on understanding human capabilities, interaction models, design principles, usability evaluation techniques, and the development of prototypes to enhance user experience. Learning Outcomes At the end of the course the students will be able to: C"
+  },
+  {
+    "faiss_id": 2,
+    "document_id": 4,
+    "file_name": "HCI_Outline.pdf",
+    "text": "ence. Learning Outcomes At the end of the course the students will be able to: CLO 1: Understand humans, the computer, and their interaction mechanisms. (C2 – Understand) CLO 2: Apply interaction design principles, design rules, and cognitive models in system development. (C3 – Apply) CLO 3: Analyze socio-organizational issues, stakeholder requirements, and collaboration models in system design. (C4 – Analyze) CLO 4: Evaluate interactive systems using usability and evaluation techniques. (C3 – A"
+  },
+  {
+    "faiss_id": 3,
+    "document_id": 4,
+    "file_name": "HCI_Outline.pdf",
+    "text": "Evaluate interactive systems using usability and evaluation techniques. (C3 – Apply) Course The course will include theoretical concepts of Human Computer Interaction and practical sessions involving: • Wireframing • Prototyping • Usability Testing • User Evaluation Techniques Reference Material A. Dix, J. Finlay, G. Abowd and R. Beale. Human Computer Interaction, Prentice Hall (Latest Edition) J. Preece, Y. Rogers, H. Sharp. Interaction Design: Beyond Human-Computer Interaction, 6th Edition, W"
+  },
+  {
+    "faiss_id": 4,
+    "document_id": 4,
+    "file_name": "HCI_Outline.pdf",
+    "text": "H. Sharp. Interaction Design: Beyond Human-Computer Interaction, 6th Edition, Wiley 2023 Assessment Criteria Sessional 25% Mid Term 25% Final Term 50% Total 100% Quizzes 10 Assignments 10 25 50 Presentations 5 Framework Week Lecture Topic Source (Book-Chapter No. Section No.) Recommendations for Learning Activities (Mention Assignments, Test, Quizzes, Practical, Case Study, Projects, Lab Work or Reading Assignments) 1 1 Introduction to the fields of HCI, The Human Factor Distribution of course"
+  },
+  {
+    "faiss_id": 5,
+    "document_id": 4,
+    "file_name": "HCI_Outline.pdf",
+    "text": "1 1 Introduction to the fields of HCI, The Human Factor Distribution of course outline 2 2 3 The Computer Factor 4 The Interaction, Models of Interaction, Interaction Paradigms 3 5 6 4 7 Human psychology and ergonomics, HCI in the Software Process 8 5 9 Interaction Design basics and the design process 10 Quiz 1 6 11 Design Principles, Principles to support usability 12 Flexibility and Robustness Assignment 1 7 13 Principles of learnability 14 Flexibility and Robustness 8 15 Shneider man’s Eight"
+  },
+  {
+    "faiss_id": 6,
+    "document_id": 4,
+    "file_name": "HCI_Outline.pdf",
+    "text": "inciples of learnability 14 Flexibility and Robustness 8 15 Shneider man’s Eight golden Rules 16 Nielsen’s heuristics Mid-Term Exam 9 17 Introduction to Evaluation, Evaluation Techniques 18 10 19 20 Experts Evaluations, Cognitive Walkthrough, Heuristic Evaluation, Evaluating through user participation 11 21 22 12 23 Quiz 2 24 Laboratory Evaluation 13 25 Field Evaluation, Observational Techniques 26 14 27 Query techniques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issu"
+  },
+  {
+    "faiss_id": 7,
+    "document_id": 4,
+    "file_name": "HCI_Outline.pdf",
+    "text": "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced Topics may be Discussed or Given as an Assignments Final-Term Exam"
+  },
+  {
+    "faiss_id": 8,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "Human Computer Interaction (HCI, HCC)AN INTRODUCTION Human Computer Interaction Why are we here? ◦It may seem trite, but user interfaces matter: For efficiency, for convenience, for accuracy, for success, even for life and death ◦The Vincennes, and Aegis RADAR system Human Computer Interaction Why are we here? ◦It may seem trite, but user interfaces matter: For efficiency, for convenience, for accuracy, for success, even for life and death ◦The Vincennes, and Aegis RADAR system ◦People time is m"
+  },
+  {
+    "faiss_id": 9,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "even for life and death ◦The Vincennes, and Aegis RADAR system ◦People time is more expensive than computer time (normally) ◦Everyone has a story of a bad interface, and the trouble it caused ◦A well-designed interface makes for a good system, and a happy (and efficient) user (This is a bad interface) Human Computer Interaction Sub-discipline of the multi-discipline Human Factors and Ergonomics ◦Psychology (many types) ◦Design ◦Engineering ◦Social sciences Both deal with the design of everyday ("
+  },
+  {
+    "faiss_id": 10,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "s) ◦Design ◦Engineering ◦Social sciences Both deal with the design of everyday (and not-so-everyday) things Involve questions such as, but not limited to: ◦Is it easy to use? ◦Is it easy to understand? ◦Is it easy to discover? ◦Is it comfortable to use? ◦Is it sensible to use? Human Computer Interaction Human Computer Interaction Each word is important In order to understand the discipline, we must understand: ◦The Human ◦The Computer ◦The Interaction These three components come together (intera"
+  },
+  {
+    "faiss_id": 11,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "uman ◦The Computer ◦The Interaction These three components come together (interact!) to form what will hopefully be the User experience None of these components can be left out, or ignored, they are all required for the development of a successful interface A well-developed and designed interface is of singular importance, because it is the sole gatewayto any system Human Computer Interaction For many years, this was not a consideration ◦In other words, what it was, was nothing Very early on, ma"
+  },
+  {
+    "faiss_id": 12,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "not a consideration ◦In other words, what it was, was nothing Very early on, machines had to be hardwired Human Computer Interaction For many years, this was not a consideration ◦In other words, what it was, was nothing Very early on, machines had to be hardwired Later, commands were entered one line at a time ◦Attempts were made to make this easier, but that was difficult due to technological limitations ◦Some intuitiveness was included, but not much ◦Still early, and in large part still the d"
+  },
+  {
+    "faiss_id": 13,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "itiveness was included, but not much ◦Still early, and in large part still the domain of hobbyists and scientists ◦Cryptic, undecipherable code ◦“The Software Crisis” ◦Can have long-lasting impacts, as seen in the Y2K problem Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction However, this time period also saw expansion of the field of ergonomics, HCI, and the disciplines involved Origi"
+  },
+  {
+    "faiss_id": 14,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "aw expansion of the field of ergonomics, HCI, and the disciplines involved Originally used primarily for word processors and spreadsheets ◦Still very cumbersome to use ◦Often required many-key combinations to perform tasks ◦Keyboard overlays were standard ◦This was all a result of, but also evolution of, the interface A slow movement away from technical manuals, and towards user manuals, was also budding Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Compu"
+  },
+  {
+    "faiss_id": 15,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "er Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction However, this time period also saw expansion of the field of ergonomics, HCI, and the disciplines involved A slow movement away from technical manuals, and towards user manuals, was also budding Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction However, this time period also saw expansion of"
+  },
+  {
+    "faiss_id": 16,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "ction Human Computer Interaction However, this time period also saw expansion of the field of ergonomics, HCI, and the disciplines involved A slow movement away from technical manuals, and towards user manuals, was also budding Most importantly, system and software design and development began to focus on the experience, as opposed to just the hardware and software ◦Usability ◦Maintenance / Support ◦Graphical interface ◦All of which end at the user ◦Understanding them ◦Listening to them ◦Designi"
+  },
+  {
+    "faiss_id": 17,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "ce ◦All of which end at the user ◦Understanding them ◦Listening to them ◦Designing for them Human Computer Interaction Usability is really the ultimate focus, the ultimate goal But what does it mean? The term is a nebulous, living thing ◦Frequently changing ◦Frequently expanding ◦Frequently being added to Usability doesn’t mean simply ‘able to be used.’ ◦Distinction between UI/UX HCI’s multidisciplinary nature can lead to complexities in approach and definition HCI (Human Factors, really) is als"
+  },
+  {
+    "faiss_id": 18,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "ad to complexities in approach and definition HCI (Human Factors, really) is also one of the most co-opted and diluted disciplines there is ◦However that also gives it its strength Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction Eventually, there was a sea change ◦Xerox Star ◦Apple Macintosh ◦Microsoft W"
+  },
+  {
+    "faiss_id": 19,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "ion Eventually, there was a sea change ◦Xerox Star ◦Apple Macintosh ◦Microsoft Windows Human Computer Interaction Human Computer Interaction Provided brand new methods of interaction ◦WIMP New interaction types ◦Instructing ◦Conversing ◦Manipulating ◦Exploring This led to an explosion in HCI, in all areas ◦New interaction methods ◦New conceptual models ◦Metaphors ◦Affordances ◦Increased accessibility, and also increased accessibility ◦This also led to a host of new problems Human Computer Intera"
+  },
+  {
+    "faiss_id": 20,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "sed accessibility ◦This also led to a host of new problems Human Computer Interaction Human Computer Interaction Standards and guidelines have been developed and incorporated into interface design for decades However, two researchers have contributes sets of rules that have been tested, verified, and incorporated more than any other JakobNeilsen ◦10 Usability Heuristics for Interface Design Ben Schneiderman ◦The Eight Golden Rules of Interface Design Each of these are considered canon in the des"
+  },
+  {
+    "faiss_id": 21,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "t Golden Rules of Interface Design Each of these are considered canon in the design field Human Computer Interaction The 10 Usability Heuristics for User Interface Design ◦Visibility of system status ◦Match between system and the real world ◦User control and freedom ◦Consistency and standards ◦Error prevention ◦Recognition rather than recall ◦Flexibility and efficiency of use ◦Aesthetic and minimalist design ◦Help users recognize, diagnose, and recover from errors ◦Help and documentation Human C"
+  },
+  {
+    "faiss_id": 22,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "ers recognize, diagnose, and recover from errors ◦Help and documentation Human Computer Interaction The Eight Golden Rules of Interface Design ◦Strive for consistency ◦Cater to universal usability ◦Offer informative feedback ◦Design dialogs to yield closure ◦Prevent errors ◦Permit easy reversal of actions ◦Support an internal locus of control ◦Reduce short term memory load Human Computer Interaction Usability goals ◦Effectiveness ◦Efficiency ◦Safety ◦Utility ◦Learnability ◦Memorability User expe"
+  },
+  {
+    "faiss_id": 23,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "Effectiveness ◦Efficiency ◦Safety ◦Utility ◦Learnability ◦Memorability User experience goals ◦Desirable aspects ◦Undesirable aspects Human Computer Interaction Eventually, there was movement beyond the PC ◦How do we address the nearly infinite amount of objects we can store? ◦Internet (Command to graphical, Lynx to browsers) ◦Communication / Collaboration ◦LOL U WOT M8 ◦Evolution and place of the computing environment ◦Background devices ◦Used by everyone (and why?) ◦Significant functionality in"
+  },
+  {
+    "faiss_id": 24,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "t ◦Background devices ◦Used by everyone (and why?) ◦Significant functionality in individual devices ◦Embedded systems ◦With this evolution, the discipline evolves as well Human Computer Interaction Human Computer Interaction Invention to Maturity Human Computer Interaction With the increase in user-generated content, and the evolution of ‘Web 2.0,’ there has become a drastic increase in the need to access, manage, display, and manipulate the vast amounts of data available to us Ackoffaddressed t"
+  },
+  {
+    "faiss_id": 25,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "splay, and manipulate the vast amounts of data available to us Ackoffaddressed the handling of computer-generated information back in 1967 ◦Five assumptions ◦Decision makers lack relevant information ◦Decision makers need information they want ◦Needed information leads to better decisions ◦Better communication among decision makers leads to better decisions ◦How the IS works is less important than how to use it Human Computer Interaction With the increase in user-generated content, and the evolu"
+  },
+  {
+    "faiss_id": 26,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "Computer Interaction With the increase in user-generated content, and the evolution of ‘Web 2.0,’ there has become a drastic increase in the need to access, manage, display, and manipulate the vast amounts of data available to us Ackoffaddressed the handling of computer-generated information back in 1967 How did we do it before? ◦File cabinets ◦Ledgers ◦Index cards / card catalog Operating computers was a specialized affair ◦Programmers ◦Keypunchers ◦Computer operator Human Computer Interaction"
+  },
+  {
+    "faiss_id": 27,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "d affair ◦Programmers ◦Keypunchers ◦Computer operator Human Computer Interaction 1970s ◦User manuals ◦Testing labs ◦Prototypes ◦Goal-oriented design 1980s ◦Research began on VDTs ◦General design guidelines were first published ◦ANSI standards were first developed Human Computer Interaction With the increase in user-generated content, and the evolution of ‘Web 2.0,’ there has become a drastic increase in the need to access, manage, display, and manipulate the vast amounts of data available to us"
+  },
+  {
+    "faiss_id": 28,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "ccess, manage, display, and manipulate the vast amounts of data available to us As storage capacity increased, data increased, and our ability to use that data increased ◦Punch cards Human Computer Interaction Human Computer Interaction With the increase in user-generated content, and the evolution of ‘Web 2.0,’ there has become a drastic increase in the need to access, manage, display, and manipulate the vast amounts of data available to us As storage capacity increased, data increased, and our"
+  },
+  {
+    "faiss_id": 29,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "s of data available to us As storage capacity increased, data increased, and our ability to use that data increased ◦Punch cards ◦Magnetic media Human Computer Interaction Human Computer Interaction With the increase in user-generated content, and the evolution of ‘Web 2.0,’ there has become a drastic increase in the need to access, manage, display, and manipulate the vast amounts of data available to us As storage capacity increased, data increased, and our ability to use that data increased ◦P"
+  },
+  {
+    "faiss_id": 30,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "apacity increased, data increased, and our ability to use that data increased ◦Punch cards ◦Magnetic media ◦Optical media Human Computer Interaction Human Computer Interaction With the increase in user-generated content, and the evolution of ‘Web 2.0,’ there has become a drastic increase in the need to access, manage, display, and manipulate the vast amounts of data available to us As storage capacity increased, data increased, and our ability to use that data increased ◦Punch cards ◦Magnetic me"
+  },
+  {
+    "faiss_id": 31,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "increased, and our ability to use that data increased ◦Punch cards ◦Magnetic media ◦Optical media ◦Cloud Human Computer Interaction Human Computer Interaction Human Computer Interaction With the increase in user-generated content, and the evolution of ‘Web 2.0,’ there has become a drastic increase in the need to access, manage, display, and manipulate the vast amounts of data available to us As storage capacity increased, data increased, and our ability to use that data increased ◦Punch cards ◦"
+  },
+  {
+    "faiss_id": 32,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "eased, data increased, and our ability to use that data increased ◦Punch cards ◦Magnetic media ◦Optical media ◦Cloud ◦How do we interact with all this information? Human Computer Interaction Now, HCI applies to many types of systems, interactions, and experiences ◦Medical information systems / equipment ◦Accessibility (Blind, deaf, infirmed, incapacitated) ◦Gaming ◦Large information environments (cockpits, power plants) ◦Social media ◦Smart TVs ◦Portable devices ◦Education ◦Military ◦Hard scienc"
+  },
+  {
+    "faiss_id": 33,
+    "document_id": 5,
+    "file_name": "IntroToHCI.pdf",
+    "text": "ts) ◦Social media ◦Smart TVs ◦Portable devices ◦Education ◦Military ◦Hard sciences ◦Business / Manufacturing Human Computer Interaction What about the future? ◦Artificial intelligence ◦Virtual reality ◦Ubiquitous systems ◦Autonomous vehicles (planes too? Maybe boats?) ◦Cybernetics How will we interact with these? How will we design these systems so we *can* interact with them? Ultimately, who will be in control? Can we maintain control? Do we want to?"
+  }
+]

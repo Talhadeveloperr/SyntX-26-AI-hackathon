@@ -1,11 +1,11 @@
 import {
   Home, MessageSquare, HelpCircle, Layers, CalendarDays, BookOpen, User, Sparkles, X, LogOut,
   Menu, Search, Plus, FileText, Paperclip, Send, CircleCheck, CircleX, CircleAlert, TriangleAlert,
-  ArrowRight, Eye, EyeOff, Mail, Lock, GraduationCap, Building2, MapPin, Download, Upload,
+  ArrowRight, ArrowLeft, Eye, EyeOff, Mail, Lock, GraduationCap, Building2, MapPin, Download, Upload,
   Trash2, Copy, Bot, Clock, CalendarCheck, CirclePlus, CirclePlay, CalendarX, Book, PenLine,
   ChartBar, Image, Smile, Meh, Frown, Hand, ArrowDown, Star, List, Bell, Calculator, Brain,
   Monitor, Microscope, Globe, SquareCheck, Check, Undo2, Timer, Flame, TrendingUp, Calendar,
-  Zap, ChevronDown, ChevronUp, ChevronLeft, ChevronRight,
+  Zap, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, FlipHorizontal,
 } from "lucide-react";
 
 const MAP = {
@@ -46,6 +46,8 @@ const MAP = {
   error_outline: CircleAlert,
   warning: TriangleAlert,
   arrow_forward: ArrowRight,
+  arrow_back: ArrowLeft,
+  flip: FlipHorizontal,
   visibility: Eye,
   visibility_off: EyeOff,
   mail: Mail,

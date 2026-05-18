@@ -11,6 +11,7 @@ import StudyPlanner from "./pages/StudyPlanner";
 import PastPapers from "./pages/PastPapers";
 import Profile from "./pages/Profile";
 import { AuthProvider, AuthContext } from "./context/AuthContext";
+import { StudyMaterialsProvider } from "./context/StudyMaterialsContext";
 
 function ProtectedRoute({ children }) {
   const { user } = useContext(AuthContext);
@@ -39,9 +40,11 @@ function AppRoutes() {
 export default function App() {
   return (
     <AuthProvider>
-      <Router>
-        <AppRoutes />
-      </Router>
+      <StudyMaterialsProvider>
+        <Router>
+          <AppRoutes />
+        </Router>
+      </StudyMaterialsProvider>
     </AuthProvider>
   );
 }

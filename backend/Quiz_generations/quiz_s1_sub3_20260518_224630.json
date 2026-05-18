@@ -1,0 +1,334 @@
+{
+  "status": "in_progress",
+  "started_at": "2026-05-18T22:46:30.602575Z",
+  "questions": [
+    {
+      "question_index": 1,
+      "question": "What is the primary focus of human computer interaction?",
+      "options": [
+        {
+          "id": 1,
+          "text": "one plausible wrong answer option text"
+        },
+        {
+          "id": 2,
+          "text": "Design is not the same as Human Computer Interaction (HCI). Design focuses on creating an environment that is easy to use, understand, and discover. Human Computer Interaction emphasizes understanding how people use computers."
+        },
+        {
+          "id": 3,
+          "text": "The primary focus of human computer interaction is to ensure that digital interfaces are user-friendly and effective in delivering information. It involves understanding how users interact with technology, designing interactions that are intuitive and efficient, and testing them to identify areas for improvement."
+        },
+        {
+          "id": 4,
+          "text": "machine learning is not a consideration."
+        }
+      ],
+      "correct_option_id": 3,
+      "generation": {
+        "calls": 4,
+        "contexts_used": [
+          "s) ◦Design ◦Engineering ◦Social sciences Both deal with the design of everyday (and not-so-everyday) things Involve questions such as, but not limited to: ◦Is it easy to use? ◦Is it easy to understand",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T"
+        ]
+      }
+    },
+    {
+      "question_index": 2,
+      "question": "What three components are required for a well-developed interface?",
+      "options": [
+        {
+          "id": 1,
+          "text": "The difficulty of the assignment is high."
+        },
+        {
+          "id": 2,
+          "text": "Design is not the same as Engineering. Design focuses on creating an ideal experience, while Engineering deals with practical aspects of design."
+        },
+        {
+          "id": 3,
+          "text": "One plausible wrong answer option: Decision makers lack relevant information."
+        },
+        {
+          "id": 4,
+          "text": "The Human Computer Interaction (HCI) components include: the human, computer, and interaction. These three components come together to form what will hopefully be the user experience."
+        }
+      ],
+      "correct_option_id": 4,
+      "generation": {
+        "calls": 4,
+        "contexts_used": [
+          "s) ◦Design ◦Engineering ◦Social sciences Both deal with the design of everyday (and not-so-everyday) things Involve questions such as, but not limited to: ◦Is it easy to use? ◦Is it easy to understand",
+          "splay, and manipulate the vast amounts of data available to us Ackoffaddressed the handling of computer-generated information back in 1967 ◦Five assumptions ◦Decision makers lack relevant information ",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T"
+        ]
+      }
+    },
+    {
+      "question_index": 3,
+      "question": "Which of the following best describes human-computer interaction?",
+      "options": [
+        {
+          "id": 1,
+          "text": "One plausible wrong answer is: The Human Factor Distribution of course outline. This distractor suggests that the distribution or approach to human factors in HCI should be a separate topic from computer science, which is not mentioned in the study material provided. It's important to understand how these three components work together and interact with each other to design effective interactions between humans and computers."
+        },
+        {
+          "id": 2,
+          "text": "If the subject is not selected correctly in the study, it will affect the results of the experiment."
+        },
+        {
+          "id": 3,
+          "text": "The study of how people interact with computers and other electronic systems."
+        },
+        {
+          "id": 4,
+          "text": "a. a machine's hardware needs to be fixed."
+        }
+      ],
+      "correct_option_id": 3,
+      "generation": {
+        "calls": 4,
+        "contexts_used": [
+          "s) ◦Design ◦Engineering ◦Social sciences Both deal with the design of everyday (and not-so-everyday) things Involve questions such as, but not limited to: ◦Is it easy to use? ◦Is it easy to understand",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T"
+        ]
+      }
+    },
+    {
+      "question_index": 4,
+      "question": "What are three components of human-computer interaction?",
+      "options": [
+        {
+          "id": 1,
+          "text": "The Human, The Computer, The Interaction These three components come together (interact!) to form what will hopefully be the User experience."
+        },
+        {
+          "id": 2,
+          "text": "One plausible wrong answer option: A person's choice of words or specific terminology is not always accurate in professional settings."
+        },
+        {
+          "id": 3,
+          "text": "The difficulty of the assignment is Medium."
+        },
+        {
+          "id": 4,
+          "text": "the first step is often the most difficult to determine"
+        }
+      ],
+      "correct_option_id": 1,
+      "generation": {
+        "calls": 4,
+        "contexts_used": [
+          "s) ◦Design ◦Engineering ◦Social sciences Both deal with the design of everyday (and not-so-everyday) things Involve questions such as, but not limited to: ◦Is it easy to use? ◦Is it easy to understand",
+          "splay, and manipulate the vast amounts of data available to us Ackoffaddressed the handling of computer-generated information back in 1967 ◦Five assumptions ◦Decision makers lack relevant information ",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T"
+        ]
+      }
+    },
+    {
+      "question_index": 5,
+      "question": "What is the primary focus of human-computer interaction?",
+      "options": [
+        {
+          "id": 1,
+          "text": "two plausible wrong answer options text"
+        },
+        {
+          "id": 2,
+          "text": "it was nothing"
+        },
+        {
+          "id": 3,
+          "text": "the Design Principle to support usability is not included in the course outline provided. It can be inferred that it should be a part of the discussion or assignment as presented, but here it's not explicitly mentioned."
+        },
+        {
+          "id": 4,
+          "text": "The primary focus of human-computer interaction is to understand and design effective interfaces that are easy to use, understand, comfortable to use, sensible to use, and adhere to user experience (UX) principles."
+        }
+      ],
+      "correct_option_id": 4,
+      "generation": {
+        "calls": 4,
+        "contexts_used": [
+          "s) ◦Design ◦Engineering ◦Social sciences Both deal with the design of everyday (and not-so-everyday) things Involve questions such as, but not limited to: ◦Is it easy to use? ◦Is it easy to understand",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T"
+        ]
+      }
+    },
+    {
+      "question_index": 6,
+      "question": "Which discipline deals with designing everyday (and not-so-everyday) things?",
+      "options": [
+        {
+          "id": 1,
+          "text": "Engineering"
+        },
+        {
+          "id": 2,
+          "text": "the difficulty of the assignment is high, not medium."
+        },
+        {
+          "id": 3,
+          "text": "design"
+        },
+        {
+          "id": 4,
+          "text": "design"
+        }
+      ],
+      "correct_option_id": 1,
+      "generation": {
+        "calls": 4,
+        "contexts_used": [
+          "s) ◦Design ◦Engineering ◦Social sciences Both deal with the design of everyday (and not-so-everyday) things Involve questions such as, but not limited to: ◦Is it easy to use? ◦Is it easy to understand",
+          "splay, and manipulate the vast amounts of data available to us Ackoffaddressed the handling of computer-generated information back in 1967 ◦Five assumptions ◦Decision makers lack relevant information ",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T"
+        ]
+      }
+    },
+    {
+      "question_index": 7,
+      "question": "a",
+      "options": [
+        {
+          "id": 1,
+          "text": "Design"
+        },
+        {
+          "id": 2,
+          "text": "a question about a topic that is not related to the given study material or assignments. It appears to be unrelated to experimental design and human-computer interaction as discussed in the provided study materials."
+        },
+        {
+          "id": 3,
+          "text": "Understanding the process of A/B testing is not a part of HCI or Human Computer Interaction. It's more about testing whether changes in software applications are effective."
+        },
+        {
+          "id": 4,
+          "text": "design"
+        }
+      ],
+      "correct_option_id": 1,
+      "generation": {
+        "calls": 4,
+        "contexts_used": [
+          "s) ◦Design ◦Engineering ◦Social sciences Both deal with the design of everyday (and not-so-everyday) things Involve questions such as, but not limited to: ◦Is it easy to use? ◦Is it easy to understand",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T"
+        ]
+      }
+    },
+    {
+      "question_index": 8,
+      "question": "The subject of design is a discipline that deals with the design of everyday things. It involves questions such as whether it's easy to use, understand, discover, comfortable to use, sensible to use, and what kind of interaction humans have with computers.",
+      "options": [
+        {
+          "id": 1,
+          "text": "the Human Factors"
+        },
+        {
+          "id": 2,
+          "text": "the validity of the assignment is questionable. The quiz and learning activities are not part of the assigned materials but rather supplementary content."
+        },
+        {
+          "id": 3,
+          "text": "design"
+        },
+        {
+          "id": 4,
+          "text": "the correct answer option text"
+        }
+      ],
+      "correct_option_id": 4,
+      "generation": {
+        "calls": 4,
+        "contexts_used": [
+          "s) ◦Design ◦Engineering ◦Social sciences Both deal with the design of everyday (and not-so-everyday) things Involve questions such as, but not limited to: ◦Is it easy to use? ◦Is it easy to understand",
+          "splay, and manipulate the vast amounts of data available to us Ackoffaddressed the handling of computer-generated information back in 1967 ◦Five assumptions ◦Decision makers lack relevant information ",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T"
+        ]
+      }
+    },
+    {
+      "question_index": 9,
+      "question": "What is the primary focus of Human Computer Interaction?",
+      "options": [
+        {
+          "id": 1,
+          "text": "The primary focus of Human Computer Interaction (HCI) is designing and improving how people interact with computers, software, and digital interfaces. This includes understanding user needs, preferences, and behaviors to create effective and intuitive interactions that facilitate information retrieval, processing, and utilization."
+        },
+        {
+          "id": 2,
+          "text": "the difficulty of understanding human-computer interface interactions is high and requires extensive knowledge in psychology, design, engineering, social sciences, etc."
+        },
+        {
+          "id": 3,
+          "text": "the field of User Experience and Interaction Design is not well understood by most students."
+        },
+        {
+          "id": 4,
+          "text": "a is not a valid subject for quiz generator."
+        }
+      ],
+      "correct_option_id": 1,
+      "generation": {
+        "calls": 4,
+        "contexts_used": [
+          "s) ◦Design ◦Engineering ◦Social sciences Both deal with the design of everyday (and not-so-everyday) things Involve questions such as, but not limited to: ◦Is it easy to use? ◦Is it easy to understand",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T"
+        ]
+      }
+    },
+    {
+      "question_index": 10,
+      "question": "łŏŔŭųūŰŮƃ",
+      "options": [
+        {
+          "id": 1,
+          "text": "The Human ComponentƄthe Computer ComponentƉand the Interaction Component"
+        },
+        {
+          "id": 2,
+          "text": "Human factors"
+        },
+        {
+          "id": 3,
+          "text": "Assignments should be assigned according to the course syllabus."
+        },
+        {
+          "id": 4,
+          "text": "One plausible wrong answer option text: The difficulty of the question 10 is too high. It requires a lot of preparation and practice, which may not be feasible for most students."
+        }
+      ],
+      "correct_option_id": 1,
+      "generation": {
+        "calls": 4,
+        "contexts_used": [
+          "s) ◦Design ◦Engineering ◦Social sciences Both deal with the design of everyday (and not-so-everyday) things Involve questions such as, but not limited to: ◦Is it easy to use? ◦Is it easy to understand",
+          "splay, and manipulate the vast amounts of data available to us Ackoffaddressed the handling of computer-generated information back in 1967 ◦Five assumptions ◦Decision makers lack relevant information ",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T"
+        ]
+      }
+    }
+  ],
+  "student_id": 1,
+  "subject_id": 3,
+  "subject_name": "a",
+  "difficulty": "Medium",
+  "num_questions": 10,
+  "embeddings_path": "/root/syntax 26/backend/Subjects_Docs/1/Subj_3/embeddings",
+  "total": 10,
+  "completed": 10
+}

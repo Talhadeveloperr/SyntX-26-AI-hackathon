@@ -1,4 +1,3 @@
-//frontend\studyplanner\src\models\userModel.js
 export class UserModel {
   constructor(data) {
     this.token = data.token;

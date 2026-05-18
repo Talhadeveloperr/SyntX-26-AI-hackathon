@@ -47,11 +47,15 @@ def create_app():
     from app.routes.flashcards_routes import flashcards_bp
     from app.routes.chat_routes import chat_bp
     from app.routes.subject_routes import subject_bp
+    from app.routes.quiz_routes import quiz_bp
+    from app.routes.flashcards_routes import flashcards_bp
 
     app.register_blueprint(auth_bp, url_prefix="/api/auth")
     app.register_blueprint(studyplanner_bp, url_prefix="/api/studyplanner")
     app.register_blueprint(flashcards_bp, url_prefix="/api/flashcards")
     app.register_blueprint(chat_bp, url_prefix="/api/chat")
     app.register_blueprint(subject_bp, url_prefix="/api/subjects")
+    app.register_blueprint(quiz_bp, url_prefix="/api/quiz")
+    app.register_blueprint(flashcards_bp, url_prefix="/api/flashcards")
 
     return app

@@ -1,0 +1,47 @@
+{
+  "status": "failed",
+  "started_at": "2026-05-18T22:57:45.172634Z",
+  "questions": [
+    {
+      "question_index": 1,
+      "question": "The subject and difficulty of the quiz are medium.",
+      "options": [
+        {
+          "id": 1,
+          "text": "One plausible wrong answer option text: Some advanced topics in HCI may not be discussed or given as assignments, but they are important for understanding the field."
+        },
+        {
+          "id": 2,
+          "text": "a"
+        },
+        {
+          "id": 3,
+          "text": "designing evaluation techniques, social sciences, and human-computer interaction are important aspects of design in everyday life."
+        },
+        {
+          "id": 4,
+          "text": "Inappropriate or irrelevant information related to the provided study materials."
+        }
+      ],
+      "correct_option_id": 2,
+      "generation": {
+        "calls": 4,
+        "contexts_used": [
+          "s) ◦Design ◦Engineering ◦Social sciences Both deal with the design of everyday (and not-so-everyday) things Involve questions such as, but not limited to: ◦Is it easy to use? ◦Is it easy to understand",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T"
+        ]
+      }
+    }
+  ],
+  "student_id": 1,
+  "subject_id": 3,
+  "subject_name": "a",
+  "difficulty": "Medium",
+  "num_questions": 2,
+  "embeddings_path": "/root/syntax 26/backend/Subjects_Docs/1/Subj_3/embeddings",
+  "total": 2,
+  "completed": 1,
+  "error": "Expecting ',' delimiter: line 1 column 45 (char 44)"
+}

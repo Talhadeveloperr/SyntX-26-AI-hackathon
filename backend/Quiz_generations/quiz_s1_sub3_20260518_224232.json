@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "started_at": "2026-05-18T22:42:32.346657Z",
+  "questions": [],
+  "student_id": 1,
+  "subject_id": 3,
+  "subject_name": "a",
+  "difficulty": "Medium",
+  "num_questions": 10,
+  "embeddings_path": "/root/syntax 26/backend/Subjects_Docs/1/Subj_3/embeddings",
+  "total": 10,
+  "completed": 0,
+  "error": "name 'ctx_correct' is not defined"
+}

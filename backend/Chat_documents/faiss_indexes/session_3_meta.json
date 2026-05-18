@@ -1,0 +1,692 @@
+[
+  {
+    "faiss_id": 0,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "THE DESIGN OF EVERYDAY THINGS AND INTERACTIVE SYSTEMS By David Ledo Image credits: ACM UIST 2017 THE PSYCHOPATHOLOGY OF EVERYDAY THINGS How some things went wrong Bad designs are everywhere. Sometimes it’s cumbersome, sometimes it’s funny, and sometimes it’s fatal. EARL Y TRACTORS High centre of gravity Narrow front wheel base Farmers work long hours and quickly Terrain is uneven ... high number of fatalities Slide based on slides by Saul Greenberg MODERN TRACTORS Roll cage Low centre of gravity"
+  },
+  {
+    "faiss_id": 1,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "ased on slides by Saul Greenberg MODERN TRACTORS Roll cage Low centre of gravity Wider wheel bases ... less accidents now , used to be called driver’s error Slide based on slides by Saul Greenberg REMOTE CONTROLS Your phone rings when watching a movie... Quick! Hit pause! Slide based on slides by Saul Greenberg REMOTE CONTROLS - TAKE 2 Your phone rings when watching a movie... Quick! Hit pause! Slide based on slides by Saul Greenberg Slide based on slides by Saul Greenberg WHY IS THIS EASIER? Bi"
+  },
+  {
+    "faiss_id": 2,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "by Saul Greenberg Slide based on slides by Saul Greenberg WHY IS THIS EASIER? Big button easier to hit (Fitt’s Law) Visually distinctive: Colour, location, shape. Easier to find without looking TiVo designed it for usability Image from Nielsen and Norman Group: Remote Control Anarchy (2004) THE “GRANDMA” REMOTE Image from College Humor HAWAII FALSE ALARM https:/ /www.nytimes.com/2018/01/13/us/hawaii-missile.html HAWAII FALSE ALARM “From a drop-down menu on a computer program, he saw two options:"
+  },
+  {
+    "faiss_id": 3,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "II FALSE ALARM “From a drop-down menu on a computer program, he saw two options: “Test missile alert” and “Missile alert.” He was supposed to choose the former; as much of the world now knows, he chose the latter , an initiation of a real-life missile alert.” - Washington Post https:/ /www.washingtonpost.com/news/post-nation/wp/2018/01/14/hawaii-missile-alert-how-one-employee- pushed-the-wrong-button-and-caused-a-wave-of-panic/?utm_term=.8322cf450104 HAWAII FALSE ALARM https:/ /theoutline.com/po"
+  },
+  {
+    "faiss_id": 4,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "e-of-panic/?utm_term=.8322cf450104 HAWAII FALSE ALARM https:/ /theoutline.com/post/2954/user-interface-designers-are-horrified-by-ha- waii-s-missile-alert-system?zd=1&zi=vosurkrx HAWAII FALSE ALARM MY STRUGGLES AS AN 8 YEAR OLD Windows 95 MY STRUGGLES TODAY Park Plus App, Feb 24, 2018 THE DESIGN OF EVERYDAY THINGS Don Norman AFFORDANCES SIGNIFIERS MAPPINGS CONCEPTUAL MODELS AFFORDANCES SIGNIFIERS MAPPINGS CONCEPTUAL MODELS GESTALT PSYCHOLOGY AND AFFORDANCE 1935 Simplified Action is the relieving"
+  },
+  {
+    "faiss_id": 5,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "MODELS GESTALT PSYCHOLOGY AND AFFORDANCE 1935 Simplified Action is the relieving of tension. Depending on tension, objects may attract us, repel us or be indifferent. Principles of Gestalt Psychology (Koffka, 1935) GESTALT AND ACTION Principles of Gestalt Psychology (Koffka, 1935) hungry Principles of Gestalt Psychology (Koffka, 1935) hungry Principles of Gestalt Psychology (Koffka, 1935) hungry eat me Principles of Gestalt Psychology (Koffka, 1935) not hungry ... Principles of Gestalt Psycholog"
+  },
+  {
+    "faiss_id": 6,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "Gestalt Psychology (Koffka, 1935) not hungry ... Principles of Gestalt Psychology (Koffka, 1935) there’s wind and papers are flying all over use me as paper weight Characteristics of the object might affect that attraction/repulsion Principles of Gestalt Psychology (Koffka, 1935) GESTALT AND ACTION Principles of Gestalt Psychology (Koffka, 1935) hungry :( Principles of Gestalt Psychology (Koffka, 1935) hungry :( Relationship with object is tied to the current condition Principles of Gestalt Psyc"
+  },
+  {
+    "faiss_id": 7,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "tionship with object is tied to the current condition Principles of Gestalt Psychology (Koffka, 1935) GESTALT AND ACTION Principles of Gestalt Psychology (Koffka, 1935) Principles of Gestalt Psychology (Koffka, 1935) Principles of Gestalt Psychology (Koffka, 1935) MAIL Principles of Gestalt Psychology (Koffka, 1935) MAIL :) ... days later MAIL MAIL MAIL Stimulus might “stick around” after Principles of Gestalt Psychology (Koffka, 1935) GESTALT AND ACTION MAIL Relationships are learned or chosen"
+  },
+  {
+    "faiss_id": 8,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "logy (Koffka, 1935) GESTALT AND ACTION MAIL Relationships are learned or chosen (when an object demands attention, e.g. phone ringing) Principles of Gestalt Psychology (Koffka, 1935) GESTALT AND ACTION GIBSON AND AFFORDANCE 1954 Set of action possibilities an individual (human or animal) can accomplish. Such actions are relative to that particular individual. The Theory of Affordances (Gibson, 1954) AFFORDANCE “The affordances of the environment are what it offers the animal, what it provides or"
+  },
+  {
+    "faiss_id": 9,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "ffordances of the environment are what it offers the animal, what it provides or furnishes, either for good or ill. The verb to afford is found in the dictionary, but the noun affordance is not. I have made it up.” The Theory of Affordances (Gibson, 1954) AFFORDANCE Set of action possibilities an individual (human or animal) can accomplish. Such actions are relative to that particular individual. The Theory of Affordances (Gibson, 1954) AFFORDANCE An elongated object affords wielding A rigid obj"
+  },
+  {
+    "faiss_id": 10,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "ances (Gibson, 1954) AFFORDANCE An elongated object affords wielding A rigid object with a sharp edge affords cutting A graspable object of moderate size and weight affords throwing The Theory of Affordances (Gibson, 1954) AFFORDANCE The Theory of Affordances (Gibson, 1954) AFFORDANCE What does this chair afford? The Theory of Affordances (Gibson, 1954) AFFORDANCE It affords... Sitting Standing on it Throwing (if it’s light) Self-defense Set of action possibilities an individual (human or animal"
+  },
+  {
+    "faiss_id": 11,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "s light) Self-defense Set of action possibilities an individual (human or animal) can accomplish. Such actions are relative to that particular individual. The Theory of Affordances (Gibson, 1954) AFFORDANCE AFFORDANCE NORMAN’S PERCIEVED AFFORDANCES Shifting to design An invitation to action Typically designed Suggests how the object might be used Design of Everyday Things (1964) PERCEIVED AFFORDANCE Creates issues when the perceived affordance is not the same as the actual affordance PERCEIVED A"
+  },
+  {
+    "faiss_id": 12,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "en the perceived affordance is not the same as the actual affordance PERCEIVED AFFORDANCE Design of Everyday Things (1988) Design of Everyday Things (1988), slide credits: Lora Oehlberg Switch suggests toggling knob suggests turning button suggests pressing slot suggests inserting, handle suggests turning PERCEIVED AFFORDANCE Making virtual items resemble physical counterparts Slide credits: Lora Oehlberg SKEUOMORPHISM Image credit: Steven Houben SKEUOMORPHISM Slide credit: Saul Greenberg SKEUOM"
+  },
+  {
+    "faiss_id": 13,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "SM Image credit: Steven Houben SKEUOMORPHISM Slide credit: Saul Greenberg SKEUOMORPHISM IBM Real Objects (1998) BumpTop (Agarawala and Balakrishnan, 2006) SKEUOMORPHISM Limiting possible actions through appearance Design of Everyday Things (1988) VISIBLE CONSTRAINTS Design of Everyday Things (1988), Slide credits: Lora Oehlberg VISIBLE CONSTRAINTS PUSH OR PULL? WHICH SIDE? CAN ONL Y PUSH, SIDE TO PUSH CLEARLY VISIBLE VISIBLE CONSTRAINTS Controls disabled when an image is selected AFFORDANCES SIG"
+  },
+  {
+    "faiss_id": 14,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "VISIBLE CONSTRAINTS Controls disabled when an image is selected AFFORDANCES SIGNIFIERS MAPPINGS CONCEPTUAL MODELS MAPPINGS “What does this button do?” The set of possible relations between objects MAPPING Design of Everyday Things (1988) How controls relate to displays CONTROL-DISPLAY COMPATIBILITY Design of Everyday Things (1988) CONTROL-DISPLAY COMPATIBILITY Design of Everyday Things (1988) David’s thermostat... Controls are inverted, Reading the temperature is not How controls relate to disp"
+  },
+  {
+    "faiss_id": 15,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "ontrols are inverted, Reading the temperature is not How controls relate to displays CONTROL-DISPLAY COMPATIBILITY Design of Everyday Things (1988) The thing that happens right after an action is assumed by people to be caused by that action. Essentially: Feedback CAUSE AND EFFECT Design of Everyday Things (1988) incorrect effect invoking unfamiliar function just as computer hangs causes “superstitious” behaviors invisible effect command with no apparent result often re-entered repeatedly e.g.,"
+  },
+  {
+    "faiss_id": 16,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "isible effect command with no apparent result often re-entered repeatedly e.g., mouse click to raise menu on unresponsive system FALSE CAUSALITY Design of Everyday Things (1988) People transfer their learning/expectations of similar objects to the current objects Positive transfer: previous learning’s also apply to new situation Negative transfer: previous learning’s conflict with the new situation TRANSFER EFFECTS Design of Everyday Things (1988) PROBLEMATIC MAPPINGS Revolv Home Control (2014)"
+  },
+  {
+    "faiss_id": 17,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "esign of Everyday Things (1988) PROBLEMATIC MAPPINGS Revolv Home Control (2014) PROBLEMATIC MAPPINGS Slide credits: Lora Oehlberg PROBLEMATIC MAPPINGS Earphone player controls - Top and bottom: volume up and down Middle button: 1 tap: pause 2 taps: next song 3 taps: previous song problems in timing = ??? AFFORDANCES SIGNIFIERS MAPPINGS CONCEPTUAL MODELS Any mark or sound, any perceivable indicator that communicates appropriate behavior to a person. Designed of Everyday Things: Revised and Expand"
+  },
+  {
+    "faiss_id": 18,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "ppropriate behavior to a person. Designed of Everyday Things: Revised and Expanded Edition (2014) SIGNIFIER Signifiers are signals. Some signifiers are signs, labels, and drawings placed in the world, such as the signs labeled “push,” “pull,” or “exit” on doors, or arrows and diagrams indicating what is to be acted upon or in which direction to gesture, or other instructions. Some signifiers are simply the perceived affordances, such as the handle of a door or the physical structure of a switch."
+  },
+  {
+    "faiss_id": 19,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "affordances, such as the handle of a door or the physical structure of a switch. Designed of Everyday Things: Revised and Expanded Edition (2014) SIGNIFIER How do we know what is possible and the current state of a device? Designed of Everyday Things: Revised and Expanded Edition (2014) DISCOVERABILITY Here it is hard to tell what is interactive (i.e. what can be clicked). DISCOVERABILITY Image credit: Steven Houben How do we know what is possible and the current state of a device? Designed of E"
+  },
+  {
+    "faiss_id": 20,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "How do we know what is possible and the current state of a device? Designed of Everyday Things: Revised and Expanded Edition (2014) DISCOVERABILITY How do we know what is possible and the current state of a device? Proxemic–Aware Controls (Ledo, Greenberg, Marquardt, Boring, 2015) DISCOVERABILITY DISCOVERABILITY How do we know when auto-flash will trigger? Phone camera will show a yellow lightning icon at the bottom. Informing users what the result of an action will be. “Inviting the appropriate"
+  },
+  {
+    "faiss_id": 21,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "Informing users what the result of an action will be. “Inviting the appropriate action is a prerequisite for feedforward but it is not sufficient. The product also needs to communicate what the user can expect. Feedback informs the user about the action that is carried out, shows that the product is responding, indicates progress, confirms navigation, etc.” (Vermeulen, Luyten, van den Hoven, Coninx, 2013) FEEDFORWARD Hand icon in Crossy Road is animated to show that players should tap on the sc"
+  },
+  {
+    "faiss_id": 22,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "D Hand icon in Crossy Road is animated to show that players should tap on the screen. Crossy Road FEEDFORWARD Gestures have low discoverability: how do we know what can be done? OctoPocus – system revealing pathways for possible gestures http:/ /www.olivierbau.com/octopocus.php (Bau, MacKay, 2008) FEEDFORWARD FEEDFORWARD Lorem ipsum dolor amet pabst bespoke locavore chia, heirloom wolf street art vice adaptogen raclette VHS. Knausgaard brunch skateboard, adaptogen occupy disrupt bushwick pok pok"
+  },
+  {
+    "faiss_id": 23,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "tte VHS. Knausgaard brunch skateboard, adaptogen occupy disrupt bushwick pok pok hell of organic readymade authentic scenester. Fixie thundercats health goth, aesthetic blue bottle actually coloring book tattooed polaroid cliche etsy forage adaptogen crucifix. Tumeric neutra austin, single-origin coffee hammock intelligentsia palo santo church-key direct trade beard af readymade ugh banh mi squid. Godard tilde post-ironic PBR&B everyday carry meggings art party mumblecore cardigan cornhole gochu"
+  },
+  {
+    "faiss_id": 24,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "ronic PBR&B everyday carry meggings art party mumblecore cardigan cornhole gochujang tumblr fashion axe ennui succulents. Wolf stumptown normcore franzen fixie coloring book. +1 tattooed asymmetrical brooklyn beard. FEEDFORWARD Lorem ipsum dolor amet pabst bespoke locavore chia, heirloom wolf street art vice adaptogen raclette VHS. Knausgaard brunch skateboard, adaptogen occupy disrupt bushwick pok pok hell of organic readymade authentic scenester. Fixie thundercats health goth, aesthetic blue b"
+  },
+  {
+    "faiss_id": 25,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "c readymade authentic scenester. Fixie thundercats health goth, aesthetic blue bottle actually coloring book tattooed polaroid cliche etsy forage adaptogen crucifix. Tumeric neutra austin, single-origin coffee hammock intelligentsia palo santo church-key direct trade beard af readymade ugh banh mi squid. Godard tilde post-ironic PBR&B everyday carry meggings art party mumblecore cardigan cornhole gochujang tumblr fashion axe ennui succulents. Wolf stumptown normcore franzen fixie coloring book."
+  },
+  {
+    "faiss_id": 26,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "hion axe ennui succulents. Wolf stumptown normcore franzen fixie coloring book. +1 tattooed asymmetrical brooklyn beard. FEEDFORWARD Lorem ipsum dolor amet pabst bespoke locavore chia, heirloom wolf street art vice adaptogen raclette VHS. Knausgaard brunch skateboard, adaptogen occupy disrupt bushwick pok pok hell of organic readymade authentic scenester. Fixie thundercats health goth, aesthetic blue bottle actually coloring book tattooed polaroid cliche etsy forage adaptogen crucifix. Tumeric n"
+  },
+  {
+    "faiss_id": 27,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "coloring book tattooed polaroid cliche etsy forage adaptogen crucifix. Tumeric neutra austin, single-origin coffee hammock intelligentsia palo santo church-key direct trade beard af readymade ugh banh mi squid. Godard tilde post-ironic PBR&B everyday carry meggings art party mumblecore cardigan cornhole gochujang tumblr fashion axe ennui succulents. Wolf stumptown normcore franzen fixie coloring book. +1 tattooed asymmetrical brooklyn beard. FEEDFORWARD Lorem ipsum dolor amet pabst bespoke locav"
+  },
+  {
+    "faiss_id": 28,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "mmetrical brooklyn beard. FEEDFORWARD Lorem ipsum dolor amet pabst bespoke locavore chia, heirloom wolf street art vice adaptogen raclette VHS. Knausgaard brunch skateboard, adaptogen occupy disrupt bushwick pok pok hell of organic readymade authentic scenester. Fixie thundercats health goth, aesthetic blue bottle actually coloring book tattooed polaroid cliche etsy forage adaptogen crucifix. Tumeric neutra austin, single-origin coffee hammock intelligentsia palo santo church-key direct trade be"
+  },
+  {
+    "faiss_id": 29,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "ingle-origin coffee hammock intelligentsia palo santo church-key direct trade beard af readymade ugh banh mi squid. Godard tilde post-ironic PBR&B everyday carry meggings art party mumblecore cardigan cornhole gochujang tumblr fashion axe ennui succulents. Wolf stumptown normcore franzen fixie coloring book. +1 tattooed asymmetrical brooklyn beard. DISCOVERABILITY Cursor icons provide information about: Effect of action (feedforward) Current state (feedback) DISCOVERABILITY part of the ‘viewport"
+  },
+  {
+    "faiss_id": 30,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "ion (feedforward) Current state (feedback) DISCOVERABILITY part of the ‘viewport’ we are at instances of the search within the document DISCOVERABILITY “Windows Modern” (Windows 8+) people can tell that it is possible to scroll further, as hinted by widgets to the right DISCOVERABILITY: HAMBURGER MENUS https:/ /lmjabreu.com/post/why-and-how-to-avoid-hamburger-menus/ https:/ /www.nngroup.com/articles/hamburger-menus/ HAMBURGER MENUS WORKAROUNDS https:/ /lmjabreu.com/post/why-and-how-to-avoid-hamb"
+  },
+  {
+    "faiss_id": 31,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "HAMBURGER MENUS WORKAROUNDS https:/ /lmjabreu.com/post/why-and-how-to-avoid-hamburger-menus/ https:/ /www.nngroup.com/articles/hamburger-menus/ AFFORDANCES SIGNIFIERS MAPPINGS CONCEPTUAL MODELS People have “mental models” of how things work, built from affordances, causality , constraints, mapping, positive transfer, cultural standards, instructions, interactions... Models allow people to mentally simulate operation of device Models may be wrong particularly if above attributes are misleading De"
+  },
+  {
+    "faiss_id": 32,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "of device Models may be wrong particularly if above attributes are misleading Designed of Everyday Things: Revised and Expanded Edition (2014) CONCEPTUAL MODEL perceived affordances: holes afford insertion constraints: big hole for fingers, small for thumb Designed of Everyday Things: Revised and Expanded Edition (2014) CONCEPTUAL MODEL perceived affordances: holes afford insertion constraints: big hole for fingers, small for thumb mapping: between holes and fingers suggested and constrained by"
+  },
+  {
+    "faiss_id": 33,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "small for thumb mapping: between holes and fingers suggested and constrained by appearance Designed of Everyday Things: Revised and Expanded Edition (2014) CONCEPTUAL MODEL perceived affordances: holes afford insertion constraints: big hole for fingers, small for thumb mapping: between holes and fingers suggested and constrained by appearance positive transfer: learned when young, constant mechanism Designed of Everyday Things: Revised and Expanded Edition (2014) CONCEPTUAL MODEL perceived affor"
+  },
+  {
+    "faiss_id": 34,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "day Things: Revised and Expanded Edition (2014) CONCEPTUAL MODEL perceived affordances: holes afford insertion constraints: big hole for fingers, small for thumb mapping: between holes and fingers suggested and constrained by appearance positive transfer: learned when young, constant mechanism conceptual model: implications clear of how the operating parts work Designed of Everyday Things: Revised and Expanded Edition (2014) CONCEPTUAL MODEL By Design 2nd edition: Why There Are No Locks on the B"
+  },
+  {
+    "faiss_id": 35,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "n (2014) CONCEPTUAL MODEL By Design 2nd edition: Why There Are No Locks on the Bathroom Doors in the Hotel Louis XIV and Other Object Lessons (Caplan, 2004, 1st edition in 1982) CONCEPTUAL MODEL By Design: Why There Are No Locks on the Bathroom Doors in the Hotel Louis XIV and Other Object Lessons Ralph Caplan By Design 2nd edition: Why There Are No Locks on the Bathroom Doors in the Hotel Louis XIV and Other Object Lessons (Caplan, 2004, 1st edition in 1982) CONCEPTUAL MODEL By Design 2nd editi"
+  },
+  {
+    "faiss_id": 36,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "Lessons (Caplan, 2004, 1st edition in 1982) CONCEPTUAL MODEL By Design 2nd edition: Why There Are No Locks on the Bathroom Doors in the Hotel Louis XIV and Other Object Lessons (Caplan, 2004, 1st edition in 1982) CONCEPTUAL MODEL “Private bathroom” - individual use, but not personal. Bathroom had two doors. What happens if the bathroom doors have locks? How would you solve this? By Design 2nd edition: Why There Are No Locks on the Bathroom Doors in the Hotel Louis XIV and Other Object Lessons (C"
+  },
+  {
+    "faiss_id": 37,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "o Locks on the Bathroom Doors in the Hotel Louis XIV and Other Object Lessons (Caplan, 2004, pp. 180) CONCEPTUAL MODEL Which hand do you write with? Left or right? CONCEPTUAL MODEL “Let’s now step away from the computer for a moment and look at the example of handwriting with pencil and paper . These are “devices” that one interacts with in the real world, after all. Consider this simple question: Which hand do you write with, right or left? When we give talks on this subject, we have the audien"
+  },
+  {
+    "faiss_id": 38,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "rite with, right or left? When we give talks on this subject, we have the audience raise their hands. Who uses their right hand? Do we have any left-handers in the audience? Which hand would you, the reader , raise? Now, of course, we have led you into a trap, because: You are all wrong. No matter which hand you raised, you are wrong. This is not a trick question. Rather the question is fundamentally ill-posed. People write with both hands, as demonstrated by Guiard (Guiard 1987)” Input Technolo"
+  },
+  {
+    "faiss_id": 39,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "e write with both hands, as demonstrated by Guiard (Guiard 1987)” Input Technologies and Techniques (Hinckley and Wigdor , 2002) CONCEPTUAL MODEL Yves Guiard’s 1987 Paper Transfer Experiment (Asymmetric Division of Labor in Human Skilled Bimanual Action: The Kinematic Chain as a Model, Journal of Motor Behavior , 1987) CONCEPTUAL MODEL The Backwards Brain Bicycle - Smarter Every Day 133, https:/ /www.youtube.com/watch?v=MFzDaBzBlL0 CONCEPTUAL MODEL Backwards Bicycle, Smarter Every Day https:/ /w"
+  },
+  {
+    "faiss_id": 40,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "h?v=MFzDaBzBlL0 CONCEPTUAL MODEL Backwards Bicycle, Smarter Every Day https:/ /www.uxmatters.com/mt/archives/2013/02/how-do-users-really-hold-mobile-devices.php CONCEPTUAL MODEL How do people hold mobile phones? Fat Thumb (Boring, Ledo, Chen, Marquardt, Tang, Greenberg, 2012) CONCEPTUAL MODEL Corners are hard to reach SKETCHING PROMPTS 1. Draw different affordances in objects that you can think of. Think of ways in which affordances can repurpose how you use an object 2. Think of different menta"
+  },
+  {
+    "faiss_id": 41,
+    "document_id": 5,
+    "file_name": "DesignPsychologyByDavidLedo.pdf",
+    "text": "hich affordances can repurpose how you use an object 2. Think of different mental models to print a file AFFORDANCES SIGNIFIERS MAPPINGS CONCEPTUAL MODELS Invitations to Action Effects of Action Properties of Action Process behind Action FOOD FOR THOUGHT Look at the examples used to illustrate the different concepts See how they might describe some of the other concepts"
+  },
+  {
+    "faiss_id": 42,
+    "document_id": 6,
+    "file_name": "HCI_Outline.pdf",
+    "text": "University of Gujrat CS-464 Human Computer Interaction Department of Computer Science Faculty of Computing & Information Technology Title Human Computer Interaction Code CS-464 Credit Hours 3 Theory/week: Weight 3 Cr. Hrs. Lectures: 2 Duration 1.5 Hrs. /Lecture Prerequisite None Follow Up Advanced UI/UX Design, Software Engineering Category Domain Elective Aims and Objectives This course is designed to provide students with a comprehensive introduction to the field of Human Computer Interaction"
+  },
+  {
+    "faiss_id": 43,
+    "document_id": 6,
+    "file_name": "HCI_Outline.pdf",
+    "text": "ts with a comprehensive introduction to the field of Human Computer Interaction (HCI). The course aims to impart foundational knowledge required to design useful and usable interactive systems based on users’ needs and contextual requirements. It focuses on understanding human capabilities, interaction models, design principles, usability evaluation techniques, and the development of prototypes to enhance user experience. Learning Outcomes At the end of the course the students will be able to: C"
+  },
+  {
+    "faiss_id": 44,
+    "document_id": 6,
+    "file_name": "HCI_Outline.pdf",
+    "text": "ence. Learning Outcomes At the end of the course the students will be able to: CLO 1: Understand humans, the computer, and their interaction mechanisms. (C2 – Understand) CLO 2: Apply interaction design principles, design rules, and cognitive models in system development. (C3 – Apply) CLO 3: Analyze socio-organizational issues, stakeholder requirements, and collaboration models in system design. (C4 – Analyze) CLO 4: Evaluate interactive systems using usability and evaluation techniques. (C3 – A"
+  },
+  {
+    "faiss_id": 45,
+    "document_id": 6,
+    "file_name": "HCI_Outline.pdf",
+    "text": "Evaluate interactive systems using usability and evaluation techniques. (C3 – Apply) Course The course will include theoretical concepts of Human Computer Interaction and practical sessions involving: • Wireframing • Prototyping • Usability Testing • User Evaluation Techniques Reference Material A. Dix, J. Finlay, G. Abowd and R. Beale. Human Computer Interaction, Prentice Hall (Latest Edition) J. Preece, Y. Rogers, H. Sharp. Interaction Design: Beyond Human-Computer Interaction, 6th Edition, W"
+  },
+  {
+    "faiss_id": 46,
+    "document_id": 6,
+    "file_name": "HCI_Outline.pdf",
+    "text": "H. Sharp. Interaction Design: Beyond Human-Computer Interaction, 6th Edition, Wiley 2023 Assessment Criteria Sessional 25% Mid Term 25% Final Term 50% Total 100% Quizzes 10 Assignments 10 25 50 Presentations 5 Framework Week Lecture Topic Source (Book-Chapter No. Section No.) Recommendations for Learning Activities (Mention Assignments, Test, Quizzes, Practical, Case Study, Projects, Lab Work or Reading Assignments) 1 1 Introduction to the fields of HCI, The Human Factor Distribution of course"
+  },
+  {
+    "faiss_id": 47,
+    "document_id": 6,
+    "file_name": "HCI_Outline.pdf",
+    "text": "1 1 Introduction to the fields of HCI, The Human Factor Distribution of course outline 2 2 3 The Computer Factor 4 The Interaction, Models of Interaction, Interaction Paradigms 3 5 6 4 7 Human psychology and ergonomics, HCI in the Software Process 8 5 9 Interaction Design basics and the design process 10 Quiz 1 6 11 Design Principles, Principles to support usability 12 Flexibility and Robustness Assignment 1 7 13 Principles of learnability 14 Flexibility and Robustness 8 15 Shneider man’s Eight"
+  },
+  {
+    "faiss_id": 48,
+    "document_id": 6,
+    "file_name": "HCI_Outline.pdf",
+    "text": "inciples of learnability 14 Flexibility and Robustness 8 15 Shneider man’s Eight golden Rules 16 Nielsen’s heuristics Mid-Term Exam 9 17 Introduction to Evaluation, Evaluation Techniques 18 10 19 20 Experts Evaluations, Cognitive Walkthrough, Heuristic Evaluation, Evaluating through user participation 11 21 22 12 23 Quiz 2 24 Laboratory Evaluation 13 25 Field Evaluation, Observational Techniques 26 14 27 Query techniques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issu"
+  },
+  {
+    "faiss_id": 49,
+    "document_id": 6,
+    "file_name": "HCI_Outline.pdf",
+    "text": "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced Topics may be Discussed or Given as an Assignments Final-Term Exam"
+  },
+  {
+    "faiss_id": 50,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "Human Computer Interaction (HCI, HCC)AN INTRODUCTION Human Computer Interaction Why are we here? ◦It may seem trite, but user interfaces matter: For efficiency, for convenience, for accuracy, for success, even for life and death ◦The Vincennes, and Aegis RADAR system Human Computer Interaction Why are we here? ◦It may seem trite, but user interfaces matter: For efficiency, for convenience, for accuracy, for success, even for life and death ◦The Vincennes, and Aegis RADAR system ◦People time is m"
+  },
+  {
+    "faiss_id": 51,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "even for life and death ◦The Vincennes, and Aegis RADAR system ◦People time is more expensive than computer time (normally) ◦Everyone has a story of a bad interface, and the trouble it caused ◦A well-designed interface makes for a good system, and a happy (and efficient) user (This is a bad interface) Human Computer Interaction Sub-discipline of the multi-discipline Human Factors and Ergonomics ◦Psychology (many types) ◦Design ◦Engineering ◦Social sciences Both deal with the design of everyday ("
+  },
+  {
+    "faiss_id": 52,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "s) ◦Design ◦Engineering ◦Social sciences Both deal with the design of everyday (and not-so-everyday) things Involve questions such as, but not limited to: ◦Is it easy to use? ◦Is it easy to understand? ◦Is it easy to discover? ◦Is it comfortable to use? ◦Is it sensible to use? Human Computer Interaction Human Computer Interaction Each word is important In order to understand the discipline, we must understand: ◦The Human ◦The Computer ◦The Interaction These three components come together (intera"
+  },
+  {
+    "faiss_id": 53,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "uman ◦The Computer ◦The Interaction These three components come together (interact!) to form what will hopefully be the User experience None of these components can be left out, or ignored, they are all required for the development of a successful interface A well-developed and designed interface is of singular importance, because it is the sole gatewayto any system Human Computer Interaction For many years, this was not a consideration ◦In other words, what it was, was nothing Very early on, ma"
+  },
+  {
+    "faiss_id": 54,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "not a consideration ◦In other words, what it was, was nothing Very early on, machines had to be hardwired Human Computer Interaction For many years, this was not a consideration ◦In other words, what it was, was nothing Very early on, machines had to be hardwired Later, commands were entered one line at a time ◦Attempts were made to make this easier, but that was difficult due to technological limitations ◦Some intuitiveness was included, but not much ◦Still early, and in large part still the d"
+  },
+  {
+    "faiss_id": 55,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "itiveness was included, but not much ◦Still early, and in large part still the domain of hobbyists and scientists ◦Cryptic, undecipherable code ◦“The Software Crisis” ◦Can have long-lasting impacts, as seen in the Y2K problem Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction However, this time period also saw expansion of the field of ergonomics, HCI, and the disciplines involved Origi"
+  },
+  {
+    "faiss_id": 56,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "aw expansion of the field of ergonomics, HCI, and the disciplines involved Originally used primarily for word processors and spreadsheets ◦Still very cumbersome to use ◦Often required many-key combinations to perform tasks ◦Keyboard overlays were standard ◦This was all a result of, but also evolution of, the interface A slow movement away from technical manuals, and towards user manuals, was also budding Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Compu"
+  },
+  {
+    "faiss_id": 57,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "er Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction However, this time period also saw expansion of the field of ergonomics, HCI, and the disciplines involved A slow movement away from technical manuals, and towards user manuals, was also budding Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction However, this time period also saw expansion of"
+  },
+  {
+    "faiss_id": 58,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "ction Human Computer Interaction However, this time period also saw expansion of the field of ergonomics, HCI, and the disciplines involved A slow movement away from technical manuals, and towards user manuals, was also budding Most importantly, system and software design and development began to focus on the experience, as opposed to just the hardware and software ◦Usability ◦Maintenance / Support ◦Graphical interface ◦All of which end at the user ◦Understanding them ◦Listening to them ◦Designi"
+  },
+  {
+    "faiss_id": 59,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "ce ◦All of which end at the user ◦Understanding them ◦Listening to them ◦Designing for them Human Computer Interaction Usability is really the ultimate focus, the ultimate goal But what does it mean? The term is a nebulous, living thing ◦Frequently changing ◦Frequently expanding ◦Frequently being added to Usability doesn’t mean simply ‘able to be used.’ ◦Distinction between UI/UX HCI’s multidisciplinary nature can lead to complexities in approach and definition HCI (Human Factors, really) is als"
+  },
+  {
+    "faiss_id": 60,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "ad to complexities in approach and definition HCI (Human Factors, really) is also one of the most co-opted and diluted disciplines there is ◦However that also gives it its strength Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction Human Computer Interaction Eventually, there was a sea change ◦Xerox Star ◦Apple Macintosh ◦Microsoft W"
+  },
+  {
+    "faiss_id": 61,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "ion Eventually, there was a sea change ◦Xerox Star ◦Apple Macintosh ◦Microsoft Windows Human Computer Interaction Human Computer Interaction Provided brand new methods of interaction ◦WIMP New interaction types ◦Instructing ◦Conversing ◦Manipulating ◦Exploring This led to an explosion in HCI, in all areas ◦New interaction methods ◦New conceptual models ◦Metaphors ◦Affordances ◦Increased accessibility, and also increased accessibility ◦This also led to a host of new problems Human Computer Intera"
+  },
+  {
+    "faiss_id": 62,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "sed accessibility ◦This also led to a host of new problems Human Computer Interaction Human Computer Interaction Standards and guidelines have been developed and incorporated into interface design for decades However, two researchers have contributes sets of rules that have been tested, verified, and incorporated more than any other JakobNeilsen ◦10 Usability Heuristics for Interface Design Ben Schneiderman ◦The Eight Golden Rules of Interface Design Each of these are considered canon in the des"
+  },
+  {
+    "faiss_id": 63,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "t Golden Rules of Interface Design Each of these are considered canon in the design field Human Computer Interaction The 10 Usability Heuristics for User Interface Design ◦Visibility of system status ◦Match between system and the real world ◦User control and freedom ◦Consistency and standards ◦Error prevention ◦Recognition rather than recall ◦Flexibility and efficiency of use ◦Aesthetic and minimalist design ◦Help users recognize, diagnose, and recover from errors ◦Help and documentation Human C"
+  },
+  {
+    "faiss_id": 64,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "ers recognize, diagnose, and recover from errors ◦Help and documentation Human Computer Interaction The Eight Golden Rules of Interface Design ◦Strive for consistency ◦Cater to universal usability ◦Offer informative feedback ◦Design dialogs to yield closure ◦Prevent errors ◦Permit easy reversal of actions ◦Support an internal locus of control ◦Reduce short term memory load Human Computer Interaction Usability goals ◦Effectiveness ◦Efficiency ◦Safety ◦Utility ◦Learnability ◦Memorability User expe"
+  },
+  {
+    "faiss_id": 65,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "Effectiveness ◦Efficiency ◦Safety ◦Utility ◦Learnability ◦Memorability User experience goals ◦Desirable aspects ◦Undesirable aspects Human Computer Interaction Eventually, there was movement beyond the PC ◦How do we address the nearly infinite amount of objects we can store? ◦Internet (Command to graphical, Lynx to browsers) ◦Communication / Collaboration ◦LOL U WOT M8 ◦Evolution and place of the computing environment ◦Background devices ◦Used by everyone (and why?) ◦Significant functionality in"
+  },
+  {
+    "faiss_id": 66,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "t ◦Background devices ◦Used by everyone (and why?) ◦Significant functionality in individual devices ◦Embedded systems ◦With this evolution, the discipline evolves as well Human Computer Interaction Human Computer Interaction Invention to Maturity Human Computer Interaction With the increase in user-generated content, and the evolution of ‘Web 2.0,’ there has become a drastic increase in the need to access, manage, display, and manipulate the vast amounts of data available to us Ackoffaddressed t"
+  },
+  {
+    "faiss_id": 67,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "splay, and manipulate the vast amounts of data available to us Ackoffaddressed the handling of computer-generated information back in 1967 ◦Five assumptions ◦Decision makers lack relevant information ◦Decision makers need information they want ◦Needed information leads to better decisions ◦Better communication among decision makers leads to better decisions ◦How the IS works is less important than how to use it Human Computer Interaction With the increase in user-generated content, and the evolu"
+  },
+  {
+    "faiss_id": 68,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "Computer Interaction With the increase in user-generated content, and the evolution of ‘Web 2.0,’ there has become a drastic increase in the need to access, manage, display, and manipulate the vast amounts of data available to us Ackoffaddressed the handling of computer-generated information back in 1967 How did we do it before? ◦File cabinets ◦Ledgers ◦Index cards / card catalog Operating computers was a specialized affair ◦Programmers ◦Keypunchers ◦Computer operator Human Computer Interaction"
+  },
+  {
+    "faiss_id": 69,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "d affair ◦Programmers ◦Keypunchers ◦Computer operator Human Computer Interaction 1970s ◦User manuals ◦Testing labs ◦Prototypes ◦Goal-oriented design 1980s ◦Research began on VDTs ◦General design guidelines were first published ◦ANSI standards were first developed Human Computer Interaction With the increase in user-generated content, and the evolution of ‘Web 2.0,’ there has become a drastic increase in the need to access, manage, display, and manipulate the vast amounts of data available to us"
+  },
+  {
+    "faiss_id": 70,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "ccess, manage, display, and manipulate the vast amounts of data available to us As storage capacity increased, data increased, and our ability to use that data increased ◦Punch cards Human Computer Interaction Human Computer Interaction With the increase in user-generated content, and the evolution of ‘Web 2.0,’ there has become a drastic increase in the need to access, manage, display, and manipulate the vast amounts of data available to us As storage capacity increased, data increased, and our"
+  },
+  {
+    "faiss_id": 71,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "s of data available to us As storage capacity increased, data increased, and our ability to use that data increased ◦Punch cards ◦Magnetic media Human Computer Interaction Human Computer Interaction With the increase in user-generated content, and the evolution of ‘Web 2.0,’ there has become a drastic increase in the need to access, manage, display, and manipulate the vast amounts of data available to us As storage capacity increased, data increased, and our ability to use that data increased ◦P"
+  },
+  {
+    "faiss_id": 72,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "apacity increased, data increased, and our ability to use that data increased ◦Punch cards ◦Magnetic media ◦Optical media Human Computer Interaction Human Computer Interaction With the increase in user-generated content, and the evolution of ‘Web 2.0,’ there has become a drastic increase in the need to access, manage, display, and manipulate the vast amounts of data available to us As storage capacity increased, data increased, and our ability to use that data increased ◦Punch cards ◦Magnetic me"
+  },
+  {
+    "faiss_id": 73,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "increased, and our ability to use that data increased ◦Punch cards ◦Magnetic media ◦Optical media ◦Cloud Human Computer Interaction Human Computer Interaction Human Computer Interaction With the increase in user-generated content, and the evolution of ‘Web 2.0,’ there has become a drastic increase in the need to access, manage, display, and manipulate the vast amounts of data available to us As storage capacity increased, data increased, and our ability to use that data increased ◦Punch cards ◦"
+  },
+  {
+    "faiss_id": 74,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "eased, data increased, and our ability to use that data increased ◦Punch cards ◦Magnetic media ◦Optical media ◦Cloud ◦How do we interact with all this information? Human Computer Interaction Now, HCI applies to many types of systems, interactions, and experiences ◦Medical information systems / equipment ◦Accessibility (Blind, deaf, infirmed, incapacitated) ◦Gaming ◦Large information environments (cockpits, power plants) ◦Social media ◦Smart TVs ◦Portable devices ◦Education ◦Military ◦Hard scienc"
+  },
+  {
+    "faiss_id": 75,
+    "document_id": 7,
+    "file_name": "IntroToHCI.pdf",
+    "text": "ts) ◦Social media ◦Smart TVs ◦Portable devices ◦Education ◦Military ◦Hard sciences ◦Business / Manufacturing Human Computer Interaction What about the future? ◦Artificial intelligence ◦Virtual reality ◦Ubiquitous systems ◦Autonomous vehicles (planes too? Maybe boats?) ◦Cybernetics How will we interact with these? How will we design these systems so we *can* interact with them? Ultimately, who will be in control? Can we maintain control? Do we want to?"
+  },
+  {
+    "faiss_id": 76,
+    "document_id": 8,
+    "file_name": "Lecture_1_-_Introduction.pdf",
+    "text": "HCI Photos/collage by Jack L. Moffetin Dan R. Olsen, « Interacting in Chaos », Interactions, sept-oct1999. Dr .UmarShoaib 2 Human Computer Interaction Why are we here? ◦ It may seem trite, but user interfaces matter: For efficiency, for convenience, for accuracy, for success, even for life and death ◦ The Vincennes, and Aegis RADAR system ◦ People time is more expensive than computer time (normally) ◦ Everyone has a story of a bad interface, and the trouble it caused ◦ A well -designed interface"
+  },
+  {
+    "faiss_id": 77,
+    "document_id": 8,
+    "file_name": "Lecture_1_-_Introduction.pdf",
+    "text": "story of a bad interface, and the trouble it caused ◦ A well -designed interface makes for a good system, and a happy (and efficient) user (This is a bad interface) Lecture 1 -Introduction 3 What is HCI? 4 What is HCI? Human Computer Interaction 5 Human | Computer | Interaction •Human –Users •an individual or a group using the system 6 Human| Computer | Interaction •Human –Users •an individual or a group using the system •Computer –Machine or network of machines running the system •desktop PCs,"
+  },
+  {
+    "faiss_id": 78,
+    "document_id": 8,
+    "file_name": "Lecture_1_-_Introduction.pdf",
+    "text": "stem •Computer –Machine or network of machines running the system •desktop PCs, handheld devices, embedded systems etc. 7 Human| Computer| Interaction Human •Users –An individual or a group using the system •Interaction –With interface representing the system •Computer –Machine or network of machines running the system •desktop PCs, handheld devices, embedded systems etc. 8 Goals •Humans are trying to accomplish different tasks in their lives •Bank Account, e-government, online information acces"
+  },
+  {
+    "faiss_id": 79,
+    "document_id": 8,
+    "file_name": "Lecture_1_-_Introduction.pdf",
+    "text": "erent tasks in their lives •Bank Account, e-government, online information access 9 Task Goal of HCI •Humans are trying to accomplish different tasks in their lives •Introduce a system, and represent it with a User Interface that should maximizetheir ability. 10 Task Applied Perspective HCI is about Design Implementation Evaluation of User Interfaces 11 CS-402 Research Perspective HCI is about developing effective interaction techniques Examples Semantic Pointing Marking Menus 12 CS-402 Lets mak"
+  },
+  {
+    "faiss_id": 80,
+    "document_id": 8,
+    "file_name": "Lecture_1_-_Introduction.pdf",
+    "text": "teraction techniques Examples Semantic Pointing Marking Menus 12 CS-402 Lets make a little digression 13 An accident •On January 20, 1992, Air Inter Flight 148 crashed into the Vosges Mountains while approaching Strasbourg Airport in Strasbourg, France. 87 of the 96 crew and passengers on board were killed. So why am I writing about a horrible accident ? 14 An accident •On January 20, 1992, Air Inter Flight 148 crashed into the Vosges Mountains while approaching Strasbourg Airport in Strasbourg,"
+  },
+  {
+    "faiss_id": 81,
+    "document_id": 8,
+    "file_name": "Lecture_1_-_Introduction.pdf",
+    "text": "ed into the Vosges Mountains while approaching Strasbourg Airport in Strasbourg, France. 87 of the 96 crew and passengers on board were killed. So why am I writing about a horrible accident ? Because of the cause of the crash. 15 CS-402 HCI 16 HCI Bad Design costs lives, money, & time 17 HCI Bad Design costs lives, money, & time •We will learn different techniques about –how to effectively design and evaluate user interfaces 18 Prototyping : A Design Technique •Prototyping is a strategy for effi"
+  },
+  {
+    "faiss_id": 82,
+    "document_id": 8,
+    "file_name": "Lecture_1_-_Introduction.pdf",
+    "text": "terfaces 18 Prototyping : A Design Technique •Prototyping is a strategy for efficiently dealing with things that are hard to predict 19 Prototyping •SANTA CLARA, California –People thought Jeff Hawkins was crazy when they saw him taking notes, checking appointments, and synchronizing a small block of wood with his PC, pretending all the while that the block was a handheld computer . “If I wanted to check the calendar I'd take it out and press the wooden button.” 20 Evaluation 21 22 Evaluation An"
+  },
+  {
+    "faiss_id": 83,
+    "document_id": 8,
+    "file_name": "Lecture_1_-_Introduction.pdf",
+    "text": "I'd take it out and press the wooden button.” 20 Evaluation 21 22 Evaluation An effective Interface 23 Programming Assignments (tentative) •Shared Drawing T ool (Javascript) •Interactive Visualization (Processing) •Intelligent Multimodal Interaction (Andriod) 24 Mother of all Demos Inventor of the mouse (1963) Bimanual interaction Hypertext, cooperative work, document sharing video-conferencing 25"
+  },
+  {
+    "faiss_id": 84,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "Human Computer Interaction Evaluation Techniques Evalua'on 2 • Evaluate design with expert – Cogni6ve Walkthrough – Heuris6c Evalua6on • Evaluate design with people – User tes6ng Evaluate design with expert • An interface is evaluated by usability experts rather than end users. • Usually several evaluators work independently, then debrief together later. 3 When to get design cri6que from experts? • Before user tes6ng. – Don’t waste users on the small stuﬀ. Cri6que can iden6fy minor issues that c"
+  },
+  {
+    "faiss_id": 85,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": ". – Don’t waste users on the small stuﬀ. Cri6que can iden6fy minor issues that can be resolved before tes6ng, allowing users to focus on the big issues. • Before redesigning. – Don’t throw out the baby with the bathwater. Cri6que can help you learn what works and what should change. • When you know there are problems, but you need evidence. – Perhaps you've received complaints from customers or found yourself stumbling around your own site. Cri6que can help you ar6culate problems and provide you"
+  },
+  {
+    "faiss_id": 86,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "ng around your own site. Cri6que can help you ar6culate problems and provide you with ammuni6on for redesign. • Before release. – Smooth oﬀ the rough edges. 4 System Evalua6on 5 Evaluate design with expert Cogni6ve Walkthrough 6 7 • Proposed by Polson Ø evaluates design on how well it supports user in learning task Ø usually performed by expert in cognitive psychology Ø expert ‘walks through’ design to identify potential problems using psychological principles Ø main focus “how easy a system"
+  },
+  {
+    "faiss_id": 87,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "tential problems using psychological principles Ø main focus “how easy a system is to learn” Cogni6ve Walkthrough: Introduc6on Cogni6ve Walkthrough: Introduc6on • Focuses on evaluating a design for ease of learning • Experts evaluate a proposed interface in the context of one or more specific user tasks • Experts walk through the tasks. At each step, ask yourself four questions. 1. What is the user trying to achieve at this point? 2. Will users see the control (button, menu, switch, etc.) for t"
+  },
+  {
+    "faiss_id": 88,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "at this point? 2. Will users see the control (button, menu, switch, etc.) for the action? (Visibility) 3. Once users find the control, will they recognize that it produces the effect they want? (Mapping) 4. After the action, will users understand the feedback they get so they can go on to the next action with confidence? (Feedback) Cogni6ve Walkthrough: Procedure • Deﬁne the inputs • Gather the walkthrough team • Walk through the ac6on sequences for each task • Record cri6cal informa6on • Revis"
+  },
+  {
+    "faiss_id": 89,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "lk through the ac6on sequences for each task • Record cri6cal informa6on • Revise the interface to ﬁx the problems Performing the Cogni6ve Walkthrough • Deﬁne the inputs – Iden6fy users and tasks – Create a descrip6on (screenshots, storyboard) or implementa6on (rapid prototype) of the interface – Deﬁne the ac6on sequences for comple6ng each task • Gather the team – Facilitator maintains the pace of the discussion Performing the Walkthrough, cont. • Walk through the action sequences for each task"
+  },
+  {
+    "faiss_id": 90,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "forming the Walkthrough, cont. • Walk through the action sequences for each task – Participants walk through (discuss) the tasks with respect to the interface (prototypes or screenshots) and action sequences – They try to tell a credible story • What is the user trying to achieve at this point? What is the user’s goal and why is it their goal? • What actions are obviously available in the interface? • Does the label for the correct action match the user’s goal? • If the user performs the correct"
+  },
+  {
+    "faiss_id": 91,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "for the correct action match the user’s goal? • If the user performs the correct action, will they get good feedback? Performing the Walkthrough, cont. • Record cri6cal informa6on – The credible success (or failure) story – Assump6ons (about tasks and user’s skill) – Problems (and suggested solu6ons) • Revise the interface to ﬁx the problems – Re-­‐implement rapid prototype or create new screenshots Cogni6ve Walkthrough Example -­‐ Rapid Transit Ticket Machine • User wishes to purchase a round-­"
+  },
+  {
+    "faiss_id": 92,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "ugh Example -­‐ Rapid Transit Ticket Machine • User wishes to purchase a round-­‐trip 6cket to Dragon Plaza. • The 6cket costs $17.50 but the user doesn’t know this yet. • The user has only $10, but doesn’t know this yet either. This example is taken from http://asi-www.informatik.uni-hamburg.de/informatik/SE_Evaluation/html/pages/walk.htm Step 1: Enter Destination • Design Flaw no. 1: Option to indicate journey type first is not made sufficiently evident. Step 2: Enter Journey Type Step 3: Depo"
+  },
+  {
+    "faiss_id": 93,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "first is not made sufficiently evident. Step 2: Enter Journey Type Step 3: Deposit money • Design Flaw no. 2: No display of total money received • Solution: Step 4: Retrieve $10 from machine since it wasn’t enough • Design Flaw no. 3: No means of retrieving money deposited. • Solu'on: Cogni6ve Walkthrough Another Example 21 Inver6ng a por6on of an image (Example) • Users – We want novice users of Photoshop to be able to invert selections of an image with little or no training; – Assume that use"
+  },
+  {
+    "faiss_id": 94,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "e to invert selections of an image with little or no training; – Assume that user’s have had experience with other imaging programs • Tasks – Select a subregion of an image and invert it Example, cont. • Ac6on Sequences – Zoom display to area of interest – Select the Lasso Tool – Select the subregion of the image – Select Inverse from the Image menu Photoshop Interface The image cannot be displayed. Your computer may not have enough memory to open the image, or the image may have been corrupted."
+  },
+  {
+    "faiss_id": 95,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "not have enough memory to open the image, or the image may have been corrupted. Restart your computer, and then open the ﬁle again. If the red x still appears, you may have to delete the image and then insert it again. Descrip6on of Interface • Photoshop presents – a toolbar (far leb) • ver6cally arranged • Assume that novice users are unfamiliar with the toolbar’s icons – the image (center) – a control panel (far right) • Assume that novice users are unfamiliar with the opera6on and purpose of"
+  },
+  {
+    "faiss_id": 96,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "ight) • Assume that novice users are unfamiliar with the opera6on and purpose of the control panel Zoom in on Face Ac6on: Zoom in on Image • What’s the user’s goal, and why? – The user wants to specify the por6on of the image to invert exactly. Zooming in on the region of interest helps to increase the accuracy of the selec6on • Is the ac6on obviously available? – The default tool in Photoshop is the Zoom tool; if the user has just started Photoshop its the current tool – Novice users may have t"
+  },
+  {
+    "faiss_id": 97,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "e user has just started Photoshop its the current tool – Novice users may have to search for this tool on the toolbar if they need it later on – This tool uses the magnifying glass as its icon Zoom in on Image, cont. • Does the ac6on or label match the goal? – No label involved here, however magnifying glass icon represents task well – Clicking on image, zooms the tool – Dragging on image, speciﬁes zoom region more accurately – Novice users may click rather than drag • Is there good feedback? –"
+  },
+  {
+    "faiss_id": 98,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "ccurately – Novice users may click rather than drag • Is there good feedback? – Yes, Photoshop instantly zooms the image Select Lasso Tool Select the Lasso Tool • What’s the user’s goal, and why? – They need a tool to select a por6on of the image • Is the ac6on obviously available? – They are familiar with the lasso tool from other image programs – The lasso icon is available at the top of the toolbar (increasing the chance that it will be seen) – The tool6p provides conﬁrma6on of the icon’s inf"
+  },
+  {
+    "faiss_id": 99,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "chance that it will be seen) – The tool6p provides conﬁrma6on of the icon’s informa6on Select the Lasso Tool, cont. • Does the ac6on or label match the goal? – Tool6p serves as label and conﬁrms the meaning of the familiar lasso icon • Is there good feedback? – Not shown but toolbar icon highlights when selected Select Image Select the Image • What’s the user’s goal, and why? – Select a por6on of the image • Is the ac6on obviously available? – Assume novice user is familiar with using the lasso"
+  },
+  {
+    "faiss_id": 100,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "ac6on obviously available? – Assume novice user is familiar with using the lasso tool • Does the ac6on or label match the goal? – Yes, the lasso tool’s sole purpose is selec6ng regions • Is there good feedback? – Yes, the lasso tool produces a “rubber-­‐band” that indicates the current selec6on Select Invert Opera6on Invert the Image • What’s the user’s goal and why? – The overall task is to invert a region of the image • Is the ac6on obviously available? – No, previous experience will lead them"
+  },
+  {
+    "faiss_id": 101,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "age • Is the ac6on obviously available? – No, previous experience will lead them to look for ac6on in the menus • Does the ac6on or label match the goal? – Yes, but the invert opera6on is buried in a submenu called Adjust within the Image menu; novice users may look for the command in the “Edit” menu – Is there good feedback? Yes, the image inverts Opera6on Complete Example Wrap-­‐up • Ac6on 1: Zoom In – Available as default tool; novice users may have to search for tool on subsequent opera6ons"
+  },
+  {
+    "faiss_id": 102,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "default tool; novice users may have to search for tool on subsequent opera6ons • Ac6on 2: Select Lasso Tool – Lasso Icon is located in prominent place on toolbar; novice users are familiar with this tool • Ac6on 3: Select Image – No problem here • Ac6on 4: Invert Image – Invert command is buried in submenu Possible Improvements? • The Invert selec6on command is a common opera6on yet it is buried in a submenu – “Image -­‐> Adjust” may not be intui6ve to a novice user – Note: It is assigned an in"
+  },
+  {
+    "faiss_id": 103,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "e -­‐> Adjust” may not be intui6ve to a novice user – Note: It is assigned an intui6ve keyboard short-­‐cut (Ctrl+I) which is good! • Sugges6ons – Move Invert up one level into the Image menu? – Place a command for inver6ng the selec6on on one of the toolbars? Evaluate design with expert Heuristic Evaluation 39 Heuristic Evaluation Ø Proposed by Nielsen and Molich. Ø A heuristic is a guideline or general principle or rule of thumb that can guide a design decision Ø Heuristic evaluation perfor"
+  },
+  {
+    "faiss_id": 104,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "or rule of thumb that can guide a design decision Ø Heuristic evaluation perform on design specification so it is useful for evaluating early design Ø It can also used on prototypes, storyboards and fully functioning systems, therefore it is flexible and cheap approach Ø design examined by experts to see if these are violated 40 41 Ø Example heuristics • system behaviour is predictable • system behaviour is consistent • feedback is provided Ø Heuristic evaluation `debugs' design. Heuristic"
+  },
+  {
+    "faiss_id": 105,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "stent • feedback is provided Ø Heuristic evaluation `debugs' design. Heuristic Evaluation Heuristic Evalua6on • Helps find usability problems in a design • Small set (3-5) of evaluators examine UI – independently check for compliance with usability principles (“heuristics”) – different evaluators will find different problems – evaluators only communicate afterwards • findings are then aggregated • Can perform on working UI or sketches 42 Evaluators’ Process • Step through design several times –"
+  },
+  {
+    "faiss_id": 106,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "king UI or sketches 42 Evaluators’ Process • Step through design several times – Examine details, flow, and architecture – Consult list of usability principles – ..and anything else that comes to mind • Which principles? – Nielsen’s “heuristics” – Category-specific heuristics from e.g., design goals, competitive analysis, existing designs • Use violations to redesign/fix problems 43 Why Mul6ple Evaluators? • No evaluator ﬁnds everything • Some ﬁnd more than others 44 Decreasing Returns 45 Proble"
+  },
+  {
+    "faiss_id": 107,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "ator ﬁnds everything • Some ﬁnd more than others 44 Decreasing Returns 45 Problems No of Evaluators Beneﬁt/ Cost No of Evaluators Problems found Beneﬁts/Cost ra6o Heuristic Evalua6on: Cost-­‐eﬀec6ve • In one case: beneﬁt-­‐cost ra6o of 48 – es6mated beneﬁt $500,000; cost $10,500 • Severe problems found more oben • Single evaluator achieves poor results – only ﬁnds 35% of usability problems – 5 evaluators ﬁnd ~ 75% of problems 46 Heuris6cs Evalua6on vs. User Tes6ng • Heuris6c Evalua6on (H.E.) obe"
+  },
+  {
+    "faiss_id": 108,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "problems 46 Heuris6cs Evalua6on vs. User Tes6ng • Heuris6c Evalua6on (H.E.) oben faster – 1-­‐2 hours each evaluator • H.E. results come pre-­‐interpreted • User tes6ng is more accurate – takes into account actual users and tasks – H.E. may miss problems & ﬁnd “false posi6ves” • Valuable to alternate methods – ﬁnd diﬀerent problems – don’t waste par6cipants 47 Phases of Heuris6c Evalua6on 1. Pre-­‐evalua6on training: give evaluators needed domain knowledge and informa6on on the scenario 2. Eval"
+  },
+  {
+    "faiss_id": 109,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": ": give evaluators needed domain knowledge and informa6on on the scenario 2. Evaluation: individuals evaluate and then aggregate results 3. Severity ra6ng: determine how severe each problem is (priority). Can do ﬁrst individually and then as a group 4. Debrieﬁng: review with design team 48 How-­‐to: Heuris6c Evalua6on • At least two passes for each evaluator – ﬁrst to get feel for ﬂow and scope of system – second to focus on speciﬁc elements • If system is walk-­‐up-­‐and-­‐use or evaluators are"
+  },
+  {
+    "faiss_id": 110,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "ocus on speciﬁc elements • If system is walk-­‐up-­‐and-­‐use or evaluators are domain experts, no assistance needed – otherwise might supply evaluators with scenarios • Each evaluator produces list of problems – explain why with reference to heuris6c or other informa6on – be speciﬁc and list each problem separately 49 Severity Ratings 0 - don’t agree that this is a usability problem 1 - cosmetic problem 2 - minor usability problem 3 - major usability problem; important to fix 4 - usability cata"
+  },
+  {
+    "faiss_id": 111,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "ability problem 3 - major usability problem; important to fix 4 - usability catastrophe; imperative to fix 50 Severity Ratings Example Issue: Unable to edit one’s weight Severity: 2 Heuristics violated: User control and freedom Description: when you open the app for the first time, you have to enter your weight, but you cannot update it. It could be useful if you mistyped your weight, or if one year or two after the first use of the app, your weight has changed. 51 Debrieﬁng • Conduct with evalu"
+  },
+  {
+    "faiss_id": 112,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "first use of the app, your weight has changed. 51 Debrieﬁng • Conduct with evaluators, observers, and development team members • Discuss general characteristics of UI • Suggest potential improvements to address major usability problems • Development team rates effort to fix • Brainstorm solutions 52 Summary • Cognitive Walkthrough – Who: new user – What: performs list of specific tasks – Why: to evaluate the learnability and to see if the tasks can be performed in the correct sequence of actions"
+  },
+  {
+    "faiss_id": 113,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "lity and to see if the tasks can be performed in the correct sequence of actions they were designed in • Heuristic Evaluation – Who: system specialist (preferably) – What: examines if the system in question abides by the agreed design heuristic – Why: to see if the system can comfortably be used based on prior experience in similar systems • User Testing – Who: end-user – What: uses the system for its intended purpose, as if he/she would be in a realistic situation at home/work/etc. – Why: to gi"
+  },
+  {
+    "faiss_id": 114,
+    "document_id": 9,
+    "file_name": "Week_9_-_Evaluation1.pdf",
+    "text": "e, as if he/she would be in a realistic situation at home/work/etc. – Why: to give direct input on how real users use the system 53"
+  }
+]
