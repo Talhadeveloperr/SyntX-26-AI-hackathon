@@ -1,0 +1,49 @@
+{
+  "status": "completed",
+  "started_at": "2026-05-18T23:03:42.579716Z",
+  "questions": [
+    {
+      "question_index": 1,
+      "question": "What is the fundamental concept that ties together all three components of Human-Computer Interaction (HCI)?",
+      "options": [
+        {
+          "id": 1,
+          "text": "The Interaction"
+        },
+        {
+          "id": 2,
+          "text": "Flexibility and Robustness"
+        },
+        {
+          "id": 3,
+          "text": "Understanding the process of A/B testing"
+        },
+        {
+          "id": 4,
+          "text": "The Human Factor"
+        }
+      ],
+      "correct_option_id": 1,
+      "generation": {
+        "calls": 4,
+        "flow": "1 correct then 3 wrong (parallel)",
+        "contexts_used": [
+          "s) ◦Design ◦Engineering ◦Social sciences Both deal with the design of everyday (and not-so-everyday) things Involve questions such as, but not limited to: ◦Is it easy to use? ◦Is it easy to understand",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T",
+          "ques and Think-Aloud Techniques, Usability Testing, Contemporary topics and issues 28 Assignment 2 15 29 30 Conducting Experimental, Understanding the process of A/B testing 16 31 32 * Some Advanced T"
+        ]
+      }
+    }
+  ],
+  "student_id": 1,
+  "subject_id": 3,
+  "subject_name": "a",
+  "difficulty": "Medium",
+  "num_questions": 1,
+  "embeddings_path": "/root/syntax 26/backend/Subjects_Docs/1/Subj_3/embeddings",
+  "total": 1,
+  "completed": 1,
+  "finished_at": "2026-05-18T23:04:49.058713Z",
+  "quiz_id": 1
+}

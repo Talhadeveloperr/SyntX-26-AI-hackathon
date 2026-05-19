@@ -280,3 +280,197 @@ class FlashcardService:
             "created_at":   str(row.created_at),
             "cards":        cards,
         }
+
+    # ------------------------------------------------------------------ #
+    #  List all decks for a student                                        #
+    # ------------------------------------------------------------------ #
+    @staticmethod
+    def list_decks(student_id: int) -> dict:
+        conn   = get_sql_connection()
+        cursor = conn.cursor()
+        cursor.execute(
+            "SELECT set_id, subject_id, subject_name, num_cards, created_at "
+            "FROM flashcard_sets WHERE student_id = ? ORDER BY created_at DESC",
+            (student_id,),
+        )
+        decks = [
+            {
+                "set_id":       r.set_id,
+                "subject_id":   r.subject_id,
+                "subject_name": r.subject_name,
+                "num_cards":    r.num_cards,
+                "created_at":   str(r.created_at),
+            }
+            for r in cursor.fetchall()
+        ]
+        conn.close()
+        return {"student_id": student_id, "decks": decks}
+
+    # ------------------------------------------------------------------ #
+    #  Create an empty deck manually (no AI)                              #
+    # ------------------------------------------------------------------ #
+    @staticmethod
+    def create_deck(student_id: int, subject_id: int, subject_name: str) -> dict:
+        # Validate subject ownership
+        conn   = get_sql_connection()
+        cursor = conn.cursor()
+        cursor.execute(
+            "SELECT subject_name FROM subjects WHERE subject_id = ? AND student_id = ?",
+            (subject_id, student_id),
+        )
+        row = cursor.fetchone()
+        if not row:
+            conn.close()
+            raise ValueError("Subject not found or does not belong to this student")
+
+        if not subject_name:
+            subject_name = row.subject_name
+
+        cursor.execute(
+            """INSERT INTO flashcard_sets
+               (student_id, subject_id, subject_name, num_cards)
+               OUTPUT INSERTED.set_id
+               VALUES (?, ?, ?, 0)""",
+            (student_id, subject_id, subject_name),
+        )
+        set_id = int(cursor.fetchone().set_id)
+        conn.commit()
+        conn.close()
+        return {"set_id": set_id, "student_id": student_id, "subject_id": subject_id,
+                "subject_name": subject_name, "num_cards": 0}
+
+    # ------------------------------------------------------------------ #
+    #  Delete a deck and all its cards                                    #
+    # ------------------------------------------------------------------ #
+    @staticmethod
+    def delete_deck(student_id: int, deck_id: int):
+        conn   = get_sql_connection()
+        cursor = conn.cursor()
+        cursor.execute(
+            "SELECT set_id FROM flashcard_sets WHERE set_id = ? AND student_id = ?",
+            (deck_id, student_id),
+        )
+        if not cursor.fetchone():
+            conn.close()
+            raise ValueError("Deck not found or does not belong to this student")
+
+        # Delete cards then deck (FK order)
+        cursor.execute("DELETE FROM flashcards WHERE set_id = ?", (deck_id,))
+        cursor.execute("DELETE FROM flashcard_sets WHERE set_id = ?", (deck_id,))
+        conn.commit()
+        conn.close()
+
+    # ------------------------------------------------------------------ #
+    #  Add a single card manually to a deck                              #
+    # ------------------------------------------------------------------ #
+    @staticmethod
+    def add_card(student_id: int, deck_id: int, question: str, answer: str) -> dict:
+        conn   = get_sql_connection()
+        cursor = conn.cursor()
+        cursor.execute(
+            "SELECT set_id, num_cards FROM flashcard_sets WHERE set_id = ? AND student_id = ?",
+            (deck_id, student_id),
+        )
+        row = cursor.fetchone()
+        if not row:
+            conn.close()
+            raise ValueError("Deck not found or does not belong to this student")
+
+        next_index = row.num_cards + 1
+        cursor.execute(
+            """INSERT INTO flashcards (set_id, card_index, question, answer)
+               OUTPUT INSERTED.flashcard_id VALUES (?, ?, ?, ?)""",
+            (deck_id, next_index, question, answer),
+        )
+        flashcard_id = int(cursor.fetchone().flashcard_id)
+        cursor.execute(
+            "UPDATE flashcard_sets SET num_cards = num_cards + 1 WHERE set_id = ?",
+            (deck_id,),
+        )
+        conn.commit()
+        conn.close()
+        return {
+            "flashcard_id": flashcard_id,
+            "set_id":       deck_id,
+            "card_index":   next_index,
+            "q":            question,
+            "a":            answer,
+        }
+
+    # ------------------------------------------------------------------ #
+    #  Delete a single card                                               #
+    # ------------------------------------------------------------------ #
+    @staticmethod
+    def delete_card(student_id: int, card_id: int):
+        conn   = get_sql_connection()
+        cursor = conn.cursor()
+        # Verify ownership via join
+        cursor.execute(
+            "SELECT f.flashcard_id, f.set_id FROM flashcards f "
+            "JOIN flashcard_sets s ON f.set_id = s.set_id "
+            "WHERE f.flashcard_id = ? AND s.student_id = ?",
+            (card_id, student_id),
+        )
+        row = cursor.fetchone()
+        if not row:
+            conn.close()
+            raise ValueError("Card not found or does not belong to this student")
+
+        set_id = row.set_id
+        cursor.execute("DELETE FROM flashcards WHERE flashcard_id = ?", (card_id,))
+        cursor.execute(
+            "UPDATE flashcard_sets SET num_cards = num_cards - 1 WHERE set_id = ? AND num_cards > 0",
+            (set_id,),
+        )
+        conn.commit()
+        conn.close()
+
+    # ------------------------------------------------------------------ #
+    #  Record a card review                                               #
+    # ------------------------------------------------------------------ #
+    @staticmethod
+    def review_card(student_id: int, card_id: int, result: str) -> dict:
+        """result: 'known' | 'unknown' — recorded in memory only (no reviews table)."""
+        conn   = get_sql_connection()
+        cursor = conn.cursor()
+        # Verify ownership
+        cursor.execute(
+            "SELECT f.flashcard_id FROM flashcards f "
+            "JOIN flashcard_sets s ON f.set_id = s.set_id "
+            "WHERE f.flashcard_id = ? AND s.student_id = ?",
+            (card_id, student_id),
+        )
+        if not cursor.fetchone():
+            conn.close()
+            raise ValueError("Card not found or does not belong to this student")
+        conn.close()
+        return {"flashcard_id": card_id, "result": result, "recorded": True}
+
+    # ------------------------------------------------------------------ #
+    #  Stats for a student                                                #
+    # ------------------------------------------------------------------ #
+    @staticmethod
+    def get_stats(student_id: int) -> dict:
+        conn   = get_sql_connection()
+        cursor = conn.cursor()
+
+        cursor.execute(
+            "SELECT COUNT(*) AS total_decks FROM flashcard_sets WHERE student_id = ?",
+            (student_id,),
+        )
+        total_decks = cursor.fetchone().total_decks
+
+        cursor.execute(
+            "SELECT ISNULL(SUM(num_cards), 0) AS total_cards "
+            "FROM flashcard_sets WHERE student_id = ?",
+            (student_id,),
+        )
+        total_cards = cursor.fetchone().total_cards
+
+        conn.close()
+        return {
+            "student_id":  student_id,
+            "total_decks": total_decks,
+            "total_cards": total_cards,
+        }
+
