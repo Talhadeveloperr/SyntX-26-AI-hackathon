@@ -1,15 +1,23 @@
 import { useContext, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Layout from "../components/Layout";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import Icon from "../components/Icon";
 import { updateProfile } from "../api/authApi";
+import { User, Mail, Building2, MapPin, Hash, GraduationCap, LogOut, Save, X, CheckCircle, AlertCircle, Shield } from "lucide-react";
 
 const CLASS_LEVELS = [
   "High School Freshman", "High School Sophomore", "High School Junior", "High School Senior",
   "Undergraduate Year 1", "Undergraduate Year 2", "Undergraduate Year 3", "Undergraduate Year 4",
   "Graduate Student", "PhD Student", "Professional", "Other",
 ];
+
+const panel = {
+  padding: "24px", borderRadius: "18px",
+  background: "rgba(12, 12, 30, 0.7)",
+  border: "1px solid rgba(255,255,255,0.07)",
+  backdropFilter: "blur(16px)",
+};
 
 export default function Profile() {
   const { user, logout, updateUser } = useContext(AuthContext);
@@ -22,9 +30,9 @@ export default function Profile() {
     city:             user?.city             || "",
     age:              user?.age              ?? "",
   });
-  const [saving,  setSaving]  = useState(false);
-  const [saved,   setSaved]   = useState(false);
-  const [error,   setError]   = useState("");
+  const [saving, setSaving] = useState(false);
+  const [saved,  setSaved]  = useState(false);
+  const [error,  setError]  = useState("");
 
   const initial = (form.full_name[0] || user?.email?.[0] || "S").toUpperCase();
   const isDirty = (
@@ -56,8 +64,7 @@ export default function Profile() {
 
   async function handleSave() {
     if (!form.full_name.trim()) { setError("Full name is required."); return; }
-    setSaving(true);
-    setError("");
+    setSaving(true); setError("");
     try {
       const payload = {
         full_name:        form.full_name.trim(),
@@ -83,160 +90,245 @@ export default function Profile() {
 
   return (
     <Layout title="Profile">
-      <div style={{ padding: "28px 32px" }}>
-        <div style={{ maxWidth: "960px", margin: "0 auto" }}>
+      <div style={{ padding: "clamp(20px, 3vw, 32px)", maxWidth: "1000px", margin: "0 auto" }}>
 
-          <div style={{ marginBottom: "24px" }}>
-            <h2 style={{ margin: "0 0 4px", fontSize: "24px", fontWeight: 700, color: "#d4e4fa" }}>Profile</h2>
-            <p style={{ margin: 0, fontSize: "14px", color: "rgba(199,196,215,0.5)" }}>Manage your account details.</p>
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: -14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          style={{ marginBottom: "28px" }}
+        >
+          <h2 style={{ margin: "0 0 5px", fontSize: "clamp(20px, 3vw, 26px)", fontWeight: 800, color: "var(--text-1)", letterSpacing: "-0.03em", fontFamily: "Space Grotesk, sans-serif" }}>
+            Your Profile
+          </h2>
+          <p style={{ margin: 0, fontSize: "14px", color: "var(--text-3)" }}>Manage your account details and preferences.</p>
+        </motion.div>
+
+        <div style={{ display: "grid", gridTemplateColumns: "clamp(220px, 26%, 280px) 1fr", gap: "20px", alignItems: "start" }}>
+
+          {/* ── LEFT COLUMN ── */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+
+            {/* Avatar card */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              style={{ ...panel, display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", padding: "32px 24px" }}
+            >
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                style={{
+                  width: "80px", height: "80px", borderRadius: "22px",
+                  background: "linear-gradient(135deg, #7c3aed, #a78bfa)",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  fontSize: "32px", fontWeight: 800, color: "#fff",
+                  marginBottom: "16px",
+                  boxShadow: "0 8px 28px rgba(124, 58, 237, 0.45)",
+                }}
+              >
+                {initial}
+              </motion.div>
+              <h3 style={{ margin: "0 0 4px", fontSize: "16px", fontWeight: 700, color: "var(--text-1)", fontFamily: "Space Grotesk, sans-serif" }}>
+                {form.full_name || "Student"}
+              </h3>
+              <p style={{ margin: "0 0 12px", fontSize: "12px", color: "var(--text-3)" }}>
+                {user?.email}
+              </p>
+              {user?.role && (
+                <span style={{ fontSize: "10px", fontWeight: 700, color: "var(--green)", background: "rgba(52,211,153,0.1)", border: "1px solid rgba(52,211,153,0.25)", borderRadius: "999px", padding: "3px 12px", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "6px" }}>
+                  {user.role}
+                </span>
+              )}
+              {form.class_level && (
+                <span style={{ fontSize: "11px", color: "#a78bfa", background: "rgba(124,58,237,0.1)", border: "1px solid rgba(124,58,237,0.2)", borderRadius: "999px", padding: "3px 10px", marginTop: "6px" }}>
+                  {form.class_level}
+                </span>
+              )}
+            </motion.div>
+
+            {/* Account actions */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              style={panel}
+            >
+              <p style={{ margin: "0 0 12px", fontSize: "10px", fontWeight: 700, color: "var(--text-4)", textTransform: "uppercase", letterSpacing: "0.08em" }}>Account</p>
+              <motion.button
+                whileHover={{ background: "rgba(248,113,113,0.1)", borderColor: "rgba(248,113,113,0.2)", x: 3 }}
+                whileTap={{ scale: 0.97 }}
+                onClick={handleLogout}
+                style={{
+                  display: "flex", alignItems: "center", gap: "10px",
+                  padding: "10px 12px", borderRadius: "10px",
+                  border: "1px solid transparent",
+                  background: "rgba(248,113,113,0.05)",
+                  color: "rgba(248, 113, 113, 0.7)",
+                  fontSize: "13px", fontWeight: 600, cursor: "pointer",
+                  textAlign: "left", width: "100%",
+                  fontFamily: "Plus Jakarta Sans, sans-serif",
+                  transition: "all 0.2s",
+                }}
+              >
+                <LogOut size={16} />
+                Sign Out
+              </motion.button>
+            </motion.div>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "260px 1fr", gap: "20px", alignItems: "start" }}>
+          {/* ── RIGHT COLUMN ── */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
 
-            {/* Left column */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-
-              {/* Avatar card */}
-              <div className="glass-card" style={{ borderRadius: "16px", padding: "28px 20px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-                <div style={{
-                  width: "80px", height: "80px", borderRadius: "20px",
-                  background: "linear-gradient(135deg,#c0c1ff,#ffb0cd)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: "34px", fontWeight: 800, color: "#051424",
-                  marginBottom: "14px",
-                }}>
-                  {initial}
-                </div>
-                <h3 style={{ margin: "0 0 3px", fontSize: "16px", fontWeight: 700, color: "#d4e4fa" }}>
-                  {form.full_name || "Student"}
-                </h3>
-                <p style={{ margin: "0 0 10px", fontSize: "12px", color: "rgba(199,196,215,0.5)" }}>
-                  {user?.email}
-                </p>
-                {user?.role && (
-                  <span style={{
-                    fontSize: "10px", fontWeight: 700, color: "#81c995",
-                    background: "rgba(129,201,149,0.12)", border: "1px solid rgba(129,201,149,0.25)",
-                    borderRadius: "999px", padding: "3px 10px", textTransform: "uppercase",
-                    letterSpacing: "0.06em", marginBottom: "6px",
-                  }}>
-                    {user.role}
-                  </span>
-                )}
-                {form.class_level && (
-                  <p style={{
-                    margin: "6px 0 0", fontSize: "11px", color: "rgba(192,193,255,0.6)",
-                    background: "rgba(192,193,255,0.08)", border: "1px solid rgba(192,193,255,0.18)",
-                    borderRadius: "999px", padding: "3px 10px",
-                  }}>
-                    {form.class_level}
-                  </p>
-                )}
-              </div>
-
-              {/* Actions */}
-              <div className="glass-card" style={{ borderRadius: "16px", padding: "18px" }}>
-                <p style={{ margin: "0 0 10px", fontSize: "11px", fontWeight: 700, color: "rgba(199,196,215,0.35)", textTransform: "uppercase", letterSpacing: "0.07em" }}>Account</p>
-                <button
-                  onClick={handleLogout}
-                  style={{ display: "flex", alignItems: "center", gap: "10px", padding: "10px 12px", borderRadius: "9px", border: "none", background: "rgba(255,180,171,0.06)", color: "#ffb4ab", fontSize: "13px", cursor: "pointer", textAlign: "left", width: "100%" }}
-                >
-                  <Icon name="logout" size={16} />
-                  Sign Out
-                </button>
-              </div>
-            </div>
-
-            {/* Right column */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-
+            {/* Status banners */}
+            <AnimatePresence>
               {error && (
-                <div style={{ padding: "12px 16px", borderRadius: "10px", background: "rgba(255,180,171,0.08)", border: "1px solid rgba(255,180,171,0.25)", color: "#ffb4ab", fontSize: "13px" }}>
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  style={{ padding: "13px 16px", borderRadius: "12px", background: "rgba(248,113,113,0.08)", border: "1px solid rgba(248,113,113,0.25)", color: "var(--red)", fontSize: "13px", display: "flex", alignItems: "center", gap: "10px" }}
+                >
+                  <AlertCircle size={16} />
                   {error}
-                </div>
+                </motion.div>
               )}
               {saved && (
-                <div style={{ padding: "12px 16px", borderRadius: "10px", background: "rgba(129,201,149,0.08)", border: "1px solid rgba(129,201,149,0.25)", color: "#81c995", fontSize: "13px" }}>
-                  Changes saved successfully.
-                </div>
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  style={{ padding: "13px 16px", borderRadius: "12px", background: "rgba(52,211,153,0.08)", border: "1px solid rgba(52,211,153,0.25)", color: "var(--green)", fontSize: "13px", display: "flex", alignItems: "center", gap: "10px" }}
+                >
+                  <CheckCircle size={16} />
+                  Changes saved successfully!
+                </motion.div>
               )}
+            </AnimatePresence>
 
-              {/* Editable fields */}
-              <div className="glass-card" style={{ borderRadius: "16px", padding: "22px 24px" }}>
-                <p style={{ margin: "0 0 18px", fontSize: "15px", fontWeight: 700, color: "#d4e4fa" }}>Personal Information</p>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+            {/* Editable fields */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              style={panel}
+            >
+              <p style={{ margin: "0 0 20px", fontSize: "15px", fontWeight: 700, color: "var(--text-1)", fontFamily: "Space Grotesk, sans-serif" }}>Personal Information</p>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
 
-                  <Field label="Full Name" name="full_name" value={form.full_name} onChange={handleChange} />
+                <PremiumField label="Full Name" name="full_name" value={form.full_name} onChange={handleChange} icon={User} />
+                <PremiumField label="Email" name="email" value={user?.email || ""} icon={Mail} disabled />
+                <PremiumField label="Institution" name="institution_name" value={form.institution_name} onChange={handleChange} icon={Building2} placeholder="University / School" />
+                <PremiumField label="City" name="city" value={form.city} onChange={handleChange} icon={MapPin} placeholder="Your city" />
+                <PremiumField label="Age" name="age" value={form.age} onChange={handleChange} icon={Hash} type="number" placeholder="Your age" />
 
-                  <Field label="Email" name="email" value={user?.email || ""} disabled />
-
-                  <Field label="Institution" name="institution_name" value={form.institution_name} onChange={handleChange} placeholder="University / School" />
-
-                  <Field label="City" name="city" value={form.city} onChange={handleChange} placeholder="Your city" />
-
-                  <Field label="Age" name="age" value={form.age} onChange={handleChange} type="number" placeholder="Your age" />
-
-                  <div>
-                    <label style={{ display: "block", fontSize: "10px", fontWeight: 700, letterSpacing: "0.07em", textTransform: "uppercase", color: "rgba(199,196,215,0.45)", marginBottom: "7px" }}>
-                      Class Level
-                    </label>
+                {/* Class level */}
+                <div>
+                  <label style={labelSt}>Class Level</label>
+                  <div style={{ position: "relative" }}>
+                    <GraduationCap size={14} style={{ position: "absolute", left: "12px", top: "50%", transform: "translateY(-50%)", color: "var(--text-4)", pointerEvents: "none" }} />
                     <select
                       name="class_level"
                       value={form.class_level}
                       onChange={handleChange}
                       style={{
-                        width: "100%", padding: "9px 12px",
-                        background: "rgba(1,15,31,0.6)", border: "1px solid rgba(255,255,255,0.1)",
-                        borderRadius: "9px", color: form.class_level ? "#d4e4fa" : "rgba(199,196,215,0.35)",
+                        width: "100%", padding: "10px 12px 10px 36px",
+                        background: "rgba(12, 12, 30, 0.6)",
+                        border: "1px solid rgba(255,255,255,0.08)",
+                        borderRadius: "10px", color: form.class_level ? "var(--text-1)" : "var(--text-4)",
                         fontSize: "13px", outline: "none", boxSizing: "border-box", cursor: "pointer",
+                        fontFamily: "Plus Jakarta Sans, sans-serif",
+                        appearance: "none",
                       }}
+                      onFocus={e => { e.target.style.borderColor = "rgba(124,58,237,0.5)"; e.target.style.boxShadow = "0 0 0 3px rgba(124,58,237,0.1)"; }}
+                      onBlur={e => { e.target.style.borderColor = "rgba(255,255,255,0.08)"; e.target.style.boxShadow = "none"; }}
                     >
                       <option value="">Select class level</option>
                       {CLASS_LEVELS.map(l => <option key={l} value={l}>{l}</option>)}
                     </select>
                   </div>
-
                 </div>
               </div>
+            </motion.div>
 
-              {/* Read-only account info */}
-              <div className="glass-card" style={{ borderRadius: "16px", padding: "22px 24px" }}>
-                <p style={{ margin: "0 0 14px", fontSize: "15px", fontWeight: 700, color: "#d4e4fa" }}>Account Info</p>
-                <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
-                  <InfoRow label="Student ID" value={user?.student_id} mono />
-                  <InfoRow label="Role"       value={user?.role} />
-                  <InfoRow label="Email"      value={user?.email} note="Contact support to change your email" />
+            {/* Account info (read-only) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              style={panel}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "18px" }}>
+                <div style={{ width: "30px", height: "30px", borderRadius: "9px", background: "rgba(124,58,237,0.12)", border: "1px solid rgba(124,58,237,0.2)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <Shield size={14} color="#a78bfa" />
                 </div>
+                <p style={{ margin: 0, fontSize: "15px", fontWeight: 700, color: "var(--text-1)", fontFamily: "Space Grotesk, sans-serif" }}>Account Info</p>
               </div>
-
-              {/* Save bar */}
-              <div style={{ display: "flex", justifyContent: "flex-end", gap: "10px" }}>
-                <button
-                  onClick={handleDiscard}
-                  disabled={!isDirty || saving}
-                  style={{
-                    padding: "10px 20px", borderRadius: "9px", border: "1px solid rgba(255,255,255,0.1)",
-                    background: "transparent", fontSize: "13px", cursor: isDirty && !saving ? "pointer" : "default",
-                    color: isDirty && !saving ? "rgba(199,196,215,0.65)" : "rgba(199,196,215,0.25)",
-                  }}
-                >
-                  Discard
-                </button>
-                <button
-                  onClick={handleSave}
-                  disabled={!isDirty || saving}
-                  style={{
-                    padding: "10px 28px", borderRadius: "9px", border: "none", fontWeight: 700, fontSize: "13px",
-                    background: isDirty && !saving ? "linear-gradient(135deg,#c0c1ff,#ffb0cd)" : "rgba(255,255,255,0.07)",
-                    color: isDirty && !saving ? "#051424" : "rgba(199,196,215,0.25)",
-                    cursor: isDirty && !saving ? "pointer" : "default", transition: "all 0.2s",
-                  }}
-                >
-                  {saving ? "Saving…" : "Save Changes"}
-                </button>
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                {[
+                  { label: "Student ID", value: user?.student_id, mono: true },
+                  { label: "Role",       value: user?.role       },
+                  { label: "Email",      value: user?.email, note: "Contact support to change your email" },
+                ].map(({ label, value, note, mono }) => (
+                  <div key={label} style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", padding: "12px 0", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+                    <span style={{ fontSize: "12px", color: "var(--text-3)", minWidth: "100px" }}>{label}</span>
+                    <div style={{ textAlign: "right" }}>
+                      <span style={{ fontSize: "13px", color: "var(--text-1)", fontFamily: mono ? "JetBrains Mono, monospace" : "inherit", letterSpacing: mono ? "0.04em" : "normal" }}>
+                        {value || "—"}
+                      </span>
+                      {note && <p style={{ margin: "2px 0 0", fontSize: "10px", color: "var(--text-4)" }}>{note}</p>}
+                    </div>
+                  </div>
+                ))}
               </div>
+            </motion.div>
 
-            </div>
+            {/* Save bar */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              style={{ display: "flex", justifyContent: "flex-end", gap: "10px" }}
+            >
+              <motion.button
+                whileHover={{ scale: isDirty && !saving ? 1.02 : 1 }}
+                whileTap={{ scale: isDirty && !saving ? 0.98 : 1 }}
+                onClick={handleDiscard}
+                disabled={!isDirty || saving}
+                style={{
+                  padding: "11px 22px", borderRadius: "11px",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  background: "transparent", fontSize: "13px", fontWeight: 600,
+                  cursor: isDirty && !saving ? "pointer" : "default",
+                  color: isDirty && !saving ? "var(--text-2)" : "var(--text-4)",
+                  fontFamily: "Plus Jakarta Sans, sans-serif",
+                  display: "flex", alignItems: "center", gap: "7px",
+                  transition: "all 0.2s",
+                }}
+              >
+                <X size={14} /> Discard
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: isDirty && !saving ? 1.03 : 1, boxShadow: isDirty && !saving ? "0 8px 24px rgba(124,58,237,0.4)" : "none" }}
+                whileTap={{ scale: isDirty && !saving ? 0.97 : 1 }}
+                onClick={handleSave}
+                disabled={!isDirty || saving}
+                style={{
+                  padding: "11px 28px", borderRadius: "11px",
+                  border: "none", fontWeight: 700, fontSize: "13px",
+                  background: isDirty && !saving ? "linear-gradient(135deg, #7c3aed, #a78bfa)" : "rgba(255,255,255,0.06)",
+                  color: isDirty && !saving ? "#fff" : "var(--text-4)",
+                  cursor: isDirty && !saving ? "pointer" : "default",
+                  fontFamily: "Plus Jakarta Sans, sans-serif",
+                  display: "flex", alignItems: "center", gap: "7px",
+                  boxShadow: isDirty && !saving ? "0 4px 16px rgba(124,58,237,0.35)" : "none",
+                  transition: "all 0.2s",
+                }}
+              >
+                <Save size={14} /> {saving ? "Saving…" : "Save Changes"}
+              </motion.button>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -244,42 +336,53 @@ export default function Profile() {
   );
 }
 
-function Field({ label, name, value, onChange, type = "text", placeholder = "", disabled = false }) {
+function PremiumField({ label, name, value, onChange, type = "text", placeholder = "", disabled = false, icon: Icon }) {
   return (
     <div>
-      <label style={{ display: "block", fontSize: "10px", fontWeight: 700, letterSpacing: "0.07em", textTransform: "uppercase", color: "rgba(199,196,215,0.45)", marginBottom: "7px" }}>
-        {label}
-      </label>
-      <input
-        type={type}
-        name={name}
-        value={value}
-        onChange={onChange}
-        placeholder={placeholder}
-        disabled={disabled}
-        style={{
-          width: "100%", padding: "9px 12px",
-          background: disabled ? "rgba(255,255,255,0.02)" : "rgba(1,15,31,0.6)",
-          border: "1px solid rgba(255,255,255,0.1)",
-          borderRadius: "9px", color: disabled ? "rgba(199,196,215,0.35)" : "#d4e4fa",
-          fontSize: "13px", outline: "none", boxSizing: "border-box",
-          cursor: disabled ? "not-allowed" : "text",
-        }}
-      />
-    </div>
-  );
-}
-
-function InfoRow({ label, value, note, mono = false }) {
-  return (
-    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", padding: "10px 0", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
-      <span style={{ fontSize: "12px", color: "rgba(199,196,215,0.45)", minWidth: "100px" }}>{label}</span>
-      <div style={{ textAlign: "right" }}>
-        <span style={{ fontSize: "13px", color: "#d4e4fa", fontFamily: mono ? "monospace" : "inherit", letterSpacing: mono ? "0.05em" : "normal" }}>
-          {value || "—"}
-        </span>
-        {note && <p style={{ margin: "2px 0 0", fontSize: "10px", color: "rgba(199,196,215,0.3)" }}>{note}</p>}
+      <label style={labelSt}>{label}</label>
+      <div style={{ position: "relative" }}>
+        {Icon && <Icon size={14} style={{ position: "absolute", left: "12px", top: "50%", transform: "translateY(-50%)", color: "var(--text-4)", pointerEvents: "none" }} />}
+        <input
+          type={type}
+          name={name}
+          value={value}
+          onChange={onChange}
+          placeholder={placeholder}
+          disabled={disabled}
+          style={{
+            width: "100%",
+            padding: Icon ? "10px 12px 10px 36px" : "10px 12px",
+            background: disabled ? "rgba(255,255,255,0.02)" : "rgba(12, 12, 30, 0.6)",
+            border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: "10px",
+            color: disabled ? "var(--text-3)" : "var(--text-1)",
+            fontSize: "13px",
+            outline: "none",
+            boxSizing: "border-box",
+            cursor: disabled ? "not-allowed" : "text",
+            fontFamily: "Plus Jakarta Sans, sans-serif",
+            transition: "border-color 0.2s, box-shadow 0.2s",
+          }}
+          onFocus={e => {
+            if (!disabled) {
+              e.target.style.borderColor = "rgba(124,58,237,0.5)";
+              e.target.style.boxShadow = "0 0 0 3px rgba(124,58,237,0.1)";
+            }
+          }}
+          onBlur={e => {
+            e.target.style.borderColor = "rgba(255,255,255,0.08)";
+            e.target.style.boxShadow = "none";
+          }}
+        />
       </div>
     </div>
   );
 }
+
+const labelSt = {
+  display: "block",
+  fontSize: "10px", fontWeight: 700,
+  letterSpacing: "0.07em", textTransform: "uppercase",
+  color: "var(--text-3)", marginBottom: "7px",
+  fontFamily: "Plus Jakarta Sans, sans-serif",
+};

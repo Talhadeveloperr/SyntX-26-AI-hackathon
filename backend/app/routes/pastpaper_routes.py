@@ -45,3 +45,4 @@ def get_analysis_details(analysis_id):
     GET /api/pastpapers/analyses/<analysis_id>
     """
     return PastpaperController.get_analysis_details(_sid(), analysis_id)
+

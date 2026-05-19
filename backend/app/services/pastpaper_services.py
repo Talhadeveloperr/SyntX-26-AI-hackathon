@@ -194,3 +194,4 @@ class PastpaperService:
             "analyzed_at": str(row.analyzed_at),
             "predictions": predictions
         }
+        
