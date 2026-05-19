@@ -286,25 +286,7 @@ export default function PastPapers() {
                 borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: "14px",
                 display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "10px", marginBottom: "14px",
               }}>
-                <div>
-                  <label style={{ display: "block", fontSize: "10px", fontWeight: 700, letterSpacing: "0.07em", textTransform: "uppercase", color: "rgba(199,196,215,0.4)", marginBottom: "5px" }}>
-                    Subject ID <span style={{ color: "#ffb0cd" }}>*</span>
-                  </label>
-                  <input
-                    type="number"
-                    placeholder="e.g. 3"
-                    value={subjectId}
-                    onChange={e => setSubjectId(e.target.value)}
-                    style={{
-                      width: "100%", boxSizing: "border-box",
-                      background: "rgba(1,15,31,0.7)", border: `1px solid ${subjectId.trim() ? "rgba(192,193,255,0.35)" : "rgba(255,255,255,0.1)"}`,
-                      borderRadius: "8px", padding: "7px 10px",
-                      color: "#d4e4fa", fontSize: "13px", outline: "none",
-                    }}
-                    onFocus={e => e.target.style.borderColor = "rgba(192,193,255,0.5)"}
-                    onBlur={e => e.target.style.borderColor = subjectId.trim() ? "rgba(192,193,255,0.35)" : "rgba(255,255,255,0.1)"}
-                  />
-                </div>
+                
                 <div>
                   <label style={{ display: "block", fontSize: "10px", fontWeight: 700, letterSpacing: "0.07em", textTransform: "uppercase", color: "rgba(199,196,215,0.4)", marginBottom: "5px" }}>
                     Subject Name <span style={{ color: "rgba(199,196,215,0.25)" }}>(optional)</span>
@@ -322,6 +304,25 @@ export default function PastPapers() {
                     }}
                     onFocus={e => e.target.style.borderColor = "rgba(192,193,255,0.4)"}
                     onBlur={e => e.target.style.borderColor = "rgba(255,255,255,0.1)"}
+                  />
+                </div>
+                <div>
+                  <label style={{ display: "block", fontSize: "10px", fontWeight: 700, letterSpacing: "0.07em", textTransform: "uppercase", color: "rgba(199,196,215,0.4)", marginBottom: "5px" }}>
+                    Subject ID <span style={{ color: "#ffb0cd" }}>*</span>
+                  </label>
+                  <input
+                    type="number"
+                    placeholder="e.g. 3"
+                    value={subjectId}
+                    onChange={e => setSubjectId(e.target.value)}
+                    style={{
+                      width: "100%", boxSizing: "border-box",
+                      background: "rgba(1,15,31,0.7)", border: `1px solid ${subjectId.trim() ? "rgba(192,193,255,0.35)" : "rgba(255,255,255,0.1)"}`,
+                      borderRadius: "8px", padding: "7px 10px",
+                      color: "#d4e4fa", fontSize: "13px", outline: "none",
+                    }}
+                    onFocus={e => e.target.style.borderColor = "rgba(192,193,255,0.5)"}
+                    onBlur={e => e.target.style.borderColor = subjectId.trim() ? "rgba(192,193,255,0.35)" : "rgba(255,255,255,0.1)"}
                   />
                 </div>
                 <div>
