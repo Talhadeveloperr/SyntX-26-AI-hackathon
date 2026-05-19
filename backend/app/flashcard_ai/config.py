@@ -17,7 +17,7 @@ class FlashcardAIConfig:
     CONTEXT_CHUNKS_PER_CARD = 3
 
     # Default number of flashcards when not specified by caller
-    DEFAULT_NUM_CARDS = 10
+    DEFAULT_NUM_CARDS = 2
 
     # Max cards allowed in one request
     MAX_NUM_CARDS = 50

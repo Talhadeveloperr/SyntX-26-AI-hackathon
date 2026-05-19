@@ -8,6 +8,22 @@ import {
   getStats,
 } from "../api/flashcardsApi";
 
+// ─── flashcard generate API ───────────────────────────────────────────────────
+const FC_BASE = "http://136.243.35.104:8501/api";
+
+async function callGenerateFlashcards(payload) {
+  console.log("📤 Generate Flashcards Payload:", payload);
+  const res = await fetch(`${FC_BASE}/flashcards/generate`, {
+    method:  "POST",
+    headers: { "Content-Type": "application/json" },
+    body:    JSON.stringify(payload),
+  });
+  if (!res.ok) throw new Error(`Generate flashcards failed: ${res.status}`);
+  const data = await res.json();
+  console.log("📥 Generate Flashcards Response:", data);
+  return data;
+}
+
 // ─── constants ────────────────────────────────────────────────────────────────
 function toYMD(d) { return new Date(d).toISOString().split("T")[0]; }
 
@@ -55,6 +71,7 @@ export default function Flashcards() {
   const [generatedCards,  setGeneratedCards]  = useState(null);
   const [genIdx,          setGenIdx]          = useState(0);
   const [genFlipped,      setGenFlipped]      = useState(false);
+  const [genError,        setGenError]        = useState(null);
 
   const fcSubject  = subjects.find(s => s.id === fcSubjectId) || null;
   const fcDocs     = fcSubjectId ? (subjectDocs[fcSubjectId] || []) : [];
@@ -69,23 +86,28 @@ export default function Flashcards() {
     ],
   };
 
-  const handleGenerateFlashcards = () => {
+  const handleGenerateFlashcards = async () => {
     if (!fcSubject) return;
     const payload = {
-      student_id:  1,
-      subject_id:  fcSubject.id,
+      student_id:   1,
+      subject_id:   fcSubject.id,
       subject_name: fcSubject.name,
-      documents:   fcDocs.map(d => ({ document_id: d.id, file_name: d.name })),
+      documents:    fcDocs.map(d => ({ document_id: d.id, file_name: d.name })),
     };
     console.log("Flashcards Generate Payload:", payload);
     setGenerating(true);
     setGeneratedCards(null);
-    setTimeout(() => {
-      setGenerating(false);
-      setGeneratedCards(DUMMY_CARDS.default);
+    setGenError(null);
+    try {
+      const data = await callGenerateFlashcards(payload);
+      setGeneratedCards(data.cards);
       setGenIdx(0);
       setGenFlipped(false);
-    }, 1600);
+    } catch {
+      setGenError("Failed to generate flashcards. Please try again.");
+    } finally {
+      setGenerating(false);
+    }
   };
 
   const docTypeIconFC = (name) => {
@@ -102,13 +124,13 @@ export default function Flashcards() {
   const loadDecks = useCallback(async (keepActive) => {
     try {
       const [a, b] = await Promise.all([getDecks(), getStats()]);
-      setDecks(a.data);
-      setStats(b.data);
+      const deckList = Array.isArray(a.data) ? a.data : (a.data?.decks ?? []);
+      setDecks(deckList);
+      setStats(b.data ?? { total_due: 0, reviewed_today: 0, streak: 0, total_cards: 0 });
       if (!keepActive && a.data.length > 0) {
         setActiveDeck(prev => prev ?? a.data[0]);
       }
     } catch { /* silent */ }
-    finally { setLoading(false); }
   }, []);
 
   const loadCards = useCallback(async (deckId) => {
@@ -309,7 +331,7 @@ export default function Flashcards() {
                     disabled={generating}
                     style={{
                       display: "flex", alignItems: "center", gap: "7px",
-                      padding: "9px 20px", borderRadius: "10px", border: "none", cursor: generating ? "not-allowed" : "pointer",
+                      padding: "9px 20px", borderRadius: "10px", cursor: generating ? "not-allowed" : "pointer",
                       background: generating ? "rgba(192,193,255,0.1)" : "linear-gradient(135deg,#c0c1ff,#ffb0cd)",
                       color: generating ? "#c0c1ff" : "#051424",
                       fontSize: "13px", fontWeight: 700, opacity: generating ? 0.7 : 1,
@@ -319,6 +341,13 @@ export default function Flashcards() {
                     <Icon name={generating ? "hourglass_top" : "auto_awesome"} size={15} />
                     {generating ? "Generating flashcards…" : `Generate Flashcards for ${fcSubject.name}`}
                   </button>
+
+                  {genError && (
+                    <div style={{ display: "flex", alignItems: "center", gap: "7px", marginTop: "10px", padding: "8px 12px", borderRadius: "9px", background: "rgba(255,180,171,0.08)", border: "1px solid rgba(255,180,171,0.2)", color: "#ffb4ab", fontSize: "12px", fontWeight: 500 }}>
+                      <Icon name="error_outline" size={13} />
+                      {genError}
+                    </div>
+                  )}
                 </div>
               )}
 
@@ -569,7 +598,7 @@ export default function Flashcards() {
                   {decks.map(deck => {
                     const active = activeDeck?.deck_id === deck.deck_id;
                     return (
-                      <button key={deck.deck_id} onClick={() => selectDeck(deck)}
+                      <div key={deck.deck_id} onClick={() => selectDeck(deck)}
                         style={{ minWidth: "178px", padding: "16px", borderRadius: "16px", border: `1px solid ${active ? "rgba(192,193,255,0.4)" : "rgba(255,255,255,0.08)"}`, background: active ? "rgba(192,193,255,0.1)" : "rgba(255,255,255,0.03)", cursor: "pointer", textAlign: "left", flexShrink: 0, position: "relative" }}>
                         <Icon name={deck.icon} size={22} style={{ color: active ? "#c0c1ff" : "rgba(199,196,215,0.4)", display: "block", marginBottom: "8px" }} />
                         <p style={{ margin: "0 0 4px", fontWeight: 600, fontSize: "14px", color: "#d4e4fa", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{deck.name}</p>
@@ -582,7 +611,7 @@ export default function Flashcards() {
                           style={{ position: "absolute", top: "8px", right: "8px", width: "22px", height: "22px", borderRadius: "6px", border: "1px solid rgba(255,255,255,0.08)", background: "transparent", color: "rgba(199,196,215,0.3)", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", padding: 0 }}>
                           <Icon name="delete" size={12} />
                         </button>
-                      </button>
+                      </div>
                     );
                   })}
                 </div>
